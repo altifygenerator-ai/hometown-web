@@ -1,6 +1,7 @@
 "use client";
 import { Playfair_Display, Inter } from "next/font/google";
-
+import { useState } from "react";
+import PricingSection from "@/components/PricingSection";
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export default function Page() {
@@ -9,21 +10,37 @@ export default function Page() {
   const projects = [
     {
       image: "/pizza.png",
-      title: "Pizza Shop Website",
+      title: "Hometown Pizza",
       description: "Modern site for a local restaurant",
     },
     {
       image: "/insideout.png",
-      title: "Cleaning Business",
+      title: "Inside Out Cleaning",
       description: "Lead-focused service site",
     },
     {
       image: "/littlecove.png",
-      title: "daycare",
+      title: "Little Cove Daycare",
       description: "Simple, high-conversion layout",
     },
+    {
+      image: "/TheAutoAcademy.png",
+      title: "The Auto Academy",
+      description: "Clean design for a local mechanic school",
+    }
   ];
+const [current, setCurrent] = useState(0);
 
+const nextSlide = () => {
+  setCurrent((prev) => (prev + 1) % projects.length);
+};
+
+const prevSlide = () => {
+  setCurrent((prev) =>
+    prev === 0 ? projects.length - 1 : prev - 1
+  );
+};
+const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="bg-gradient-to-b from-[#f3ede6] via-[#f8f6f2] to-white text-gray-900 font-sans min-h-screen">
@@ -137,54 +154,120 @@ export default function Page() {
       </section>
 
 
-      <section className="py-20 px-6 border-t border-gray-200">
+ <section className="py-20 px-6 border-t border-gray-200">
   <div className="max-w-6xl mx-auto">
 
-    <h2 className="font-sans text-2xl text-center mb-10 text-[#7a4e2d]">
-      Recent Work
+    <h2 className="font-serif text-4xl text-center mb-10 text-[#7a4e2d]">
+      Showcase
     </h2>
 
-    <div className="grid md:grid-cols-3 gap-6">
-      {projects.map((p, i) => (
-        <div key={i} className="bg-white rounded-2xl shadow overflow-hidden">
+    {/* ✅ SINGLE CONTAINER — NOT A GRID */}
+    <div className="w-full max-w-5xl mx-auto">
+      <div className="relative rounded-2xl overflow-hidden shadow-xl">
 
-          <img
-            src={p.image}
-            alt={p.title}
-            className="w-full h-48 object-cover transition duration-300 hover:scale-105"
-          />
+        {/* Image */}
+        <img
+  src={projects[current].image}
+  alt={projects[current].title}
+  onClick={() => setIsOpen(true)}
+  className="w-full h-[420px] object-cover transition-all duration-500 cursor-pointer"
+/>
 
-          <div className="p-4">
-            <h3 className="font-sans text-lg font-semibold">{p.title}</h3>
-            <p className="font-sans text-sm text-gray-600 mt-1">
-              {p.description}
-            </p>
-          </div>
-
+        {/* Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-8">
+          <h3 className="text-2xl font-semibold">
+            {projects[current].title}
+          </h3>
+          <p className="text-sm opacity-80 mt-1">
+            {projects[current].description}
+          </p>
         </div>
-      ))}
+
+        {/* Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-full"
+        >
+          ←
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-full"
+        >
+          →
+        </button>
+        {isOpen && (
+  <div
+    className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+    onClick={() => setIsOpen(false)}
+  >
+    <img
+      src={projects[current].image}
+      alt={projects[current].title}
+      className="max-w-[90%] max-h-[90%] rounded-lg shadow-xl"
+    />
+
+    {/* Close button */}
+    <button
+      className="absolute top-6 right-6 text-white text-2xl"
+      onClick={() => setIsOpen(false)}
+    >
+      ✕
+    </button>
+  </div>
+)}
+
+      </div>
     </div>
 
   </div>
 </section>
 
 
-     <section className="py-16 px-6 border-t text-center">
-  <div className="max-w-4xl mx-auto">
+    <section className="py-20 px-6 border-t bg-gradient-to-b from-white to-gray-50">
+  <div className="max-w-4xl mx-auto text-center">
 
-    <h2 className="font-serif text-2xl mb-6 text-[#7a4e2d]">
+    {/* Heading */}
+    <h2 className="font-serif text-3xl md:text-4xl mb-10 text-[#7a4e2d]">
       How It Works
     </h2>
 
-    <div className="font-sans space-y-3 text-gray-600">
-      <p>1. You send me your business info</p>
-      <p>2. I build a preview website</p>
-      <p>3. You approve or request changes</p>
-      <p>4. We launch your site</p>
+    {/* Steps */}
+    <div className="space-y-6">
+
+      {[
+        "You send me your business info",
+        "I build a preview website",
+        "You approve or request changes",
+        "We launch your site",
+      ].map((step, i) => (
+        <div
+          key={i}
+          className="flex items-center gap-4 bg-white shadow-md rounded-xl px-6 py-4 text-left hover:scale-[1.02] transition"
+        >
+          {/* Number */}
+          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#7a4e2d] text-white font-bold">
+            {i + 1}
+          </div>
+
+          {/* Text */}
+          <p className="text-lg font-medium text-gray-700">
+            {step}
+          </p>
+        </div>
+      ))}
+
     </div>
+
+    {/* Bottom CTA hint */}
+    <p className="mt-10 text-gray-500 text-sm">
+      Simple, fast, and built to get results.
+    </p>
 
   </div>
 </section>
+<PricingSection />
 
 
     <section className="py-20 px-6 bg-gradient-to-r from-[#7a4e2d] to-[#a67852] text-white text-center">
