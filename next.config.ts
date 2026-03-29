@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
             key: "Content-Type",
             value: "application/xml",
           },
+          {
+            key: "Cache-Control",
+            value: "no-store, no-cache, must-revalidate",
+          },
         ],
       },
     ];
