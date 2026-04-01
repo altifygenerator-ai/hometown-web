@@ -1,5 +1,9 @@
 "use client";
-
+export const metadata = {
+  title: "Website Pricing | Arkansas Web Design",
+  description:
+    "Simple, transparent pricing for professional websites built for Arkansas small businesses. No fluff, just results.",
+};
 export default function PricingSection() {
   const tiers = [
     {

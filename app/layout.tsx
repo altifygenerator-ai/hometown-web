@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import { Playfair_Display, Inter } from "next/font/google";
 
@@ -13,62 +12,35 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-export const metadata = {
-  title: "Affordable Website Design for Small Businesses | Altify",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Hometown Web Services | Arkansas Web Design for Small Businesses",
+    template: "%s | Hometown Web Services",
+  },
   description:
-    "We build fast, modern websites for small businesses that bring in customers. Affordable pricing, quick turnaround, and clean design.",
+    "Affordable, high-converting websites for small businesses in Arkansas. Hometown Web Services builds fast, modern sites that turn visitors into customers.",
   
   keywords: [
-    "website design Arkansas",
-    "small business website",
-    "affordable web design",
-    "local business websites",
+    "web design Arkansas",
+    "small business websites Arkansas",
     "website developer Arkansas",
-    "Next.js web design",
-    "web design in glenwood arkansas",
-    "website design in glenwood ar",
-    "website design in hot springs ar",
-    "website design in texarkana ar",
-    "website design in hope ar",
-    "website design in magnolia ar",
-    "website design in el dorado ar",
-    "small business web design Arkansas",
-    "affordable website design Arkansas",
-    "local web design Arkansas",
-    "Next.js web design Arkansas",
-    "small business website arkansas",
+    "local web design services",
     "affordable web design Arkansas",
-    "local business websites Arkansas",
-    "website developer Arkansas",
+    "business website design Arkansas",
   ],
 
-  authors: [{ name: "Altify" }],
-  creator: "Altify",
-
   openGraph: {
-    title: "Affordable Website Design for Small Businesses",
+    title: "Hometown Web Services | Arkansas Web Design",
     description:
-      "Modern, high-converting websites built for small businesses.",
-    url: "https://hometownwebservicesar.cc/",
-    siteName: "Hometown Web Services AR",
-    images: [
-      {
-        url: "/preview.png", // add this image in /public
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: "en_US",
+      "We build high-converting websites for small businesses across Arkansas. Clean design, fast load times, and real results.",
+    url: "https://hometownwebservicesar.cc",
+    siteName: "Hometown Web Services",
     type: "website",
   },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Affordable Website Design for Small Businesses",
-    description:
-      "Clean, modern websites that bring in customers.",
-    images: ["/preview.png"],
-  },
+  metadataBase: new URL("https://hometownwebservicesar.cc"),
 };
 
 export default function RootLayout({

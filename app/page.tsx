@@ -2,8 +2,14 @@
 import { Playfair_Display, Inter } from "next/font/google";
 import { useState } from "react";
 import PricingSection from "@/components/PricingSection";
+
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+export const metadata = {
+  title: "Arkansas Web Design for Small Businesses",
+  description:
+    "Need a website that actually brings in customers? Hometown Web Services builds fast, modern websites for Arkansas businesses that convert.",
+};
 export default function Page() {
   
   
