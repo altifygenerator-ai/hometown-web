@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
-const baseUrl = process.env.BASE_URL ?? 'https://hometownwebservicesar.cc'
+const siteUrl = process.env.SITE_URL ?? 'https://hometownwebservicesar.cc'
 
-return [
+
+  return [
     {
-      url: `${baseUrl}/`,
+      url: `${siteUrl}/`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
