@@ -1,18 +1,16 @@
 import "./globals.css";
-import { Playfair_Display, Inter } from "next/font/google";
-
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
 import type { Metadata } from "next";
+import { Fraunces, Figtree } from "next/font/google";
+
+const display = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+const body = Figtree({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -21,7 +19,6 @@ export const metadata: Metadata = {
   },
   description:
     "Affordable, high-converting websites for small businesses in Arkansas. Hometown Web Services builds fast, modern sites that turn visitors into customers.",
-  
   keywords: [
     "web design Arkansas",
     "small business websites Arkansas",
@@ -30,7 +27,6 @@ export const metadata: Metadata = {
     "affordable web design Arkansas",
     "business website design Arkansas",
   ],
-
   openGraph: {
     title: "Hometown Web Services | Arkansas Web Design",
     description:
@@ -39,7 +35,6 @@ export const metadata: Metadata = {
     siteName: "Hometown Web Services",
     type: "website",
   },
-
   metadataBase: new URL("https://hometownwebservicesar.cc"),
 };
 
@@ -49,11 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-   <html
-  lang="en"
-  className={`${playfair.variable} ${inter.variable} h-full antialiased`}
->
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html
+      lang="en"
+      className={`${display.variable} ${body.variable} h-full antialiased`}
+    >
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }

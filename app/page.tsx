@@ -1,312 +1,331 @@
 "use client";
-import { Playfair_Display, Inter } from "next/font/google";
-import { useState } from "react";
-import PricingSection from "@/components/PricingSection";
 
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-export const metadata = {
-  title: "Arkansas Web Design for Small Businesses",
-  description:
-    "Need a website that actually brings in customers? Hometown Web Services builds fast, modern websites for Arkansas businesses that convert.",
+import { useMemo, useState } from "react";
+import Image from "next/image";
+import { ArrowUpRight, Phone, Sparkles } from "lucide-react";
+import { title } from "process";
+import ProjectCard from "@/components/Projectcard";
+/* ================= PROJECT SYSTEM ================= */
+
+type Project = {
+  title: string;
+  category: string;
+  images: string[];
+  summary: string;
+  tags: string[];
+  live?: {
+    url: string;
+    label?: string;
+  };
 };
+
+const projects: Project[] = [
+  
+  {
+    title: "Hometown Pizza",
+    category: "Restaurant",
+    images: ["/pizza.png"],
+    summary: "Designed to drive more calls and online orders.",
+    tags: ["Next.js", "Mobile-first"],
+    live: { url: "https://hometown-pizza-site.vercel.app/" },
+  },
+  {
+    title: "Inside Out Cleaning",
+    category: "Service",
+    images: ["/insideout.png"],
+    summary: "Lead-focused site built to generate inquiries.",
+    tags: ["Lead Gen", "Fast"],
+  },
+  {
+    title: "Little Cove Daycare",
+    category: "Daycare",
+    images: ["/littlecove.png"] ,
+    summary: "Simple, high-trust layout for parents.",
+    tags: ["Trust", "Clean UI"],
+    live: { url: "https://littlecoveearlylearning.com/" },
+  },
+  {
+    title: "Glenwood Arkansas",
+    category: "Tourism",
+    images: ["/glenwood.png"],
+    summary: "Designed to drive more calls and online orders.",
+    tags: ["Next.js", "Mobile-first"],
+    live: { url: "https://glenwoodarkansas.org/" },
+  },
+  
+  {
+    title: "Amity Arkansas",
+    category: "Tourism",
+    images: ["/amity.png"],
+    summary: "Lead-focused site built to generate inquiries.",
+    tags: ["Lead Gen", "Fast"],
+    live: { url: "https://amityarkansas.org/" },
+  }, 
+  {
+    title: "Flavor-Licious",
+    category: "Restaurant",
+    images: ["/flavor1.png", "/flavor2.png"],
+    summary: "Simple, high-trust layout for parents.",
+    tags: ["Trust", "Clean UI"],
+  }
+];
+
+/* ================= PRICING ================= */
+
+const tiers = [
+  {
+    name: "Starter",
+    price: "$200–$300",
+    desc: "Simple one-page site",
+    features: ["1 page", "Mobile", "Contact"],
+  },
+  {
+    name: "Core",
+    price: "$400–$600",
+    desc: "Best for growth",
+    features: ["3–5 pages", "Leads", "Clean design"],
+    highlight: true,
+  },
+  {
+    name: "Authority",
+    price: "$700–$900",
+    desc: "Premium build",
+    features: ["Advanced", "Polish", "Strategy"],
+  },
+];
+
+/* ================= PROCESS ================= */
+
+const steps = [
+  "Send your business info",
+  "I build a full preview site",
+  "You request changes",
+  "We launch it live",
+];
+
 export default function Page() {
-  
-  
-  const projects = [
-    {
-      image: "/pizza.png",
-      title: "Hometown Pizza",
-      description: "Modern site for a local restaurant",
-    },
-    {
-      image: "/insideout.png",
-      title: "Inside Out Cleaning",
-      description: "Lead-focused service site",
-    },
-    {
-      image: "/littlecove.png",
-      title: "Little Cove Daycare",
-      description: "Simple, high-conversion layout",
-    },
-    {
-      image: "/TheAutoAcademy.png",
-      title: "The Auto Academy",
-      description: "Clean design for a local mechanic school",
-    }
-  ];
-const [current, setCurrent] = useState(0);
+  const [active] = useState("All");
 
-const nextSlide = () => {
-  setCurrent((prev) => (prev + 1) % projects.length);
-};
-
-const prevSlide = () => {
-  setCurrent((prev) =>
-    prev === 0 ? projects.length - 1 : prev - 1
-  );
-};
-const [isOpen, setIsOpen] = useState(false);
+  const visibleProjects = useMemo(() => projects, [active]);
 
   return (
-    <div className="bg-gradient-to-b from-[#f3ede6] via-[#f8f6f2] to-white text-gray-900 font-sans min-h-screen">
+    <div className="min-h-screen text-[var(--text-main)]">
 
+      {/* ================= HEADER ================= */}
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/60 border-b border-[var(--border-soft)]">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-      <header className="w-full fixed top-0 left-0 z-50 bg-white/70 backdrop-blur-md">
-       <div className="bg-white/60 backdrop-blur-md p-6 rounded-xl inline-block">
-          <h1 className="font-serif">
-            Hometown Web Services
-          </h1>
+          {/* LEFT */}
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 rounded-full overflow-hidden ring-2 ring-white shadow">
+              <Image src="/logo.png" alt="me" width={40} height={40} />
+            </div>
 
-          <div className="flex gap-4">
-            <a
-              href="tel:8702604880"
-              className="font-sans text-sm hover:text-[#7a4e2d]"
-            >
-              Call
-            </a>
-            <a
-              href="mailto:altifygenerator@gmail.com"
-              className="font-sans text-sm hover:text-[#7a4e2d]"
-            >
-              Email
-            </a>
+            <div>
+              <p className="font-semibold text-sm">Hometown Web Services</p>
+              <p className="text-xs text-[var(--text-soft)]">Arkansas Web Design</p>
+            </div>
           </div>
+
+          {/* NAV */}
+          <nav className="hidden md:flex gap-6 text-sm text-[var(--text-soft)]">
+            <a href="#work">Work</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          {/* CTA */}
+          <a href="tel:8702604880" className="btn btn-primary flex items-center gap-2">
+            <Phone className="h-4 w-4" /> Call
+          </a>
+
         </div>
       </header>
 
+      {/* ================= HERO ================= */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
 
-      <section className="py-20 px-6 border-t border-gray-200 pt-28">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <div className="grid md:grid-cols-2 gap-10 items-center">
 
-
-          <div>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold text-[#5a3e2b] leading-tight">
-              Hometown Web Services
-            </h1>
-
-            <p className="font-sans mt-4 text-xl text-gray-700">
-              We Build Websites for Businesses that Need Results, Not Complexity!
-            </p>
-
-            <p className="font-sans mt-4 text-gray-600">
-              Simple, modern websites designed to help you get more calls,
-              more leads, and more customers.
-            </p>
-
-            <div className="mt-8 flex gap-4">
-              <a
-                href="mailto:altifygenerator@gmail.com"
-                className="bg-[#7a4e2d] text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition duration-200"
-              >
-                Get a Free Mockup
-              </a>
-
-              <a
-                href="tel:8702604880"
-                className="border border-[#7a4e2d] px-6 py-3 rounded-full hover:bg-[#7a4e2d] hover:text-white transition"
-              >
-                Call Now
-              </a>
-             
-            </div>
-          </div>
-
-  
-          <div className="flex justify-center">
-            <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
-              
-  <img
-  src="/headshot.png"
-  alt="my photo"
-  className="w-full h-48 object-cover"
-  />
-              </div>
-            </div>
-          </div>
-
-      
-      </section>
-
-
-      <section className="py-20 px-6 border-t border-gray-200">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-2xl mb-4 text-[#7a4e2d]">
-            Most Business Websites Don’t Bring Customers
-          </h2>
-
-          <p className="font-sans text-gray-600">
-            Outdated design, slow loading, and no clear way for customers to contact you
-            means lost business every day.
-          </p>
-        </div>
-      </section>
-
-
-      <section className="py-20 px-6 border-t border-gray-200">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 text-center">
-
-          {[
-            "Mobile Optimized",
-            "Fast & Clean Design",
-            "Built to Get Calls"
-          ].map((item, i) => (
-            <div key={i} className="bg-white p-6 rounded-xl shadow-sm">
-              {item}
-            </div>
-          ))}
-
-        </div>
-      </section>
-
-
- <section className="py-20 px-6 border-t border-gray-200">
-  <div className="max-w-6xl mx-auto">
-
-    <h2 className="font-serif text-4xl text-center mb-10 text-[#7a4e2d]">
-      Showcase
-    </h2>
-
-    {/* ✅ SINGLE CONTAINER — NOT A GRID */}
-    <div className="w-full max-w-5xl mx-auto">
-      <div className="relative rounded-2xl overflow-hidden shadow-xl">
-
-        {/* Image */}
-        <img
-  src={projects[current].image}
-  alt={projects[current].title}
-  onClick={() => setIsOpen(true)}
-  className="w-full h-[420px] object-cover transition-all duration-500 cursor-pointer"
-/>
-
-        {/* Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-8">
-          <h3 className="text-2xl font-semibold">
-            {projects[current].title}
-          </h3>
-          <p className="text-sm opacity-80 mt-1">
-            {projects[current].description}
-          </p>
-        </div>
-
-        {/* Buttons */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-full"
-        >
-          ←
-        </button>
-
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white px-4 py-2 rounded-full"
-        >
-          →
-        </button>
-        {isOpen && (
-  <div
-    className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
-    onClick={() => setIsOpen(false)}
-  >
-    <img
-      src={projects[current].image}
-      alt={projects[current].title}
-      className="max-w-[90%] max-h-[90%] rounded-lg shadow-xl"
-    />
-
-    {/* Close button */}
-    <button
-      className="absolute top-6 right-6 text-white text-2xl"
-      onClick={() => setIsOpen(false)}
-    >
-      ✕
-    </button>
-  </div>
-)}
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-    <section className="py-20 px-6 border-t bg-gradient-to-b from-white to-gray-50">
-  <div className="max-w-4xl mx-auto text-center">
-
-    {/* Heading */}
-    <h2 className="font-serif text-3xl md:text-4xl mb-10 text-[#7a4e2d]">
-      How It Works
-    </h2>
-
-    {/* Steps */}
+    {/* LEFT SIDE */}
     <div className="space-y-6">
 
-      {[
-        "You send me your business info",
-        "I build a preview website",
-        "You approve or request changes",
-        "We launch your site",
-      ].map((step, i) => (
-        <div
-          key={i}
-          className="flex items-center gap-4 bg-white shadow-md rounded-xl px-6 py-4 text-left hover:scale-[1.02] transition"
-        >
-          {/* Number */}
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#7a4e2d] text-white font-bold">
-            {i + 1}
+      <div className="badge">Local business websites</div>
+
+      <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+        I build websites that actually make people call.
+      </h1>
+
+      <p className="text-lg text-[var(--text-soft)]">
+        Clean, simple, and built for real results.
+      </p>
+
+      <div className="flex gap-3 flex-wrap">
+        <a href="#work" className="btn btn-primary">See Work</a>
+        <a href="#pricing" className="btn btn-secondary">Pricing</a>
+      </div>
+
+      {/* 🔥 PERSONAL TOUCH */}
+      <div className="flex items-center gap-3 mt-6">
+       
+        <p className="text-sm text-[var(--text-soft)]">
+          Built by a local developer in Arkansas
+        </p>
+      </div>
+
+    </div>
+
+    {/* RIGHT SIDE IMAGE */}
+    <div className="relative">
+
+      {/* glow */}
+      <div className="absolute -top-10 -left-10 w-40 h-40 bg-[var(--teal)] opacity-20 blur-3xl rounded-full" />
+      <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[var(--orange)] opacity-20 blur-3xl rounded-full" />
+
+      <div className="card p-4">
+
+        <div className="rounded-xl overflow-hidden">
+          <Image
+            src="/headshot.png"
+            alt="Your name"
+            width={500}
+            height={500}
+            className="object-cover w-full"
+          />
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+      {/* ================= WORK ================= */}
+<section id="work" className="max-w-7xl mx-auto px-6 py-16">
+
+  <div className="flex items-center justify-between mb-10">
+    <h2 className="text-3xl font-bold">Featured Work</h2>
+
+    <p className="text-sm text-[var(--text-soft)] hidden md:block">
+      Real sites built for real businesses
+    </p>
+  </div>
+
+  <div className="grid md:grid-cols-2 gap-6">
+
+    {visibleProjects.map((project) => (
+      <ProjectCard
+        key={project.title}
+        project={project}
+      />
+    ))}
+
+  </div>
+
+</section>
+
+      {/* ================= PROCESS ================= */}
+      <section id="process" className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-8">How it works</h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {steps.map((step, i) => (
+            <div key={i} className="card p-6 flex gap-4">
+
+              <div className="h-8 w-8 bg-[var(--teal)] text-white flex items-center justify-center rounded-full">
+                {i + 1}
+              </div>
+
+              <p className="text-[var(--text-soft)]">{step}</p>
+
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= PRICING ================= */}
+      <div className="grid md:grid-cols-3 gap-6">
+
+  {tiers.map((tier) => (
+    <div
+      key={tier.name}
+      className={`p-6 rounded-2xl transition ${
+        tier.highlight
+          ? "bg-gradient-to-br from-[var(--teal)] to-[var(--orange)] text-white scale-[1.05] shadow-xl"
+          : "card"
+      }`}
+    >
+
+      {tier.highlight && (
+        <div className="mb-3 text-xs uppercase tracking-wide font-semibold bg-white/20 px-3 py-1 rounded-full inline-block">
+          Most Popular
+        </div>
+      )}
+
+      <h3 className="text-xl font-semibold">{tier.name}</h3>
+      <p className="text-3xl font-bold mt-2">{tier.price}</p>
+
+      <p className={`mt-2 text-sm ${tier.highlight ? "text-white/80" : "text-[var(--text-soft)]"}`}>
+        {tier.desc}
+      </p>
+
+      <ul className="mt-6 space-y-2 text-sm">
+        {tier.features.map((f) => (
+          <li key={f}>✓ {f}</li>
+        ))}
+      </ul>
+
+    </div>
+  ))}
+
+</div>
+
+      {/* ================= CTA ================= */}
+      <section id="contact" className="max-w-7xl mx-auto px-6 py-20">
+        <div className="rounded-3xl bg-gradient-to-br from-[var(--teal)] to-[var(--berry)] text-white p-12 flex flex-col md:flex-row justify-between gap-8">
+
+          <div>
+            <h2 className="text-3xl font-bold">
+              If your site isn’t bringing in customers, it’s costing you money.
+            </h2>
+
+            <p className="mt-4 text-white/80">
+              I can fix that or build something better.
+            </p>
           </div>
 
-          {/* Text */}
-          <p className="text-lg font-medium text-gray-700">
-            {step}
-          </p>
+          <div className="flex flex-col gap-3">
+            <a href="tel:8702604880" className="bg-white text-black px-5 py-3 rounded-full text-sm text-center">
+              Call Me
+            </a>
+
+            <a href="mailto:altifygenerator@gmail.com" className="border border-white px-5 py-3 rounded-full text-sm text-center">
+              Email Me
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61580781227329" className="border border-white px-5 py-3 rounded-full text-sm text-center">
+              Facebook
+            </a> 
+          </div>
+
         </div>
-      ))}
+      </section>
 
-    </div>
+      {/* ================= FOOTER ================= */}
+      <footer className="border-t border-[var(--border-soft)] py-10 px-6">
+        <div className="max-w-7xl mx-auto flex justify-between text-sm text-[var(--text-soft)]">
+          <p>Hometown Web Services</p>
 
-    {/* Bottom CTA hint */}
-    <p className="mt-10 text-gray-500 text-sm">
-      Simple, fast, and built to get results.
-    </p>
+          <div className="flex gap-6">
+            <a href="#work">Work</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </footer>
 
-  </div>
-</section>
-<PricingSection />
-
-
-    <section className="py-20 px-6 bg-gradient-to-r from-[#7a4e2d] to-[#a67852] text-white text-center">
-  <div className="max-w-4xl mx-auto">
-
-    <h2 className="text-3xl font-serif mb-4">
-      Ready to Grow Your Business Online?
-    </h2>
-
-    <p className="text-white/80 mb-6 font-sans">
-      Let’s build a website that actually brings you customers — not confusion.
-    </p>
-
-    <div className="flex justify-center gap-4 flex-wrap">
-      
-      <a
-        href="tel:8702604880"
-        className="bg-white text-[#7a4e2d] px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg hover:scale-105 transition"
-      >
-        Call Now
-      </a>
-
-      <a
-        href="mailto:your@email.com"
-        className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-[#7a4e2d] transition"
-      >
-        Email Me
-      </a>
-
-    </div>
-
-  </div>
-</section>
     </div>
   );
 }
