@@ -28,13 +28,22 @@ export const metadata: Metadata = {
     "business website design Arkansas",
   ],
   openGraph: {
-    title: "Hometown Web Services | Arkansas Web Design",
-    description:
-      "We build high-converting websites for small businesses across Arkansas. Clean design, fast load times, and real results.",
-    url: "https://hometownwebservicesar.cc",
-    siteName: "Hometown Web Services",
-    type: "website",
-  },
+  title: "Hometown Web Services | Arkansas Web Design",
+  description:
+    "Clean, modern websites that actually bring in customers. Built for small businesses in Arkansas.",
+  url: "https://hometownwebservicesar.cc",
+  siteName: "Hometown Web Services",
+  type: "website",
+
+  images: [
+    {
+      url: "/og-image.png", // 👈 this is key
+      width: 1200,
+      height: 630,
+      alt: "Hometown Web Services",
+    },
+  ],
+},
   metadataBase: new URL("https://hometownwebservicesar.cc"),
 };
 
