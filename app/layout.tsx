@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Fraunces, Figtree } from "next/font/google";
-
+import { Analytics } from '@vercel/analytics/react';
 const display = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
@@ -56,7 +56,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${display.variable} ${body.variable} h-full antialiased`}
-    >
+    ><Analytics />
       <body className="min-h-full">{children}</body>
     </html>
   );
