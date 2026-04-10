@@ -20,7 +20,21 @@ type Project = {
 };
 
 const projects: Project[] = [
-  
+   {
+    title: "Onward And Upward",
+    category: "Landscaping and maintinence",
+    images: ["/onward1.png", "/onward2.png"],
+      summary: "Online presence and branding to bring in more clients.",
+      tags: ["Trust, Clean UI, Modern, Maintinence, Lawncare"],
+      live: {url: "https://onwardsandupward.com/"},
+    },
+    {
+    title: "Flavor-Licious",
+    category: "Restaurant",
+    images: ["/flavor1.png", "/flavor2.png"],
+    summary: "Simple, high-trust layout for parents.",
+    tags: ["Trust", "Clean UI"],
+  },
   {
     title: "Hometown Pizza",
     category: "Restaurant",
@@ -61,14 +75,10 @@ const projects: Project[] = [
     tags: ["Lead Gen", "Fast"],
     live: { url: "https://amityarkansas.org/" },
   }, 
-  {
-    title: "Flavor-Licious",
-    category: "Restaurant",
-    images: ["/flavor1.png", "/flavor2.png"],
-    summary: "Simple, high-trust layout for parents.",
-    tags: ["Trust", "Clean UI"],
-  }
-];
+  
+ 
+    ]
+  
 
 /* ================= PRICING ================= */
 
