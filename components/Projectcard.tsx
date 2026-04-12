@@ -45,10 +45,7 @@ export default function ProjectCard({ project }: any) {
 
       </div>
 
-      <div className="p-5">
-        <h3 className="font-semibold">{project.title}</h3>
-        <p className="text-sm text-[var(--text-soft)]">{project.summary}</p>
-      </div>
+   
       <div className="p-5 space-y-3">
 
   <h3 className="font-semibold">{project.title}</h3>

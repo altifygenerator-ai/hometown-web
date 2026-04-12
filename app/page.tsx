@@ -20,84 +20,88 @@ type Project = {
 };
 
 const projects: Project[] = [
-   {
+  {
     title: "Onward And Upward",
-    category: "Landscaping and maintinence",
+    category: "Landscaping",
     images: ["/onward1.png", "/onward2.png"],
-      summary: "Online presence and branding to bring in more clients.",
-      tags: ["Trust, Clean UI, Modern, Maintinence, Lawncare"],
-      live: {url: "https://onwardsandupward.com/"},
-    },
-    {
+    summary:
+      "Turned their Facebook presence into a clean site where people can quickly see services and request a quote without all the back and forth.",
+    tags: ["Services", "Quote Flow", "Local Business"],
+    live: { url: "https://onwardsandupward.com/" },
+  },
+  {
     title: "Flavor-Licious",
     category: "Restaurant",
     images: ["/flavor1.png", "/flavor2.png"],
-    summary: "Simple, high-trust layout for parents.",
-    tags: ["Trust", "Clean UI"],
+    summary:
+      "Simple one-page setup so customers can check the menu, hours, and location fast instead of scrolling through posts.",
+    tags: ["Menu", "Location", "Easy Access"],
   },
   {
     title: "Hometown Pizza",
     category: "Restaurant",
     images: ["/pizza.png"],
-    summary: "Designed to drive more calls and online orders.",
-    tags: ["Next.js", "Mobile-first"],
+    summary:
+      "Built to make ordering easier with clear menu access and quick call buttons so customers don’t hesitate.",
+    tags: ["Calls", "Orders", "Mobile Friendly"],
     live: { url: "https://hometown-pizza-site.vercel.app/" },
   },
   {
     title: "Inside Out Cleaning",
     category: "Service",
     images: ["/insideout.png"],
-    summary: "Lead-focused site built to generate inquiries.",
-    tags: ["Lead Gen", "Fast"],
+    summary:
+      "Focused on turning visitors into leads with a simple layout and fast quote request form.",
+    tags: ["Leads", "Quote Form", "Simple Layout"],
   },
   {
     title: "Little Cove Daycare",
     category: "Daycare",
-    images: ["/littlecove.png"] ,
-    summary: "Simple, high-trust layout for parents.",
-    tags: ["Trust", "Clean UI"],
+    images: ["/littlecove.png"],
+    summary:
+      "Designed to build trust with parents by clearly showing programs, info, and an easy way to reach out.",
+    tags: ["Trust", "Parents", "Clarity"],
     live: { url: "https://littlecoveearlylearning.com/" },
   },
   {
     title: "Glenwood Arkansas",
     category: "Tourism",
     images: ["/glenwood.png"],
-    summary: "Designed to drive more calls and online orders.",
-    tags: ["Next.js", "Mobile-first"],
+    summary:
+      "Organized local info into one clean place so visitors can quickly find things to do, places to go, and directions.",
+    tags: ["Info Hub", "Visitors", "Local"],
     live: { url: "https://glenwoodarkansas.org/" },
   },
-  
   {
     title: "Amity Arkansas",
     category: "Tourism",
     images: ["/amity.png"],
-    summary: "Lead-focused site built to generate inquiries.",
-    tags: ["Lead Gen", "Fast"],
+    summary:
+      "Cleaned up scattered information into a simple site that makes it easier for people to explore the area.",
+    tags: ["Local Info", "Simple", "Clear"],
     live: { url: "https://amityarkansas.org/" },
-  }, 
-  
- 
-    ]
+  },
+];
   
 
 /* ================= PRICING ================= */
 
 const tiers = [
   {
-    name: "Starter",
+    name: "Starter Site",
     price: "$200–$300",
     desc: "Simple one-page site",
     features: ["1 page", "Mobile", "Contact"],
   },
   {
-    name: "Core",
+    name: "Growth Site",
     price: "$400–$600",
     desc: "Best for growth",
     features: ["3–5 pages", "Leads", "Clean design"],
     highlight: true,
   },
   {
-    name: "Authority",
+    name: "Full Setup",
     price: "$700–$900",
     desc: "Premium build",
     features: ["Advanced", "Polish", "Strategy"],
@@ -145,10 +149,16 @@ export default function Page() {
             <a href="#contact">Contact</a>
           </nav>
 
-          {/* CTA */}
+                     <a
+    href="sms:8702604880?body=Hey%20I%20was%20checking%20out%20your%20site%20and%20wanted%20to%20ask%20about%20getting%20one%20made"
+    className="btn border border-black text-black flex items-center gap-2"
+  >
+    Message
+  </a>
           <a href="tel:8702604880" className="btn btn-primary flex items-center gap-2">
             <Phone className="h-4 w-4" /> Call
           </a>
+ 
 
         </div>
       </header>
@@ -164,11 +174,11 @@ export default function Page() {
       <div className="badge">Local business websites</div>
 
       <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-        I build websites that actually make people call.
+        Websites that help local businesses get more calls & jobs
       </h1>
 
       <p className="text-lg text-[var(--text-soft)]">
-        Clean, simple, and built for real results.
+        Most people find you on facebook, but there’s no easy place to see everything or book… that’s where jobs get lost
       </p>
 
       <div className="flex gap-3 flex-wrap">
@@ -212,7 +222,48 @@ export default function Page() {
   </div>
 
 </section>
-      {/* ================= WORK ================= */}
+    <section className="py-20 bg-neutral-950 text-white">
+      <div className="max-w-5xl mx-auto px-6">
+
+        {/* PROBLEM */}
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+            Most local businesses don’t have a real website
+          </h2>
+
+          <ul className="space-y-3 text-neutral-300 text-lg">
+            <li>• everything is spread across facebook posts</li>
+            <li>• customers have to message back and forth</li>
+            <li>• no clear services or pricing</li>
+            <li>• no easy way to book or request a quote</li>
+          </ul>
+
+          <p className="mt-6 text-neutral-400 text-lg">
+            so people either get confused… or just move on
+          </p>
+        </div>
+
+        {/* SOLUTION */}
+        <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
+          <h3 className="text-2xl md:text-3xl font-semibold mb-6">
+            I build simple, clean websites that put everything in one place
+          </h3>
+
+          <ul className="space-y-3 text-neutral-300 text-lg">
+            <li>• services & pricing clearly listed</li>
+            <li>• before/after or work examples</li>
+            <li>• quick call / text / quote buttons</li>
+            <li>• map, hours, directions</li>
+          </ul>
+
+          <p className="mt-6 text-neutral-400 text-lg">
+            so when someone finds you, they don’t have to think… they just reach out
+          </p>
+        </div>
+
+      </div>
+    </section>
+      
 <section id="work" className="max-w-7xl mx-auto px-6 py-16">
 
   <div className="flex items-center justify-between mb-10">
@@ -235,6 +286,59 @@ export default function Page() {
   </div>
 
 </section>
+<section className="py-20 bg-white text-black">
+      <div className="max-w-3xl mx-auto px-6">
+
+        <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+          Hey, I’m Jake
+        </h2>
+
+        <p className="text-lg text-neutral-700 leading-relaxed mb-4">
+          I build simple websites for local businesses around Arkansas.
+        </p>
+
+        <p className="text-lg text-neutral-700 leading-relaxed mb-4">
+          Most of the time people are finding you on Facebook, but there’s no
+          real place for them to see everything or reach out easily, so things
+          end up getting missed.
+        </p>
+
+        <p className="text-lg text-neutral-700 leading-relaxed mb-4">
+          I just take what you already have and put it into something clean and
+          simple so people can understand what you do and contact you without
+          all the back and forth.
+        </p>
+
+        <p className="text-lg text-neutral-700 leading-relaxed">
+          Nothing overcomplicated, just something that works and makes things
+          easier on your end.
+        </p>
+<p className="mt-6 text-sm text-neutral-500">
+  Based in Arkansas • Working with local businesses
+</p>
+      </div>
+    </section>
+    <section className="py-20 bg-neutral-950 text-white">
+      <div className="max-w-3xl mx-auto px-6 text-center">
+
+        <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+          I’ll build you a free preview first
+        </h2>
+
+        <p className="text-lg text-neutral-300 mb-6">
+          I can put together a quick version of your site based on your business so you can actually see it before deciding anything.
+        </p>
+
+        <p className="text-lg text-neutral-400 mb-8">
+          no upfront payment, no pressure — if you like it, we move forward… if not, no worries
+        </p>
+
+        <div className="inline-block bg-white text-black px-6 py-3 rounded-xl font-medium">
+          see what your site could look like
+        </div>
+
+      </div>
+    </section>
 
       {/* ================= PROCESS ================= */}
       <section id="process" className="max-w-7xl mx-auto px-6 py-16">
@@ -321,6 +425,26 @@ export default function Page() {
 
         </div>
       </section>
+          <section className="py-20 bg-white text-black">
+      <div className="max-w-3xl mx-auto px-6 text-center">
+
+        <h2 className="text-3xl md:text-4xl font-semibold mb-6">
+          want something cleaner than just facebook?
+        </h2>
+
+        <p className="text-lg text-neutral-700 mb-8">
+          if you’ve been thinking about getting a site set up or just want something easier for people to use, i can put something together for you to check out
+        </p>
+
+        <a
+          href="#contact"
+          className="inline-block bg-black text-white px-6 py-3 rounded-xl font-medium hover:opacity-90"
+        >
+          get a free preview
+        </a>
+
+      </div>
+    </section>
 
       {/* ================= FOOTER ================= */}
       <footer className="border-t border-[var(--border-soft)] py-10 px-6">

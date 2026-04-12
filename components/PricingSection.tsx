@@ -7,7 +7,7 @@ export const metadata = {
 export default function PricingSection() {
   const tiers = [
     {
-      name: "Starter",
+      name: "Simple Site",
       price: "$200–$300",
       desc: "Perfect for small businesses needing a simple online presence.",
       features: [
@@ -20,7 +20,7 @@ export default function PricingSection() {
       highlight: false,
     },
     {
-      name: "Core",
+      name: "Growth Site",
       price: "$400–$600",
       desc: "Best for growing businesses that want more leads.",
       features: [
@@ -33,7 +33,7 @@ export default function PricingSection() {
       highlight: true,
     },
     {
-      name: "Authority",
+      name: "Full Setup",
       price: "$700–$900",
       desc: "High-end build for serious businesses.",
       features: [
