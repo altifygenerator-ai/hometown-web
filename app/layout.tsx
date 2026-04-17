@@ -1,63 +1,59 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Fraunces, Figtree } from "next/font/google";
-import { Analytics } from '@vercel/analytics/react';
-const display = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
-});
+import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
-const body = Figtree({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Hometown Web Services | Arkansas Web Design for Small Businesses",
+   title: {
+    default: "Arkansas Web Design for Small Businesses | Hometown Web Services",
     template: "%s | Hometown Web Services",
   },
   description:
-    "Affordable, high-converting websites for small businesses in Arkansas. Hometown Web Services builds fast, modern sites that turn visitors into customers.",
+    "Web design and SEO for small businesses in Arkansas. Clean, modern websites that help you show up on Google and get more calls and leads.",
   keywords: [
     "web design Arkansas",
-    "small business websites Arkansas",
-    "website developer Arkansas",
+    "Arkansas web designer",
+    "small business website Arkansas",
+    "SEO Arkansas small business",
+    "Google business profile optimization Arkansas",
     "local web design services",
-    "affordable web design Arkansas",
-    "business website design Arkansas",
   ],
   openGraph: {
-  title: "Hometown Web Services | Arkansas Web Design",
-  description:
-    "Clean, modern websites that actually bring in customers. Built for small businesses in Arkansas.",
-  url: "https://hometownwebservicesar.cc",
-  siteName: "Hometown Web Services",
-  type: "website",
-
-  images: [
-    {
-      url: "/og-image.png", // 👈 this is key
-      width: 1200,
-      height: 630,
-      alt: "Hometown Web Services",
-    },
-  ],
-},
+    title: "Arkansas Web Design | Hometown Web Services",
+    description:
+      "Clean, modern websites built to help small businesses show up on Google and get more customers.",
+    url: "https://hometownwebservicesar.cc",
+    siteName: "Hometown Web Services",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Hometown Web Services",
+      },
+    ],
+  },
   metadataBase: new URL("https://hometownwebservicesar.cc"),
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${display.variable} ${body.variable} h-full antialiased`}
-    ><Analytics />
-      <body className="min-h-full">{children}</body>
+    <html lang="en" className={`${inter.variable} h-full`}>
+      <body className="min-h-full bg-[var(--bg-main)] text-[var(--text-main)] antialiased selection:bg-[var(--accent)] selection:text-white">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

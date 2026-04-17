@@ -1,83 +1,74 @@
 "use client";
 
-import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function ProjectCard({ project }: any) {
-  const [index, setIndex] = useState(0);
+export default function ProjectCard({ project, index }: any) {
+  if (!project) return null;
+
+  const href = project?.live?.url ?? "#";
 
   return (
-    <div className="card hover:-translate-y-1 transition">
-
-      <div className="relative h-52">
-
-        <Image
-          src={project.images[index]}
-          alt={project.title}
-          fill
-          className="object-cover rounded-xl"
-        />
-
-        {/* arrows */}
-        {project.images.length > 1 && (
-          <>
-            <button
-              onClick={() =>
-                setIndex((prev) =>
-                  prev === 0 ? project.images.length - 1 : prev - 1
-                )
-              }
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-white px-2 py-1 rounded"
-            >
-              ←
-            </button>
-
-            <button
-              onClick={() =>
-                setIndex((prev) => (prev + 1) % project.images.length)
-              }
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 text-white px-2 py-1 rounded"
-            >
-              →
-            </button>
-          </>
-        )}
-
-      </div>
-
-   
-      <div className="p-5 space-y-3">
-
-  <h3 className="font-semibold">{project.title}</h3>
-
-  <p className="text-sm text-[var(--text-soft)]">
-    {project.summary}
-  </p>
-
-  <div className="flex gap-2 flex-wrap">
-    {project.tags.map((tag: string) => (
-      <span
-        key={tag}
-        className="text-xs bg-white px-3 py-1 rounded-full border"
-      >
-        {tag}
-      </span>
-    ))}
-  </div>
-
-  {/* 🔥 LIVE LINK */}
-  {project.live && (
-    <a
-      href={project.live.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-1 text-sm font-medium text-[var(--teal)] hover:underline"
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: index % 2 === 0 ? -80 : 80, // 🔥 left/right slide
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+        delay: index * 0.08,
+      }}
     >
-      View Live →
-    </a>
-  )}
+      <Link href={href} className="group block">
 
-    </div>
-</div>
+        <div className="relative">
+
+          {/* DEPTH */}
+          <div className="absolute inset-0 scale-[1.02] bg-black/5 blur-xl rounded-2xl" />
+
+          {/* IMAGE */}
+          <div className="relative h-[320px] rounded-2xl overflow-hidden border border-[var(--border-soft)]">
+            <Image
+              src={project.images?.[0] ?? "/placeholder.png"}
+              alt={project.title}
+              fill
+              className="object-cover transition duration-500 group-hover:scale-[1.02]"
+            />
+          </div>
+
+        </div>
+
+        {/* TEXT */}
+        <div className="mt-4 space-y-2">
+          <h3 className="text-lg">{project.title}</h3>
+
+          <p className="text-sm text-[var(--text-soft)]">
+            {project.summary}
+          </p>
+
+          {/* TAGS */}
+          {project.tags && (
+            <div className="flex flex-wrap gap-2 pt-2">
+              {project.tags.map((tag: string) => (
+                <span
+                  key={tag}
+                  className="text-xs px-2 py-1 border border-[var(--border-soft)] rounded-full text-[var(--text-soft)]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+
+      </Link>
+    </motion.div>
   );
 }
