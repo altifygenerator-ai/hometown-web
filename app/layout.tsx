@@ -9,13 +9,20 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl = "https://hometownwebservicesar.cc";
+
 export const metadata: Metadata = {
-   title: {
-    default: "Arkansas Web Design for Small Businesses | Hometown Web Services",
+  metadataBase: new URL(siteUrl),
+
+  title: {
+    default:
+      "Arkansas Web Design for Small Businesses | Websites That Get Leads",
     template: "%s | Hometown Web Services",
   },
+
   description:
-    "Web design and SEO for small businesses in Arkansas. Clean, modern websites that help you show up on Google and get more calls and leads.",
+    "Web design and SEO for small businesses in Arkansas. Clean, modern websites built to rank on Google, bring in leads, and turn visitors into calls.",
+
   keywords: [
     "web design Arkansas",
     "Arkansas web designer",
@@ -23,24 +30,51 @@ export const metadata: Metadata = {
     "SEO Arkansas small business",
     "Google business profile optimization Arkansas",
     "local web design services",
+    "contractor website design Arkansas",
+    "lead generation websites Arkansas",
   ],
+
   openGraph: {
     title: "Arkansas Web Design | Hometown Web Services",
     description:
-      "Clean, modern websites built to help small businesses show up on Google and get more customers.",
-    url: "https://hometownwebservicesar.cc",
+      "Modern websites built to help Arkansas businesses show up on Google and get more calls and leads.",
+    url: siteUrl,
     siteName: "Hometown Web Services",
     type: "website",
+    locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Hometown Web Services",
+        alt: "Hometown Web Services Arkansas Web Design",
       },
     ],
   },
-  metadataBase: new URL("https://hometownwebservicesar.cc"),
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Arkansas Web Design | Hometown Web Services",
+    description:
+      "Websites built for small businesses in Arkansas to rank on Google and generate leads.",
+    images: ["/og-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  alternates: {
+    canonical: siteUrl,
+  },
 };
 
 export default function RootLayout({
