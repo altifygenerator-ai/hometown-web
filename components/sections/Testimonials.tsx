@@ -11,7 +11,7 @@ const testimonials = [
   {
     name: "Rebecca T",
     business: "Onward and Upward Services",
-    text: "I really appreciate everything. I knew you were the right person to reach out to.",
+    text: "Great service. Dependable. Very responsive and trustworthy. Any time we ask for change on the website he does it immediately. Does amazing work. Very thankful he is on our team at Onward & Upward Services.",
   },
 
 ];
