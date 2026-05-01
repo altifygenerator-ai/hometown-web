@@ -2,8 +2,7 @@ import type { MetadataRoute } from "next";
 import { locations } from "@/data/locations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl =
-    process.env.SITE_URL ?? "https://hometownwebservicesar.cc";
+  const siteUrl = "https://hometownwebservicesar.cc";
 
   const locationPages = Object.keys(locations).map((slug) => ({
     url: `${siteUrl}/locations/${slug}`,
@@ -16,25 +15,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${siteUrl}/`,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "weekly" as const,
       priority: 1,
     },
-
-    // main pages (add these if you have them)
     {
       url: `${siteUrl}/services`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
       url: `${siteUrl}/portfolio`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.8,
     },
-
-    // 🔥 location pages
     ...locationPages,
   ];
 }
