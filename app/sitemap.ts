@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const locationPages = Object.keys(locations).map((slug) => ({
     url: `${siteUrl}/locations/${slug}`,
-    lastModified: new Date(),
+    
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
@@ -14,19 +14,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${siteUrl}/`,
-      lastModified: new Date(),
+      
       changeFrequency: "weekly" as const,
       priority: 1,
     },
     {
       url: `${siteUrl}/services`,
-      lastModified: new Date(),
+      
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
       url: `${siteUrl}/portfolio`,
-      lastModified: new Date(),
+      
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
