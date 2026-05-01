@@ -55,20 +55,18 @@ export default function Footer() {
     Areas We Serve
   </h4>
 
-  <ul className="flex flex-col gap-2 text-sm">
-    <li>
-      <a href="/locations/hot-springs-ar">Hot Springs, AR</a>
-    </li>
-    <li>
-      <a href="/locations/arkadelphia-ar">Arkadelphia, AR</a>
-    </li>
-    <li>
-      <a href="/locations/glenwood-ar">Glenwood, AR</a>
-    </li>
-    <li>
-      <a href="/locations/malvern-ar">Malvern, AR</a>
-    </li>
-  </ul>
+<p className="text-[var(--text-soft)] mb-2">Southwest Arkansas</p>
+<li><a href="/locations/hot-springs-ar">Hot Springs, AR</a></li>
+<li><a href="/locations/arkadelphia-ar">Arkadelphia, AR</a></li>
+<li><a href="/locations/glenwood-ar">Glenwood, AR</a></li>
+<li><a href="/locations/malvern-ar">Malvern, AR</a></li>
+
+<p className="text-[var(--text-soft)] mt-4 mb-2">Central Arkansas</p>
+<li><a href="/locations/benton-ar">Benton, AR</a></li>
+<li><a href="/locations/bryant-ar">Bryant, AR</a></li>
+<li><a href="/locations/little-rock-ar">Little Rock, AR</a></li>
+<li><a href="/locations/north-little-rock-ar">North Little Rock, AR</a></li>
+<li><a href="/locations/maumelle-ar">Maumelle, AR</a></li>
 </div>
 
         {/* BOTTOM */}

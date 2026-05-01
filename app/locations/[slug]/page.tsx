@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { locations, type LocationSlug } from "@/data/locations";
 
 import Header from "@/components/sections/Header";
@@ -14,25 +15,41 @@ type Props = {
   }>;
 };
 
+const siteUrl = "https://hometownwebservicesar.cc";
+
 export function generateStaticParams() {
   return Object.keys(locations).map((slug) => ({
     slug,
   }));
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const location = locations[slug as LocationSlug];
 
   if (!location) {
     return {
-      title: "Location Not Found",
+      title: "Location Not Found | Hometown Web Services",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
   return {
     title: `${location.title} | Hometown Web Services`,
     description: location.description,
+    alternates: {
+      canonical: `${siteUrl}/locations/${slug}`,
+    },
+    openGraph: {
+      title: `${location.title} | Hometown Web Services`,
+      description: location.description,
+      url: `${siteUrl}/locations/${slug}`,
+      siteName: "Hometown Web Services",
+      type: "website",
+    },
   };
 }
 
@@ -41,6 +58,8 @@ export default async function LocationPage({ params }: Props) {
   const location = locations[slug as LocationSlug];
 
   if (!location) return notFound();
+
+  const nearbyText = location.nearby.join(", ");
 
   return (
     <>
@@ -57,11 +76,11 @@ export default async function LocationPage({ params }: Props) {
               {location.title}
             </h1>
 
-            <p className="mt-6 text-lg text-[var(--text-soft)] max-w-xl">
+            <p className="mt-6 text-lg text-[var(--text-soft)] max-w-2xl">
               {location.description}
             </p>
 
-            <div className="mt-10 flex items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <a href="#contact" className="btn btn-primary">
                 Get a free preview
               </a>
@@ -74,23 +93,46 @@ export default async function LocationPage({ params }: Props) {
               </a>
             </div>
 
-            <div className="mt-20 max-w-2xl">
+            <div className="mt-20 grid md:grid-cols-3 gap-8">
+              <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                <h2 className="text-2xl mb-4">
+                  Built for {location.city} businesses
+                </h2>
+                <p className="text-[var(--text-soft)] leading-relaxed">
+                  {location.audience}
+                </p>
+              </article>
+
+              <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                <h2 className="text-2xl mb-4">The problem I usually see</h2>
+                <p className="text-[var(--text-soft)] leading-relaxed">
+                  {location.problem}
+                </p>
+              </article>
+
+              <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                <h2 className="text-2xl mb-4">How I help</h2>
+                <p className="text-[var(--text-soft)] leading-relaxed">
+                  {location.solution}
+                </p>
+              </article>
+            </div>
+
+            <div className="mt-16 border-t border-white/10 pt-10 max-w-3xl">
               <h2 className="text-3xl md:text-4xl mb-4">
-                Websites built for local businesses in {location.city}
+                Serving {location.city} and nearby areas
               </h2>
 
               <p className="text-[var(--text-soft)] leading-relaxed">
-                A lot of small businesses around {location.city} rely on
-                Facebook, word of mouth, and referrals. That can work, but when
-                someone searches Google for what you do, you need a clear place
-                that explains your services, builds trust, and makes it easy to
-                call or request a quote.
+                I also help businesses around {nearbyText} and other nearby
+                Arkansas communities with websites, Google visibility, and
+                simple online systems that make it easier for customers to reach
+                out.
               </p>
             </div>
           </div>
         </section>
 
-    
         <ServicesPreview />
         <Process />
         <Testimonials />

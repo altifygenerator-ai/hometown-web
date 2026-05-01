@@ -48,7 +48,7 @@ export default function FeaturedWork() {
               <div className="relative w-full h-[420px] md:h-[520px] rounded-2xl overflow-hidden border border-[var(--border-soft)]">
 
                 <Image
-                  src="/onward1.png"
+                  src="/rpm1.png"
                   alt="Featured project"
                   fill
                   className="object-cover transition duration-500 group-hover:scale-[1.02]"

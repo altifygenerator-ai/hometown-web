@@ -7,6 +7,24 @@ export const metadata = {
     "Examples of websites built for small businesses in Arkansas. Clean, modern, and designed to bring in customers.",
 };
 const projects = [
+    {
+    title: "Richards Property Management",
+    category: "Landscaping and Dirt Work",
+    images: ["/rpm1.png","/rpm2.png","/rpm3.png",],
+    summary:
+      "A site to help with their online presence and bring in more calls for their landscaping and dirt work services. The site is designed to show off their work, explain their services, and make it easy for customers to reach out.",
+    tags: ["Landscaping","Dirt Work","SEO"],
+    live: {url: "https://richardslandmanagementllc.com/"},
+  },
+    {
+    title: "Worksheet Editor",
+    category: "SAAS Tool",
+    images: ["/we1.png","/we2.png","/we3.png","/we4.png"],
+    summary:
+      "A simple tool to help teachers create and organize worksheets. The site is designed to be easy to use, with a clean interface and a focus on helping teachers quickly create and manage their worksheets.",
+    tags: ["SAAS","Education","Productivity"],
+    live: {url: "https://editworksheets.org/"},
+  },
   {
     title: "Lockhart Solutions",
     category: "Solar Panels",

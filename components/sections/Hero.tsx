@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="py-32 bg-depth overflow-hidden">
+    <section className="py-32 bg-depth overflow-hidden relative">
       <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[var(--accent)] opacity-10 blur-3xl rounded-full pointer-events-none" />
+
+      {/* NEW IMAGE */}
+    
 
       <div className="max-w-6xl mx-auto px-6">
 
