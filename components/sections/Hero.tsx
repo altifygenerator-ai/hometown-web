@@ -63,6 +63,28 @@ export default function Hero() {
             View work →
           </a>
         </motion.div>
+        {/* TRUST + INDUSTRY ROW */}
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.35 }}
+  className="mt-16 grid gap-4 md:grid-cols-3"
+>
+  {[
+    "Built for contractors, service businesses, and local Arkansas companies",
+    "Modern mobile-friendly websites designed to bring in calls and leads",
+    "SEO-focused structure to help businesses show up better on Google",
+  ].map((item) => (
+    <div
+      key={item}
+      className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)]/70 backdrop-blur-sm p-5"
+    >
+      <p className="text-sm text-[var(--text-soft)] leading-relaxed">
+        {item}
+      </p>
+    </div>
+  ))}
+</motion.div>
 
         {/* OFFSET BLOCK (asymmetry) */}
         <motion.div

@@ -7,6 +7,22 @@ export const metadata = {
     "Examples of websites built for small businesses in Arkansas. Clean, modern, and designed to bring in customers.",
 };
 const projects = [
+  {
+  title: "Lyn and Lilis Cleaning",
+  category: "cleaning service",
+  videos: ["/videos/lynnlilisdemo.mp4"],
+  summary: "A clean, modern site designed to build trust and make it easy for customers to reach out for cleaning services.",
+  tags: ["cleaning", "service", "trust"],
+  live: { url: "https://www.lynandlilistidyhouse.com/" },
+},
+{
+  title: "Ozark Roofing",
+  category: "Roofing and Construction",
+  videos: ["/videos/ozarkroofdemo.mp4"],
+  summary: "Contractor-style site focused on mobile experience, cleaner branding, and turning local traffic into actual calls for roofing and construction services.",
+  tags: ["roofing", "construction", "contractor"],
+  live: { url: "https://ozarkroofing.online/" },
+},
     {
     title: "Richards Property Management",
     category: "Landscaping and Dirt Work",
@@ -112,6 +128,23 @@ export default function PortfolioPage() {
       <Header />
 
       <main className="py-32">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: "Hometown Web Services Portfolio",
+      creator: {
+        "@type": "ProfessionalService",
+        name: "Hometown Web Services",
+        url: "https://hometownwebservicesar.cc",
+      },
+      description:
+        "Selected website projects and local business website examples built for contractors, service companies, tourism sites, and Arkansas small businesses.",
+    }),
+  }}
+/>
         <div className="max-w-6xl mx-auto px-6">
 
           {/* INTRO */}

@@ -12,6 +12,34 @@ export default function ServicesPage() {
       <Header />
 
       <main>
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Web Design and Local SEO Services",
+      provider: {
+        "@type": "ProfessionalService",
+        name: "Hometown Web Services",
+        url: "https://hometownwebservicesar.cc",
+      },
+      areaServed: {
+        "@type": "State",
+        name: "Arkansas",
+      },
+      serviceType: [
+        "Web Design",
+        "Local SEO",
+        "Small Business Websites",
+        "Google Business Profile Optimization",
+        "Website Redesigns",
+      ],
+      description:
+        "Web design and local SEO services for Arkansas small businesses, contractors, service companies, restaurants, and local shops.",
+    }),
+  }}
+/>
 
         {/* HERO */}
         <section className="py-32">

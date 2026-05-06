@@ -33,6 +33,7 @@ export default function CTA() {
           </p>
 
           <div className="mt-10 flex items-center gap-4">
+
             <a href="sms:8702604880" className="btn btn-primary">
               Get a free preview
             </a>
@@ -52,6 +53,13 @@ export default function CTA() {
 </a>
           </div>
         </motion.div>
+                    <div className="mt-8 flex flex-wrap gap-6 text-sm text-[var(--text-soft)]">
+  <span>✔ Built for small businesses</span>
+  <span>✔ Mobile-first layouts</span>
+  <span>✔ Google-focused structure</span>
+  <span>✔ Arkansas-based</span>
+</div>
+
 
         {/* OFFSET SUPPORT TEXT */}
         <motion.div

@@ -7,13 +7,16 @@ import Link from "next/link";
 export default function ProjectCard({ project, index }: any) {
   if (!project) return null;
 
-  const href = project?.live?.url ?? "#";
+  const href = project?.live?.url || "#";
+
+  const videoSrc = project.videos?.[0];
+  const imageSrc = project.images?.[0];
 
   return (
     <motion.div
       initial={{
         opacity: 0,
-        x: index % 2 === 0 ? -80 : 80, // 🔥 left/right slide
+        x: index % 2 === 0 ? -80 : 80,
       }}
       whileInView={{
         opacity: 1,
@@ -27,22 +30,31 @@ export default function ProjectCard({ project, index }: any) {
       }}
     >
       <Link href={href} className="group block">
-
         <div className="relative">
-
           {/* DEPTH */}
           <div className="absolute inset-0 scale-[1.02] bg-black/5 blur-xl rounded-2xl" />
 
-          {/* IMAGE */}
-          <div className="relative h-[320px] rounded-2xl overflow-hidden border border-[var(--border-soft)]">
-            <Image
-              src={project.images?.[0] ?? "/placeholder.png"}
-              alt={project.title}
-              fill
-              className="object-cover transition duration-500 group-hover:scale-[1.02]"
-            />
+          {/* IMAGE / VIDEO */}
+          <div className="relative h-[320px] rounded-2xl overflow-hidden border border-[var(--border-soft)] bg-black">
+            {videoSrc ? (
+              <video
+                src={videoSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+              />
+            ) : (
+              <Image
+                src={imageSrc ?? "/placeholder.png"}
+                alt={project.title || "Portfolio project"}
+                fill
+                className="object-cover transition duration-500 group-hover:scale-[1.02]"
+              />
+            )}
           </div>
-
         </div>
 
         {/* TEXT */}
@@ -67,7 +79,6 @@ export default function ProjectCard({ project, index }: any) {
             </div>
           )}
         </div>
-
       </Link>
     </motion.div>
   );

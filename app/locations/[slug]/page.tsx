@@ -4,10 +4,6 @@ import { locations, type LocationSlug } from "@/data/locations";
 
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
-import ServicesPreview from "@/components/sections/ServicesPreview";
-import Process from "@/components/sections/Process";
-import Testimonials from "@/components/sections/Testimonials";
-import CTA from "@/components/sections/CTA";
 
 type Props = {
   params: Promise<{
@@ -59,24 +55,50 @@ export default async function LocationPage({ params }: Props) {
 
   if (!location) return notFound();
 
-  const nearbyText = location.nearby.join(", ");
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Hometown Web Services",
+    url: `${siteUrl}/locations/${slug}`,
+    areaServed: {
+      "@type": "City",
+      name: `${location.city}, ${location.state}`,
+    },
+    description: location.description,
+    serviceType: [
+      "Web Design",
+      "Local SEO",
+      "Small Business Websites",
+      "Contractor Websites",
+    ],
+  };
 
   return (
     <>
       <Header />
 
       <main>
-        <section className="py-32 bg-depth overflow-hidden">
-          <div className="max-w-6xl mx-auto px-6">
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+
+        <section className="py-32 bg-depth overflow-hidden relative">
+          <div className="absolute top-[-120px] right-[-120px] w-[420px] h-[420px] bg-[var(--accent)] opacity-10 blur-3xl rounded-full pointer-events-none" />
+
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
             <p className="text-sm text-[var(--text-soft)] mb-6">
-              Websites for {location.city}, {location.state} businesses
+              {location.kicker}
             </p>
 
             <h1 className="text-5xl md:text-7xl max-w-4xl">
               {location.title}
             </h1>
 
-            <p className="mt-6 text-lg text-[var(--text-soft)] max-w-2xl">
+            <p className="mt-6 text-lg text-[var(--text-soft)] max-w-2xl leading-relaxed">
               {location.description}
             </p>
 
@@ -93,50 +115,173 @@ export default async function LocationPage({ params }: Props) {
               </a>
             </div>
 
-            <div className="mt-20 grid md:grid-cols-3 gap-8">
-              <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                <h2 className="text-2xl mb-4">
-                  Built for {location.city} businesses
-                </h2>
-                <p className="text-[var(--text-soft)] leading-relaxed">
-                  {location.audience}
-                </p>
-              </article>
+            <div className="mt-20 grid gap-5 md:grid-cols-3">
+              {location.heroCards.map((card) => (
+                <article
+                  key={card.title}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                >
+                  <h2 className="text-2xl mb-4">{card.title}</h2>
+                  <p className="text-[var(--text-soft)] leading-relaxed">
+                    {card.text}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                <h2 className="text-2xl mb-4">The problem I usually see</h2>
-                <p className="text-[var(--text-soft)] leading-relaxed">
-                  {location.problem}
-                </p>
-              </article>
+        <section className="py-28">
+          <div className="max-w-6xl mx-auto px-6 grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-sm text-[var(--text-soft)] mb-4">
+                Local website strategy
+              </p>
 
-              <article className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                <h2 className="text-2xl mb-4">How I help</h2>
-                <p className="text-[var(--text-soft)] leading-relaxed">
-                  {location.solution}
-                </p>
-              </article>
+              <h2 className="text-3xl md:text-5xl">
+                {location.strategyTitle}
+              </h2>
             </div>
 
-            <div className="mt-16 border-t border-white/10 pt-10 max-w-3xl">
-              <h2 className="text-3xl md:text-4xl mb-4">
-                Serving {location.city} and nearby areas
+            <div className="space-y-5">
+              {location.strategyText.map((text) => (
+                <p
+                  key={text}
+                  className="text-[var(--text-soft)] leading-relaxed"
+                >
+                  {text}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-28 bg-[var(--bg-alt)]">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-2xl">
+              <p className="text-sm text-[var(--text-soft)] mb-4">
+                Common business types
+              </p>
+
+              <h2 className="text-3xl md:text-5xl">
+                Websites for real businesses around {location.city}
+              </h2>
+            </div>
+
+            <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {location.industries.map((industry) => (
+                <div
+                  key={industry}
+                  className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-6"
+                >
+                  <p className="font-medium">{industry}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-28">
+          <div className="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-2">
+            <div>
+              <p className="text-sm text-[var(--text-soft)] mb-4">
+                What the site needs to do
+              </p>
+
+              <h2 className="text-3xl md:text-5xl">
+                {location.websiteNeedsTitle}
+              </h2>
+            </div>
+
+            <div className="grid gap-5">
+              {location.websiteNeeds.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-6"
+                >
+                  <h3 className="text-2xl">{item.title}</h3>
+                  <p className="mt-3 text-[var(--text-soft)] leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-28 bg-depth">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-3xl">
+              <p className="text-sm text-[var(--text-soft)] mb-4">
+                Nearby areas
+              </p>
+
+              <h2 className="text-3xl md:text-5xl">
+                Serving {location.city} and nearby Arkansas communities
               </h2>
 
-              <p className="text-[var(--text-soft)] leading-relaxed">
-                I also help businesses around {nearbyText} and other nearby
-                Arkansas communities with websites, Google visibility, and
-                simple online systems that make it easier for customers to reach
-                out.
+              <p className="mt-6 text-[var(--text-soft)] leading-relaxed">
+                I also help businesses around {location.nearby.join(", ")} and
+                other nearby areas with websites, local SEO, Google visibility,
+                and simple online systems that make it easier for customers to
+                reach out.
               </p>
             </div>
           </div>
         </section>
 
-        <ServicesPreview />
-        <Process />
-        <Testimonials />
-        <CTA />
+        <section className="py-28">
+          <div className="max-w-4xl mx-auto px-6">
+            <p className="text-sm text-[var(--text-soft)] mb-4">Questions</p>
+
+            <h2 className="text-3xl md:text-5xl mb-10">
+              {location.city} web design questions
+            </h2>
+
+            <div className="space-y-4">
+              {location.faq.map((item) => (
+                <div
+                  key={item.question}
+                  className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)] p-6"
+                >
+                  <h3 className="text-xl">{item.question}</h3>
+                  <p className="mt-3 text-[var(--text-soft)] leading-relaxed">
+                    {item.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-32 relative overflow-hidden">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl md:text-5xl">
+                Want a better website for your {location.city} business?
+              </h2>
+
+              <p className="mt-6 text-lg text-[var(--text-soft)] leading-relaxed">
+                I can put together a clean preview based on your business,
+                services, and local market. No pressure, just something real you
+                can look at.
+              </p>
+
+              <div className="mt-10 flex flex-wrap items-center gap-4">
+                <a href="sms:8702604880" className="btn btn-primary">
+                  Get a free preview
+                </a>
+
+                <a
+                  href="/services"
+                  className="text-sm text-[var(--text-soft)] hover:text-[var(--text-main)] transition"
+                >
+                  See services →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

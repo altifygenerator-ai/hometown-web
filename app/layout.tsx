@@ -16,28 +16,32 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Arkansas Web Design for Small Businesses | Websites That Get Leads",
+      "Arkansas Web Design for Small Businesses | Hometown Web Services",
     template: "%s | Hometown Web Services",
   },
 
   description:
-    "Web design and SEO for small businesses in Arkansas. Clean, modern websites built to rank on Google, bring in leads, and turn visitors into calls.",
+    "Web design, local SEO, and Google-ready websites for Arkansas small businesses, contractors, service companies, restaurants, and local shops.",
 
   keywords: [
-    "web design Arkansas",
+    "Arkansas web design",
     "Arkansas web designer",
-    "small business website Arkansas",
-    "SEO Arkansas small business",
-    "Google business profile optimization Arkansas",
-    "local web design services",
+    "small business websites Arkansas",
+    "websites for Arkansas contractors",
     "contractor website design Arkansas",
-    "lead generation websites Arkansas",
+    "local SEO Arkansas",
+    "Google Business Profile help Arkansas",
+    "web design for service businesses",
+    "websites for roofers Arkansas",
+    "websites for electricians Arkansas",
+    "websites for cleaning companies Arkansas",
+    "restaurant website design Arkansas",
   ],
 
   openGraph: {
-    title: "Arkansas Web Design | Hometown Web Services",
+    title: "Arkansas Web Design for Small Businesses",
     description:
-      "Modern websites built to help Arkansas businesses show up on Google and get more calls and leads.",
+      "Modern websites built to help Arkansas businesses show up on Google, look more professional, and turn visitors into calls.",
     url: siteUrl,
     siteName: "Hometown Web Services",
     type: "website",
@@ -54,9 +58,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Arkansas Web Design | Hometown Web Services",
+    title: "Arkansas Web Design for Small Businesses",
     description:
-      "Websites built for small businesses in Arkansas to rank on Google and generate leads.",
+      "Websites and local SEO for Arkansas small businesses, contractors, and service companies.",
     images: ["/og-image.png"],
   },
 
@@ -82,9 +86,42 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: "Hometown Web Services",
+      url: siteUrl,
+      areaServed: {
+        "@type": "State",
+        name: "Arkansas",
+      },
+      description:
+        "Web design and local SEO services for Arkansas small businesses, contractors, service companies, restaurants, and local shops.",
+      serviceType: [
+        "Web Design",
+        "Local SEO",
+        "Small Business Websites",
+        "Google Business Profile Optimization",
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Hometown Web Services",
+      url: siteUrl,
+    },
+  ];
+
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
       <body className="min-h-full bg-[var(--bg-main)] text-[var(--text-main)] antialiased selection:bg-[var(--accent)] selection:text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
         {children}
         <Analytics />
       </body>
