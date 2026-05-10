@@ -1,79 +1,131 @@
 import Link from "next/link";
 
+const serviceLinks = [
+  { label: "Services", href: "/services" },
+  { label: "Contractor Websites", href: "/contractor-websites" },
+  { label: "Portfolio", href: "/portfolio" },
+];
+
+const southwestArkansas = [
+  { label: "Hot Springs, AR", href: "/locations/hot-springs-ar" },
+  { label: "Arkadelphia, AR", href: "/locations/arkadelphia-ar" },
+  { label: "Glenwood, AR", href: "/locations/glenwood-ar" },
+  { label: "Malvern, AR", href: "/locations/malvern-ar" },
+];
+
+const centralArkansas = [
+  { label: "Benton, AR", href: "/locations/benton-ar" },
+  { label: "Bryant, AR", href: "/locations/bryant-ar" },
+  { label: "Little Rock, AR", href: "/locations/little-rock-ar" },
+  { label: "North Little Rock, AR", href: "/locations/north-little-rock-ar" },
+  { label: "Maumelle, AR", href: "/locations/maumelle-ar" },
+];
+
 export default function Footer() {
   return (
-    <footer className="py-16 border-t border-[var(--border-soft)]">
-
-      <div className="max-w-6xl mx-auto px-6">
-
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-
-          {/* LEFT */}
+    <footer className="border-t border-[var(--border-soft)] bg-white px-6 py-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
+          {/* BRAND */}
           <div>
-            <p className="text-sm text-[var(--text-main)]">
+            <Link href="/" className="text-base font-medium text-[var(--text-main)]">
               Hometown Web Services
-            </p>
-
-            <p className="text-sm text-[var(--text-soft)] mt-1">
-              Arkansas Web Design
-            </p>
-          </div>
-  
-
-          {/* RIGHT */}
-          <div className="flex items-center gap-6 text-sm text-[var(--text-soft)]">
-
-            <Link
-              href="/portfolio"
-              className="hover:text-[var(--text-main)] transition"
-            >
-              Work
             </Link>
 
-            <Link
-              href="/services"
-              className="hover:text-[var(--text-main)] transition"
-            >
-              Services
-            </Link>
+            <p className="mt-2 max-w-sm text-sm leading-6 text-[var(--text-soft)]">
+              Arkansas web design, local SEO, and Google-ready websites for
+              contractors, service businesses, restaurants, and small local
+              companies.
+            </p>
 
-            <a
-              href="sms:8702604880"
-              className="hover:text-[var(--text-main)] transition"
-            >
-              Contact
-            </a>
-            <a href="mailto:youremail@gmail.com">
-  altifygenerator@gmail.com
-</a>
+            <div className="mt-5 flex flex-col gap-2 text-sm text-[var(--text-soft)]">
+              <a
+                href="sms:8702604880"
+                className="hover:text-[var(--text-main)]"
+              >
+                Text: (870) 260-4880
+              </a>
 
+              <a
+                href="mailto:altifygenerator@gmail.com"
+                className="hover:text-[var(--text-main)]"
+              >
+                altifygenerator@gmail.com
+              </a>
+            </div>
           </div>
 
+          {/* MAIN LINKS */}
+          <div>
+            <h4 className="mb-4 text-sm font-medium text-[var(--text-main)]">
+              Pages
+            </h4>
+
+            <nav className="flex flex-col gap-3 text-sm text-[var(--text-soft)]">
+              {serviceLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-[var(--text-main)]"
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              <a href="sms:8702604880" className="hover:text-[var(--text-main)]">
+                Contact
+              </a>
+            </nav>
+          </div>
+
+          {/* SOUTHWEST AR */}
+          <div>
+            <h4 className="mb-4 text-sm font-medium text-[var(--text-main)]">
+              Southwest Arkansas
+            </h4>
+
+            <nav className="flex flex-col gap-3 text-sm text-[var(--text-soft)]">
+              {southwestArkansas.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-[var(--text-main)]"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* CENTRAL AR */}
+          <div>
+            <h4 className="mb-4 text-sm font-medium text-[var(--text-main)]">
+              Central Arkansas
+            </h4>
+
+            <nav className="flex flex-col gap-3 text-sm text-[var(--text-soft)]">
+              {centralArkansas.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-[var(--text-main)]"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
-        <div className="mt-10">
-  <h4 className="text-sm mb-3 text-[var(--text-soft)]">
-    Areas We Serve
-  </h4>
-
-<p className="text-[var(--text-soft)] mb-2">Southwest Arkansas</p>
-<li><a href="/locations/hot-springs-ar">Hot Springs, AR</a></li>
-<li><a href="/locations/arkadelphia-ar">Arkadelphia, AR</a></li>
-<li><a href="/locations/glenwood-ar">Glenwood, AR</a></li>
-<li><a href="/locations/malvern-ar">Malvern, AR</a></li>
-
-<p className="text-[var(--text-soft)] mt-4 mb-2">Central Arkansas</p>
-<li><a href="/locations/benton-ar">Benton, AR</a></li>
-<li><a href="/locations/bryant-ar">Bryant, AR</a></li>
-<li><a href="/locations/little-rock-ar">Little Rock, AR</a></li>
-<li><a href="/locations/north-little-rock-ar">North Little Rock, AR</a></li>
-<li><a href="/locations/maumelle-ar">Maumelle, AR</a></li>
-</div>
 
         {/* BOTTOM */}
-        <div className="mt-10 text-xs text-[var(--text-soft)]">
-          © {new Date().getFullYear()} Hometown Web Services. All rights reserved.
-        </div>
+        <div className="mt-12 flex flex-col gap-3 border-t border-[var(--border-soft)] pt-6 text-xs text-[var(--text-soft)] md:flex-row md:items-center md:justify-between">
+          <p>
+            © {new Date().getFullYear()} Hometown Web Services. All rights
+            reserved.
+          </p>
 
+          <p>Built in Arkansas for small businesses that need better websites.</p>
+        </div>
       </div>
     </footer>
   );
