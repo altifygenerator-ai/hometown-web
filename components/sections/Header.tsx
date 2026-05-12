@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -28,20 +29,30 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-[var(--border-soft)] bg-[var(--bg-main)]/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* LEFT — BRAND */}
-        <Link
-          href="/"
-          className="text-sm font-medium tracking-tight text-[var(--text-main)]"
-        >
-          Hometown Web Services
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Hometown Web Services"
+            width={44}
+            height={44}
+            className="h-10 w-10 object-contain"
+            priority
+          />
+
+          <div className="leading-tight">
+            <span className="block text-sm font-semibold tracking-tight text-[var(--text-main)]">
+              Hometown Web Services
+            </span>
+            <span className="hidden text-xs text-[var(--text-soft)] sm:block">
+              Arkansas websites & local SEO
+            </span>
+          </div>
         </Link>
 
         {/* RIGHT — NAV */}
         <div className="flex items-center gap-8">
           <nav className="hidden items-center gap-6 text-sm text-[var(--text-soft)] md:flex">
-            <Link
-              href="/portfolio"
-              className="hover:text-[var(--text-main)]"
-            >
+            <Link href="/portfolio" className="hover:text-[var(--text-main)]">
               Work
             </Link>
 

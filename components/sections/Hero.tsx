@@ -1,23 +1,32 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="py-32 bg-depth overflow-hidden relative">
-      <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[var(--accent)] opacity-10 blur-3xl rounded-full pointer-events-none" />
+    <section className="relative overflow-hidden bg-depth py-32">
+      <div className="pointer-events-none absolute right-[-100px] top-[-100px] h-[400px] w-[400px] rounded-full bg-[var(--accent)] opacity-10 blur-3xl" />
 
-      {/* NEW IMAGE */}
-    
+      {/* LOGO WATERMARK */}
+      <div className="pointer-events-none absolute right-[80px] top-1/2 hidden -translate-y-1/2 opacity-[0.06] md:block">
+        <Image
+          src="/logo.png"
+          alt=""
+          width={540}
+          height={540}
+          className="h-auto w-[420px] lg:w-[540px]"
+          priority
+        />
+      </div>
 
-      <div className="max-w-6xl mx-auto px-6">
-
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
         {/* TOP LINE */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-sm text-[var(--text-soft)] mb-6"
+          className="mb-6 text-sm text-[var(--text-soft)]"
         >
           Websites for local Arkansas businesses
         </motion.p>
@@ -27,7 +36,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl max-w-3xl"
+          className="max-w-3xl text-5xl md:text-7xl"
         >
           Get a website that actually brings in calls and jobs
         </motion.h1>
@@ -37,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-6 text-lg text-[var(--text-soft)] max-w-xl"
+          className="mt-6 max-w-xl text-lg text-[var(--text-soft)]"
         >
           Most people find you on Facebook, but there’s no clear place to see
           your services, pricing, or how to reach you. I build simple, clean
@@ -58,47 +67,47 @@ export default function Hero() {
 
           <a
             href="/portfolio"
-            className="text-sm text-[var(--text-soft)] hover:text-[var(--text-main)] transition"
+            className="text-sm text-[var(--text-soft)] transition hover:text-[var(--text-main)]"
           >
             View work →
           </a>
         </motion.div>
-        {/* TRUST + INDUSTRY ROW */}
-<motion.div
-  initial={{ opacity: 0, y: 40 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.35 }}
-  className="mt-16 grid gap-4 md:grid-cols-3"
->
-  {[
-    "Built for contractors, service businesses, and local Arkansas companies",
-    "Modern mobile-friendly websites designed to bring in calls and leads",
-    "SEO-focused structure to help businesses show up better on Google",
-  ].map((item) => (
-    <div
-      key={item}
-      className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)]/70 backdrop-blur-sm p-5"
-    >
-      <p className="text-sm text-[var(--text-soft)] leading-relaxed">
-        {item}
-      </p>
-    </div>
-  ))}
-</motion.div>
 
-        {/* OFFSET BLOCK (asymmetry) */}
+        {/* TRUST + INDUSTRY ROW */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mt-16 grid gap-4 md:grid-cols-3"
+        >
+          {[
+            "Built for contractors, service businesses, and local Arkansas companies",
+            "Modern mobile-friendly websites designed to bring in calls and leads",
+            "SEO-focused structure to help businesses show up better on Google",
+          ].map((item) => (
+            <div
+              key={item}
+              className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-card)]/70 p-5 backdrop-blur-sm"
+            >
+              <p className="text-sm leading-relaxed text-[var(--text-soft)]">
+                {item}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* OFFSET BLOCK */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-24 ml-auto max-w-md"
+          className="ml-auto mt-24 max-w-md"
         >
           <p className="text-sm text-[var(--text-soft)]">
             Built for small businesses that want something simple that actually
             works — not something complicated that just sits there.
           </p>
         </motion.div>
-
       </div>
     </section>
   );
