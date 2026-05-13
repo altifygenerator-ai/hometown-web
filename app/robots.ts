@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://hometownwebservicesar.cc/sitemap.xml",
+    sitemap: "https://hometownwebservicesar.cc/sitemap-main.xml",
   };
 }
