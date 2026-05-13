@@ -13,81 +13,108 @@ const testimonials = [
     business: "Onward and Upward Services",
     text: "Great service. Dependable. Very responsive and trustworthy. Any time we ask for change on the website he does it immediately. Does amazing work. Very thankful he is on our team at Onward & Upward Services.",
   },
+];
 
+const trustPoints = [
+  "Free preview before you pay",
+  "Fast updates and clear communication",
+  "Built for real local business goals",
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[var(--bg-alt)] py-24 md:py-28">
+      {/* SUBTLE GLOW */}
+      <div className="pointer-events-none absolute right-[-140px] top-[-140px] h-[400px] w-[400px] rounded-full bg-[var(--accent)] opacity-[0.04] blur-[120px]" />
 
-      {/* 🔥 subtle glow */}
-      <div className="absolute top-[-120px] right-[-120px] w-[400px] h-[400px] bg-[var(--accent)] opacity-[0.04] blur-[120px] rounded-full pointer-events-none" />
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          {/* LEFT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="mb-4 text-sm text-[var(--text-soft)]">
+              Testimonials
+            </p>
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <h2 className="max-w-md text-3xl leading-tight md:text-5xl">
+              Real feedback from businesses that needed a better online presence.
+            </h2>
 
-        {/* INTRO */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-md"
-        >
-          <p className="text-sm text-[var(--text-soft)] mb-4">
-            Testimonials
-          </p>
+            <p className="mt-6 max-w-md leading-relaxed text-[var(--text-soft)]">
+              I try to keep the process simple: build something useful, make it
+              easy to understand, and actually help when changes are needed.
+            </p>
 
-          <h2 className="text-3xl md:text-5xl">
-            What people are seeing after getting a real site
-          </h2>
-        </motion.div>
+            <div className="mt-10 space-y-4 border-l border-[var(--border-soft)] pl-6">
+              {trustPoints.map((point) => (
+                <p key={point} className="text-sm text-[var(--text-soft)]">
+                  {point}
+                </p>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* FEATURED TESTIMONIAL */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-16 p-8 md:p-12 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-alt)] max-w-4xl"
-        >
-          <p className="text-xl md:text-2xl leading-relaxed">
-            “{testimonials[0].text}”
-          </p>
-
-          <div className="mt-6 text-sm text-[var(--text-soft)]">
-            {testimonials[0].name} — {testimonials[0].business}
-          </div>
-        </motion.div>
-
-        {/* SUPPORTING TESTIMONIALS */}
-        <div className="mt-16 grid md:grid-cols-2 gap-8">
-
-          {testimonials.slice(1).map((t, i) => (
+          {/* RIGHT SIDE */}
+          <div className="space-y-6">
+            {/* FEATURED TESTIMONIAL */}
             <motion.div
-              key={i}
-              initial={{
-                opacity: 0,
-                x: i === 0 ? -60 : 60,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-6 rounded-2xl border border-[var(--border-soft)]"
+              initial={{ opacity: 0, y: 45 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="rounded-[2rem] border border-[var(--border-soft)] bg-[var(--bg-card)] p-7 md:p-10"
             >
-              <p className="text-[var(--text-main)]">
-                “{t.text}”
+              <div className="mb-8 flex items-center justify-between gap-4 border-b border-[var(--border-soft)] pb-5">
+                <p className="text-sm text-[var(--text-soft)]">
+                  Client result
+                </p>
+
+                <span className="rounded-full border border-[var(--border-soft)] px-4 py-2 text-xs text-[var(--text-soft)]">
+                  Search visibility
+                </span>
+              </div>
+
+              <p className="text-2xl leading-relaxed md:text-3xl">
+                “{testimonials[0].text}”
               </p>
 
-              <div className="mt-4 text-sm text-[var(--text-soft)]">
-                {t.name} — {t.business}
+              <div className="mt-8">
+                <p className="text-sm text-[var(--text-main)]">
+                  {testimonials[0].name}
+                </p>
+                <p className="mt-1 text-sm text-[var(--text-soft)]">
+                  {testimonials[0].business}
+                </p>
               </div>
             </motion.div>
-          ))}
 
+            {/* SECOND TESTIMONIAL */}
+            <motion.div
+              initial={{ opacity: 0, y: 45 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: 0.18 }}
+              className="rounded-[1.75rem] border border-[var(--border-soft)] bg-white/40 p-6 md:p-8"
+            >
+              <p className="leading-relaxed text-[var(--text-main)]">
+                “{testimonials[1].text}”
+              </p>
+
+              <div className="mt-6 border-t border-[var(--border-soft)] pt-5">
+                <p className="text-sm text-[var(--text-main)]">
+                  {testimonials[1].name}
+                </p>
+                <p className="mt-1 text-sm text-[var(--text-soft)]">
+                  {testimonials[1].business}
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
-
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ const projects = [
 {
   title: "Ozark Roofing",
   category: "Roofing and Construction",
-  videos: ["/videos/ozarkroofdemo.mp4"],
+  videos: ["/videos/seo-demo-2.mp4"],
   summary: "Contractor-style site focused on mobile experience, cleaner branding, and turning local traffic into actual calls for roofing and construction services.",
   tags: ["roofing", "construction", "contractor"],
   live: { url: "https://ozarkroofing.online/" },

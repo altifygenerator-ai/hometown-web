@@ -97,16 +97,43 @@ export default function Hero() {
         </motion.div>
 
         {/* OFFSET BLOCK */}
-        <motion.div
+       <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="ml-auto mt-24 max-w-md"
+          className="mt-20 grid gap-6 rounded-[2rem] border border-[var(--border-soft)] bg-[var(--bg-card)]/80 p-6 backdrop-blur-sm md:grid-cols-[1.2fr_0.8fr] md:p-8"
         >
-          <p className="text-sm text-[var(--text-soft)]">
-            Built for small businesses that want something simple that actually
-            works — not something complicated that just sits there.
-          </p>
+          <div>
+            <p className="mb-3 text-xs uppercase tracking-[0.22em] text-[var(--text-soft)]">
+              Simple, local, and built to work
+            </p>
+
+            <h2 className="max-w-2xl text-2xl font-semibold tracking-tight text-[var(--text-main)] md:text-3xl">
+              A clean website that gives people a reason to trust you before
+              they ever call.
+            </h2>
+
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--text-soft)]">
+              Built for small businesses that want something simple, professional,
+              and useful — not a bloated agency site or a template that just sits
+              there.
+            </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3 md:grid-cols-1">
+            {[
+              "Free preview before you pay",
+              "Mobile-first pages",
+              "Built around calls and leads",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-[var(--border-soft)] bg-white/60 px-4 py-3 text-sm text-[var(--text-soft)]"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

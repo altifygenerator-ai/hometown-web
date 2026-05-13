@@ -208,7 +208,35 @@ export default function ContractorWebsitesPage() {
           </div>
         </div>
       </section>
+<section className="bg-[var(--bg-alt)] px-6 py-20">
+  <div className="mx-auto max-w-6xl">
+    <span className="badge">Contractor website essentials</span>
 
+    <div className="mt-5 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <h2 className="text-4xl leading-tight md:text-5xl">
+        A contractor site needs to answer questions fast.
+      </h2>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        {[
+          "Services you offer",
+          "Photos of past work",
+          "Service areas",
+          "Reviews and trust signals",
+          "Fast call and quote buttons",
+          "Mobile-friendly layout",
+        ].map((item) => (
+          <div
+            key={item}
+            className="rounded-2xl border border-[var(--border-soft)] bg-white p-5"
+          >
+            <p>{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
       <section className="bg-[var(--bg-alt)] px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <span className="badge">Demo work</span>
@@ -219,8 +247,9 @@ export default function ContractorWebsitesPage() {
             </h2>
 
             <p className="max-w-md text-[var(--text-soft)]">
-              Swap these video paths with your actual contractor site demos when
-              you drop the MP4s into your public/videos folder.
+               These examples show the kind of structure I build for service businesses:
+  clear services, strong visuals, mobile-friendly layouts, and easy ways for
+  customers to call or request a quote.
             </p>
           </div>
 

@@ -365,7 +365,24 @@ export default function LocalSEOPage() {
         </div>
       </section>
 
-      {/* VIDEO SECTION */}
+      <section className="px-6 py-20">
+  <div className="mx-auto max-w-6xl">
+    <span className="badge">Arkansas service areas</span>
+
+    <div className="mt-5 grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
+      <h2 className="text-4xl leading-tight md:text-5xl">
+        Built for businesses trying to rank in real Arkansas towns.
+      </h2>
+
+      <p className="text-lg leading-8 text-[var(--text-soft)]">
+        I work with businesses across Arkansas, including Arkadelphia, Hot
+        Springs, Glenwood, Benton, Bryant, Little Rock, Caddo Valley, and nearby
+        service areas. The goal is to build pages and structure around the places
+        your customers are actually searching from.
+      </p>
+    </div>
+  </div>
+</section>
   
 
       {/* FAQ */}
