@@ -1,0 +1,10 @@
+export { arkadelphiaLocation } from "./arkadelphia";
+export { hotSpringsLocation } from "./hot-springs";
+export { glenwoodLocation } from "./glenwood";
+export { bentonLocation } from "./benton";
+export { bryantLocation } from "./bryant";
+export { littleRockLocation } from "./little-rock";
+export { maumelleLocation } from "./maumelle";
+export { malvernLocation } from "./malvern";
+export { northLittleRockLocation } from "./north-little-rock";
+export { caddoValleyLocation } from "./caddo-valley";
