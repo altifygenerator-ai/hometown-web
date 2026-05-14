@@ -16,10 +16,16 @@ const serviceLinks = [
     text: "Sites built for roofers, remodelers, plumbers, and trades.",
   },
   {
+    label: "Vacation Rental Websites",
+    href: "/vacation-rental-websites",
+    text: "Sites for cabins, Airbnbs, short-term rentals, and lodging.",
+  },
+  {
     label: "Local SEO Services Arkansas",
     href: "/local-seo-arkansas",
     text: "Google visibility, local rankings, and SEO-focused structure.",
   },
+
 ];
 
 const locationLinks = [

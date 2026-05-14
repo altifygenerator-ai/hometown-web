@@ -7,6 +7,7 @@ import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQSection, { faqs } from "@/components/sections/FAQSection";
+import VacationRentalPreview from "@/components/sections/VacationRentalPreview";
 const siteUrl = "https://hometownwebservicesar.cc";
 
 const homeSchema = [
@@ -151,6 +152,8 @@ export default function Page() {
       <Hero />
       <FeaturedWork />
       <ServicesPreview />
+      <VacationRentalPreview />
+
       <Process />
       <Testimonials />
       <FAQSection/>
