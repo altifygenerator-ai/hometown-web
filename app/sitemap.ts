@@ -41,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/vacation-rental-websites`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/local-seo-arkansas`,
       lastModified,
       changeFrequency: "monthly",
