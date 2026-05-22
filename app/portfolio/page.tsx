@@ -8,6 +8,96 @@ export const metadata = {
 };
 const projects = [
   {
+  title: "Bennett Handyman Services",
+  category: "Handyman and Home Services",
+  videos: ["/videos/bennetdemo1.mp4"],
+  summary:
+    "A rugged handyman website demo built around real service work, clear contact options, licensed and insured trust points, and a stronger local contractor feel.",
+  tags: ["Handyman", "Contractor", "Home Services"],
+},
+{
+  title: "Bright Path Learning Studio",
+  category: "Education and Enrichment",
+  videos: ["/videos/BrightPathDemo.mp4"],
+  summary:
+    "A calm, parent-friendly education site designed to explain class details, tuition, location, and enrollment options in a clean one-page layout.",
+  tags: ["Education", "Parents", "Enrollment"],
+},
+{
+  title: "Buckstaff Bathhouse Concept",
+  category: "Tourism and Historic Business",
+  videos: ["/videos/BuckstaffConcept.mp4"],
+  summary:
+    "A concept demo focused on giving a historic Hot Springs business a cleaner, more modern web presence while keeping the local tourism feel intact.",
+  tags: ["Tourism", "Historic", "Concept"],
+},
+{
+  title: "Hot Springs Arkansas",
+  category: "Tourism",
+  videos: ["/videos/hotsprings.mp4"],
+  summary:
+    "A local tourism guide built to organize Hot Springs events, things to do, restaurants, lodging, and visitor information into one searchable guide.",
+  tags: ["Tourism", "Events", "Local Guide"],
+  live: { url: "https://www.hotspringsarkansas.org/" },
+},
+{
+  title: "Jason’s Demo",
+  category: "Local Business Demo",
+  videos: ["/videos/jasons.mp4"],
+  summary:
+    "A local business website demo built to show services clearly, improve trust, and make the next step easier for visitors.",
+  tags: ["Local Business", "Demo", "Services"],
+},
+{
+  title: "Magnolias & Whiskey",
+  category: "Boutique and Custom Orders",
+  videos: ["/videos/magnoliasdemo.mp4"],
+  summary:
+    "A warm boutique-style website demo built around handmade products, gallery-style presentation, and a simple custom order flow.",
+  tags: ["Boutique", "Custom Orders", "Gallery"],
+},
+{
+  title: "Mayo’s Remodeling",
+  category: "Remodeling and Contractor",
+  videos: ["/videos/mayos.mp4", "/videos/mayosforcapcut.mp4"],
+  summary:
+    "A modern remodeling website demo designed to showcase services, project photos, trust points, and easy quote requests for homeowners.",
+  tags: ["Remodeling", "Contractor", "Quote Requests"],
+},
+{
+  title: "Onyx Ridge Building Solutions",
+  category: "Construction and Remodeling",
+  videos: ["/videos/onyxridge.mp4"],
+  summary:
+    "A dark, rugged contractor site built around remodeling, new construction, plumbing, and strong trust-based service positioning.",
+  tags: ["Construction", "Remodeling", "Contractor"],
+  live: { url: "https://onyxridge.net/" },
+},
+{
+  title: "Ozark Pond",
+  category: "Outdoor and Property Services",
+  videos: ["/videos/ozarkpond.mp4"],
+  summary:
+    "A clean local service website demo focused on outdoor property work, clear service presentation, and easy contact for quote requests.",
+  tags: ["Outdoor Services", "Property", "Local Business"],
+},
+{
+  title: "Precision Turf Co.",
+  category: "Lawn Care",
+  videos: ["/videos/PrecisionTurfDemo.mp4"],
+  summary:
+    "A premium lawn care website demo built around a branded service program, strong visuals, clear offers, and local lead generation.",
+  tags: ["Lawn Care", "Premium", "Lead Generation"],
+},
+{
+  title: "TG Services & Excavating",
+  category: "Excavating and Dirt Work",
+  videos: ["/videos/TGdemo.mp4"],
+  summary:
+    "A premium contractor website demo built around excavating, dirt work, land clearing, fencing, drainage, and real project photos.",
+  tags: ["Excavating", "Dirt Work", "Contractor"],
+},
+  {
   title: "Lyn and Lilis Cleaning",
   category: "cleaning service",
   videos: ["/videos/lynnlilisdemo.mp4"],

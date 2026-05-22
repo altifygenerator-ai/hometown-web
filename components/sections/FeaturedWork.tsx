@@ -5,23 +5,23 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "Richards Property Management",
+    title: "Onyx Ridge",
     description:
       "Modern contractor-style site focused on mobile experience, cleaner branding, and turning local traffic into actual calls.",
-    video: "/videos/demorpm.mp4",
+    video: "/videos/onyxridge.mp4",
   },
-  {
-    title: "Glenwood Arkansas Tourism",
-    description:
-      "Tourism-style local guide built around cabins, restaurants, attractions, and search visibility for Arkansas travel traffic.",
-    video: "/videos/demoglenwood.mp4",
-  },
-  {
-    title: "Lyn and Lilis Cleaning",
-    description:
-      "High-trust service business layout designed for cleaning companies and local service providers.",
-    video: "/videos/lynnlilisdemo.mp4",
-  },
+{
+  title: "Mayo’s Remodeling Demo",
+  description:
+    "Modern remodeling website demo designed to make contractor services feel more trustworthy, visual, and easy for homeowners to act on.",
+  video: "/videos/mayos.mp4",
+},
+{
+  title: "Precision Turf Co. Demo",
+  description:
+    "High-end turf and lawn care demo focused on branded service packages, polished presentation, and turning local traffic into quote requests.",
+  video: "/videos/PrecisionTurfDemo.mp4",
+},
 ];
 
 const proofPoints = [
