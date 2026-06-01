@@ -6,106 +6,121 @@ import Link from "next/link";
 const services = [
   {
     title: "Website Design",
-    text: "Modern websites built to look professional and convert visitors into calls.",
+    text: "Clean, modern websites that make your business easier to understand, trust, and contact.",
   },
   {
-    title: "Local SEO",
-    text: "Structure and content designed to help businesses show up on Google.",
+    title: "Local SEO Structure",
+    text: "Pages, headings, metadata, and service-area content built so Google can better understand what you do.",
   },
   {
-    title: "Google Profiles",
-    text: "Optimization help for Google Business listings and local visibility.",
+    title: "Google Profile Help",
+    text: "Help improving the info, services, photos, and trust signals around your Google Business Profile.",
   },
   {
     title: "Lead-Focused Layouts",
-    text: "Built to make contacting your business simple and friction-free.",
+    text: "Clear call buttons, text links, quote sections, service pages, and mobile-first contact paths.",
   },
+];
+
+const painPoints = [
+  "People only find scattered Facebook posts",
+  "The current website looks outdated or thin",
+  "Services and pricing are hard to understand",
+  "Customers have to hunt for how to contact you",
 ];
 
 export default function ServicesPreview() {
   return (
     <section className="bg-[var(--bg-alt)] py-24 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
-        {/* INTRO */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end"
+          className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"
         >
           <div>
-            <p className="mb-4 text-sm text-[var(--text-soft)]">
-              What I do
-            </p>
+            <p className="section-kicker mb-4">What I fix</p>
 
-            <h2 className="max-w-xl text-3xl leading-tight md:text-5xl">
-              Simple websites that help people find you and reach out.
+            <h2 className="text-balance max-w-2xl text-4xl leading-tight md:text-6xl">
+              Most small businesses do not have a work problem. They have a
+              trust problem online.
             </h2>
           </div>
 
-          <p className="max-w-2xl text-lg leading-relaxed text-[var(--text-soft)] lg:pb-1">
-            I build clean, modern websites for small businesses that make it easy
-            for customers to understand what you do, find you on Google, and
-            contact you without confusion.
-          </p>
+          <div>
+            <p className="text-lg leading-8 text-[var(--text-soft)]">
+              A lot of good local businesses lose people before the first call.
+              Not because the work is bad, but because the website is old,
+              missing, confusing, or everything is spread across Facebook.
+            </p>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {painPoints.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-[var(--border-soft)] bg-white px-4 py-3 text-sm text-[var(--text-soft)]"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
-        {/* SERVICE GRID */}
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4"
+          className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4"
         >
           {services.map((service) => (
             <div
               key={service.title}
-              className="rounded-[1.5rem] border border-[var(--border-soft)] bg-[var(--bg-card)] p-6 transition duration-300 hover:-translate-y-1"
+              className="rounded-[1.5rem] border border-[var(--border-soft)] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
             >
               <h3 className="text-xl">{service.title}</h3>
 
-              <p className="mt-3 text-sm leading-relaxed text-[var(--text-soft)]">
+              <p className="mt-3 text-sm leading-7 text-[var(--text-soft)]">
                 {service.text}
               </p>
             </div>
           ))}
         </motion.div>
 
-        {/* BOTTOM CTA / EXPLANATION BAND */}
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-10 grid gap-8 rounded-[2rem] border border-[var(--border-soft)] bg-[var(--bg-card)]/70 p-6 md:grid-cols-[1.1fr_0.9fr] md:p-8"
+          className="mt-10 grid gap-8 rounded-[2rem] border border-[var(--border-soft)] bg-white p-7 shadow-[var(--shadow-soft)] md:grid-cols-[1.05fr_0.95fr] md:p-9"
         >
           <div>
-            <p className="mb-3 text-sm text-[var(--text-soft)]">
-              Why it matters
-            </p>
+            <p className="section-kicker mb-4">The goal</p>
 
-            <h3 className="max-w-2xl text-2xl leading-tight md:text-3xl">
-              Your website should make the next step obvious.
+            <h3 className="text-balance max-w-2xl text-3xl leading-tight md:text-4xl">
+              Give customers one clear place to decide if you are the right
+              business to call.
             </h3>
           </div>
 
           <div className="space-y-4">
-            <p className="leading-relaxed text-[var(--text-soft)]">
-              Instead of everything being spread across Facebook, your site puts
-              your services, pricing, photos, reviews, and contact options in one
-              clear place.
+            <p className="leading-7 text-[var(--text-soft)]">
+              Your website should show what you do, where you work, what kind of
+              jobs you want, why people should trust you, and how to reach you
+              without digging around.
             </p>
 
-            <p className="leading-relaxed text-[var(--text-soft)]">
-              So when someone finds you, they don’t have to think — they just
-              call, text, or request a quote.
+            <p className="leading-7 text-[var(--text-soft)]">
+              That means the design matters, but the structure matters just as
+              much.
             </p>
 
             <Link
               href="/services"
-              className="inline-block pt-2 text-sm text-[var(--text-soft)] transition hover:text-[var(--text-main)]"
+              className="inline-flex pt-2 text-sm text-[var(--text-soft)] transition hover:text-[var(--text-main)]"
             >
               See services →
             </Link>

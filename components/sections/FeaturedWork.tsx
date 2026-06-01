@@ -6,73 +6,71 @@ import Link from "next/link";
 const projects = [
   {
     title: "Onyx Ridge",
+    label: "Contractor Website",
     description:
-      "Modern contractor-style site focused on mobile experience, cleaner branding, and turning local traffic into actual calls.",
+      "A rugged contractor-style website built to make services, trust, service areas, and call buttons obvious on mobile.",
     video: "/videos/onyxridge.mp4",
   },
-{
-  title: "Mayo’s Remodeling Demo",
-  description:
-    "Modern remodeling website demo designed to make contractor services feel more trustworthy, visual, and easy for homeowners to act on.",
-  video: "/videos/mayos.mp4",
-},
-{
-  title: "Precision Turf Co. Demo",
-  description:
-    "High-end turf and lawn care demo focused on branded service packages, polished presentation, and turning local traffic into quote requests.",
-  video: "/videos/PrecisionTurfDemo.mp4",
-},
+  {
+    title: "Mayo’s Remodeling Demo",
+    label: "Remodeling Demo",
+    description:
+      "A remodeler-focused demo showing how real project photos, clearer service sections, and stronger layout can make the business feel more trustworthy.",
+    video: "/videos/mayos.mp4",
+  },
+  {
+    title: "Precision Turf Co. Demo",
+    label: "Lawn Care Demo",
+    description:
+      "A premium lawn care demo built around service packages, quote requests, and a cleaner high-end brand feel.",
+    video: "/videos/PrecisionTurfDemo.mp4",
+  },
 ];
 
 const proofPoints = [
-  "Built for mobile visitors first",
-  "Structured around calls, quotes, and leads",
-  "Designed with local SEO in mind",
+  "Proof-first project sections",
+  "Mobile quote and call flow",
+  "Local SEO structure",
+  "Clean service-area targeting",
 ];
 
 export default function FeaturedWork() {
   return (
     <section className="relative overflow-hidden py-24 md:py-28">
-      {/* SUBTLE GLOW */}
       <div className="pointer-events-none absolute left-[-150px] top-[120px] h-[320px] w-[320px] rounded-full bg-[var(--accent)] opacity-5 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
-        {/* INTRO */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end"
+          className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end"
         >
-          <div className="max-w-2xl">
-            <p className="mb-4 text-sm text-[var(--text-soft)]">
-              Selected work
-            </p>
+          <div className="max-w-3xl">
+            <p className="section-kicker mb-4">Selected work</p>
 
-            <h2 className="text-3xl leading-tight md:text-5xl">
-              Websites built to look modern, rank better, and bring in more
-              calls.
+            <h2 className="text-balance text-4xl leading-tight md:text-6xl">
+              Website demos built around how local customers actually decide.
             </h2>
 
-            <p className="mt-6 max-w-xl leading-relaxed text-[var(--text-soft)]">
-              Most small businesses already do solid work. The problem is their
-              online presence usually does not reflect it. These projects were
-              built to improve trust, visibility, and lead flow without making
-              things overly complicated.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-soft)]">
+              People usually make a quick judgment before they ever call. These
+              builds are designed to make the business look active, trustworthy,
+              easy to understand, and easy to contact.
             </p>
           </div>
 
-          <div className="rounded-[2rem] border border-[var(--border-soft)] bg-[var(--bg-card)]/70 p-6 backdrop-blur-sm">
+          <div className="premium-shell rounded-[2rem] p-6">
             <p className="text-sm font-medium text-[var(--text-main)]">
-              What these sites are built to do
+              What the work is built to do
             </p>
 
-            <div className="mt-5 grid gap-3">
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
               {proofPoints.map((point) => (
                 <div
                   key={point}
-                  className="rounded-2xl border border-[var(--border-soft)] bg-white/60 px-4 py-3 text-sm text-[var(--text-soft)]"
+                  className="rounded-2xl border border-[var(--border-soft)] bg-white/70 px-4 py-3 text-sm text-[var(--text-soft)]"
                 >
                   {point}
                 </div>
@@ -81,49 +79,48 @@ export default function FeaturedWork() {
           </div>
         </motion.div>
 
-        {/* MAIN FEATURED PROJECT */}
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-12"
+          className="mt-14"
         >
           <Link href="/portfolio" className="group block">
-            <div className="relative">
-              <div className="absolute inset-0 scale-[1.015] rounded-[2rem] bg-black/5 blur-xl" />
+            <div className="relative overflow-hidden rounded-[2.25rem] border border-[var(--border-soft)] bg-black shadow-[var(--shadow-strong)]">
+              <video
+                src={projects[0].video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="h-[380px] w-full object-cover transition duration-700 group-hover:scale-[1.02] md:h-[560px]"
+              />
 
-              <div className="relative overflow-hidden rounded-[2rem] border border-[var(--border-soft)] bg-black">
-                <video
-                  src={projects[0].video}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="h-[360px] w-full object-cover transition duration-500 group-hover:scale-[1.02] md:h-[500px]"
-                />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/30 to-transparent" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+              <div className="absolute bottom-0 left-0 max-w-3xl p-7 md:p-10">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/65">
+                  {projects[0].label}
+                </p>
 
-                <div className="absolute bottom-0 left-0 max-w-2xl p-7 md:p-10">
-                  <p className="mb-3 text-sm uppercase tracking-[0.22em] text-white/70">
-                    Featured Project
-                  </p>
+                <h3 className="text-4xl leading-tight text-white md:text-6xl">
+                  {projects[0].title}
+                </h3>
 
-                  <h3 className="text-3xl leading-tight text-white md:text-5xl">
-                    {projects[0].title}
-                  </h3>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">
+                  {projects[0].description}
+                </p>
 
-                  <p className="mt-5 leading-relaxed text-white/80">
-                    {projects[0].description}
-                  </p>
-                </div>
+                <span className="mt-7 inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition group-hover:bg-white/90">
+                  View portfolio
+                </span>
               </div>
             </div>
           </Link>
         </motion.div>
 
-        {/* SECONDARY PROJECTS */}
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           {projects.slice(1).map((project, index) => (
             <motion.div
@@ -137,28 +134,33 @@ export default function FeaturedWork() {
               }}
             >
               <Link href="/portfolio" className="group block h-full">
-                <div className="h-full overflow-hidden rounded-[1.75rem] border border-[var(--border-soft)] bg-[var(--bg-card)] transition duration-300 group-hover:-translate-y-1">
-                  <div className="relative overflow-hidden">
+                <div className="h-full overflow-hidden rounded-[2rem] border border-[var(--border-soft)] bg-white shadow-[var(--shadow-soft)] transition duration-300 group-hover:-translate-y-1">
+                  <div className="relative overflow-hidden bg-black">
                     <video
                       src={project.video}
                       autoPlay
                       muted
                       loop
                       playsInline
-                      className="h-[250px] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                      preload="metadata"
+                      className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+                    <p className="absolute bottom-5 left-5 rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-black">
+                      {project.label}
+                    </p>
                   </div>
 
                   <div className="p-7">
-                    <h3 className="text-2xl">{project.title}</h3>
+                    <h3 className="text-3xl">{project.title}</h3>
 
-                    <p className="mt-4 leading-relaxed text-[var(--text-soft)]">
+                    <p className="mt-4 leading-7 text-[var(--text-soft)]">
                       {project.description}
                     </p>
 
-                    <span className="mt-5 inline-block text-sm text-[var(--text-soft)] transition group-hover:text-[var(--text-main)]">
+                    <span className="mt-6 inline-block text-sm text-[var(--text-soft)] transition group-hover:text-[var(--text-main)]">
                       View project →
                     </span>
                   </div>
@@ -167,22 +169,6 @@ export default function FeaturedWork() {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 flex justify-center"
-        >
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center rounded-full border border-[var(--border-soft)] px-6 py-3 text-sm transition hover:bg-[var(--bg-card)]"
-          >
-            View Full Portfolio
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

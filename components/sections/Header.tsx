@@ -25,17 +25,33 @@ const serviceLinks = [
     href: "/local-seo-arkansas",
     text: "Google visibility, local rankings, and SEO-focused structure.",
   },
-
+  {
+    label: "Free Website Preview",
+    href: "/free-preview",
+    text: "Send your info and see a working preview before paying.",
+  },
 ];
 
 const locationLinks = [
+  {
+    label: "Hot Springs Web Design",
+    href: "/locations/hot-springs-ar",
+  },
+  {
+    label: "Hot Springs Contractor Websites",
+    href: "/hot-springs-contractor-websites",
+  },
+  {
+    label: "Hot Springs Vacation Rental Websites",
+    href: "/hot-springs-vacation-rental-websites",
+  },
   {
     label: "Arkadelphia Web Design",
     href: "/locations/arkadelphia-ar",
   },
   {
-    label: "Hot Springs Web Design",
-    href: "/locations/hot-springs-ar",
+    label: "Glenwood Web Design",
+    href: "/locations/glenwood-ar",
   },
   {
     label: "Benton Web Design",
@@ -186,9 +202,9 @@ export default function Header() {
           </nav>
 
           {/* CTA */}
-          <Link href="/contact" className="btn btn-primary text-sm">
-            Get a free preview
-          </Link>
+        <Link href="/free-preview" className="btn btn-primary text-sm">
+  Get a free preview
+</Link>
         </div>
       </div>
     </header>

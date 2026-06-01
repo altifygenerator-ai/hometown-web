@@ -1,24 +1,34 @@
 import Link from "next/link";
 
+const rentalFeatures = [
+  "Airbnb / Vrbo friendly",
+  "Direct booking links",
+  "Photo-first layout",
+  "Local area guide content",
+  "Cabin brand page",
+  "Google-ready structure",
+];
+
 export default function VacationRentalPreview() {
   return (
-    <section className="bg-[var(--bg-alt)] px-6 py-24 md:py-28">
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="mb-4 text-sm text-[var(--text-soft)]">
-              Cabin & rental websites
-            </p>
+    <section className="relative overflow-hidden bg-[var(--bg-main)] px-6 py-24 md:py-28">
+      <div className="pointer-events-none absolute right-[-180px] top-20 h-[360px] w-[360px] rounded-full bg-[var(--accent)] opacity-[0.045] blur-[120px]" />
 
-            <h2 className="max-w-xl text-3xl leading-tight md:text-5xl">
-              I also build websites for cabins, Airbnbs, and vacation rentals.
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div>
+            <p className="section-kicker mb-4">Cabins & rentals</p>
+
+            <h2 className="text-balance max-w-2xl text-4xl leading-tight md:text-6xl">
+              Airbnb is where people book. Your website is where they remember
+              you.
             </h2>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--text-soft)]">
-              Booking sites are useful, but your rental should have its own
-              place online too. A clean website helps your cabin or vacation
-              rental look more official, show up easier in search, and give
-              guests a better experience before they book.
+              I also build websites for cabins, Airbnbs, vacation rentals, and
+              local stays that need a cleaner home online. Booking platforms are
+              useful, but your own site can show the property better, support
+              Google searches, and make the rental feel more official.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -32,30 +42,34 @@ export default function VacationRentalPreview() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-[var(--border-soft)] bg-[var(--bg-card)] p-6 md:p-8">
+          <div className="premium-shell rounded-[2rem] p-6 md:p-8">
             <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                "Airbnb / Vrbo friendly",
-                "Direct booking links",
-                "Photo-first layouts",
-                "Local area content",
-                "Cabin brand pages",
-                "Google-ready structure",
-              ].map((item) => (
+              {rentalFeatures.map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-main)] px-5 py-4 text-sm text-[var(--text-soft)]"
+                  className="rounded-2xl border border-[var(--border-soft)] bg-white px-5 py-4 text-sm text-[var(--text-soft)]"
                 >
                   {item}
                 </div>
               ))}
             </div>
 
-            <p className="mt-8 border-t border-[var(--border-soft)] pt-5 text-sm leading-7 text-[var(--text-soft)]">
-              Good fit for cabins, lake rentals, short-term rentals, tiny homes,
-              lodges, vacation homes, and property owners who want something
-              cleaner than only sending people to a crowded booking platform.
-            </p>
+            <div className="mt-8 rounded-[1.5rem] bg-[var(--text-main)] p-6 text-white">
+              <p className="text-sm font-medium text-white/70">
+                Good fit for
+              </p>
+
+              <p className="mt-3 text-2xl leading-tight">
+                Cabins, lake rentals, short-term rentals, tiny homes, lodges,
+                vacation homes, and boutique stays.
+              </p>
+
+              <p className="mt-5 text-sm leading-7 text-white/65">
+                Especially when the photos are strong and the property has a
+                story, local area, or experience worth showing beyond a booking
+                platform listing.
+              </p>
+            </div>
           </div>
         </div>
       </div>

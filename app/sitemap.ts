@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 const siteUrl = "https://hometownwebservicesar.cc";
 
-const lastModified = new Date("2026-05-13");
+const lastModified = new Date("2026-06-01");
 
 const locationSlugs = [
   "arkadelphia-ar",
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteUrl}/locations/${slug}`,
     lastModified,
     changeFrequency: "monthly",
-    priority: 0.7,
+    priority: slug === "hot-springs-ar" ? 0.85 : 0.7,
   }));
 
   const servicePages: MetadataRoute.Sitemap = [
@@ -33,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly",
       priority: 0.85,
+    },
+    {
+      url: `${siteUrl}/free-preview`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     {
       url: `${siteUrl}/contractor-websites`,
@@ -51,6 +57,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/hot-springs-contractor-websites`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${siteUrl}/hot-springs-vacation-rental-websites`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
   ];
 

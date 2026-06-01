@@ -9,9 +9,10 @@ export const hotSpringsLocation: LocationData = {
   url: `${siteUrl}/locations/hot-springs-ar`,
 
   metadata: {
-    title: "Web Design in Hot Springs, AR | Hometown Web Services",
+    title:
+      "Web Design in Hot Springs, AR | Small Business & Contractor Websites",
     description:
-      "Web design and local SEO for Hot Springs, Arkansas businesses including cabins, restaurants, contractors, cleaning companies, tourism businesses, and local service providers.",
+      "Web design and local SEO for Hot Springs, Arkansas contractors, cabins, vacation rentals, restaurants, cleaning companies, tourism businesses, shops, and local service providers.",
     alternates: {
       canonical: `${siteUrl}/locations/hot-springs-ar`,
     },
@@ -20,9 +21,9 @@ export const hotSpringsLocation: LocationData = {
   hero: {
     eyebrow: "Hot Springs Web Design",
     title:
-      "Web design in Hot Springs, Arkansas for businesses that need more calls.",
+      "Web design in Hot Springs for businesses that need more calls, trust, and local visibility.",
     description:
-      "I build clean, mobile-friendly websites for Hot Springs cabins, restaurants, contractors, cleaning companies, tourism businesses, local shops, and service businesses that need to look better online and show up stronger on Google.",
+      "I build clean, mobile-friendly websites for Hot Springs contractors, cabins, vacation rentals, restaurants, cleaning companies, tourism businesses, local shops, and service businesses that need a stronger online presence and an easier way for customers to reach out.",
     primaryCta: "Get a free preview",
     secondaryCta: "View services",
   },
@@ -30,79 +31,95 @@ export const hotSpringsLocation: LocationData = {
   trustItems: [
     "Free preview before you pay",
     "Built for Google and mobile",
-    "Arkansas-based web design",
+    "Designed around calls and quote requests",
   ],
 
   intro: {
     eyebrow: "Built for Hot Springs businesses",
     title:
-      "A better website for a city built around tourism, local search, and trust.",
+      "A better website for a city built around tourism, local search, and first impressions.",
     paragraphs: [
-      "Hot Springs businesses compete for both locals and visitors. Whether someone is searching for a cabin, restaurant, contractor, cleaning company, local shop, or tourism business, your website needs to make the next step obvious.",
-      "I build websites that organize your services, photos, reviews, service areas, and contact options in one clear place so people do not have to dig through Facebook or guess how to reach you.",
+      "Hot Springs businesses compete for attention from locals, visitors, homeowners, property owners, and people searching on their phones. Whether someone is looking for a cabin, restaurant, contractor, cleaning company, local shop, or tourism business, the website needs to make the business easy to understand and easy to contact.",
+      "A lot of local businesses already have good work, good photos, and active Facebook pages. The problem is that Facebook is not always enough. A website gives customers one clear place to see your services, photos, reviews, service areas, hours, booking links, quote options, and contact information.",
+      "I build Hot Springs websites around the way people actually search and decide: quick mobile layout, clear calls-to-action, real proof, local wording, Google-friendly structure, and a clean design that makes the business feel more trustworthy before the first call.",
     ],
   },
 
   services: [
     {
       title: "Small business website design",
-      text: "Clean websites that explain what you do, where you work, and how people can contact you.",
+      text: "Clean websites for Hot Springs businesses that need to explain services, show proof, and make it easy for customers to call, text, book, or request a quote.",
     },
     {
-      title: "Local SEO structure",
-      text: "Pages, headings, metadata, and local wording built around Hot Springs search visibility.",
+      title: "Contractor and service business websites",
+      text: "Websites for remodelers, roofers, plumbers, landscapers, cleaners, dirt work companies, home service businesses, and other trades serving Hot Springs and nearby areas.",
     },
     {
-      title: "Tourism business websites",
-      text: "Websites for cabins, local guides, attractions, restaurants, and businesses serving visitors.",
+      title: "Cabin, rental, and tourism websites",
+      text: "Photo-first websites for cabins, Airbnbs, vacation rentals, restaurants, attractions, local guides, and businesses that rely on visitor traffic.",
     },
     {
-      title: "Google Business Profile help",
-      text: "Support for your Google listing so your website and local presence work together.",
+      title: "Local SEO and Google structure",
+      text: "Page structure, headings, metadata, service-area wording, and Google Business Profile support to help search engines better understand your business.",
     },
   ],
 
   seoBlock: {
     eyebrow: "Local visibility",
-    title: "Hot Springs customers are searching before they call.",
+    title: "Hot Springs customers usually search before they call.",
     text:
-      "A good website helps Google understand your services, service areas, and business information while giving customers a clear reason to trust you.",
+      "A good website helps Google understand what your business does, where you work, and why customers should trust you. For Hot Springs businesses, that can mean stronger service pages, clearer local wording, better mobile layout, review placement, photo sections, and contact paths built around calls, quote requests, bookings, and directions.",
     nearbyAreas: [
       "Lake Hamilton",
       "Hot Springs Village",
       "Mountain Pine",
       "Royal",
+      "Rockwell",
+      "Lake Catherine",
       "Garland County",
     ],
   },
 
   industries: [
-    "Cabins and vacation rentals",
-    "Restaurants and coffee shops",
     "Contractors and remodelers",
+    "Roofers and construction companies",
+    "Plumbers and home service businesses",
     "Cleaning companies",
-    "Local shops",
-    "Tourism businesses",
-    "Home service companies",
+    "Lawn care and property services",
+    "Cabins and vacation rentals",
+    "Restaurants and food trucks",
+    "Coffee shops and local dining",
+    "Tourism businesses and attractions",
+    "Local shops and boutiques",
     "Professional services",
+    "Google-first service businesses",
   ],
 
   faqs: [
     {
-      question: "Do you build websites for Hot Springs tourism businesses?",
+      question: "Do you build websites for Hot Springs contractors?",
       answer:
-        "Yes. I build websites for cabins, vacation rentals, restaurants, local guides, attractions, and businesses that rely on visitor traffic.",
+        "Yes. I build websites for Hot Springs contractors, remodelers, roofers, plumbers, landscapers, cleaning companies, dirt work businesses, and other local service companies that need more calls and quote requests.",
+    },
+    {
+      question: "Do you build websites for Hot Springs cabins and vacation rentals?",
+      answer:
+        "Yes. I build photo-first websites for cabins, Airbnbs, vacation rentals, lake stays, boutique lodging, and rental owners who want a cleaner online presence beyond only Airbnb or Vrbo.",
     },
     {
       question: "Can you help Hot Springs businesses show up better on Google?",
       answer:
-        "Yes. I can build the site with local SEO structure, service pages, location wording, metadata, and Google Business Profile support.",
+        "Yes. I build websites with local SEO structure, service-area wording, metadata, headings, internal links, and Google Business Profile support so Google can better understand the business and the areas it serves.",
     },
     {
-      question:
-        "Do you work with contractors and service businesses in Hot Springs?",
+      question: "Can you use my Facebook page to build the site?",
       answer:
-        "Yes. I build websites for contractors, remodelers, plumbers, cleaners, landscapers, and other local service businesses.",
+        "Yes. Many Hot Springs businesses already have photos, service details, reviews, menus, hours, or updates on Facebook. I can use that as a starting point and turn it into a cleaner website.",
+    },
+    {
+      question: "Do I have to pay before seeing anything?",
+      answer:
+        "No. I can put together a free preview first so you can see the direction before committing.",
     },
   ],
 
@@ -118,15 +135,37 @@ export const hotSpringsLocation: LocationData = {
         "@id": `${siteUrl}/#business`,
         name: "Hometown Web Services",
         url: siteUrl,
+        telephone: "+18702604880",
       },
-      areaServed: {
-        "@type": "City",
-        name: "Hot Springs",
-        addressRegion: "AR",
-      },
-      serviceType: "Web Design and Local SEO",
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Hot Springs",
+          addressRegion: "AR",
+        },
+        {
+          "@type": "Place",
+          name: "Lake Hamilton",
+        },
+        {
+          "@type": "Place",
+          name: "Hot Springs Village",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Garland County",
+        },
+      ],
+      serviceType: [
+        "Web Design",
+        "Local SEO",
+        "Contractor Website Design",
+        "Small Business Website Design",
+        "Vacation Rental Website Design",
+        "Google Business Profile Optimization",
+      ],
       description:
-        "Web design and local SEO services for Hot Springs, Arkansas small businesses, contractors, restaurants, cabins, tourism businesses, and local service providers.",
+        "Web design and local SEO services for Hot Springs, Arkansas small businesses, contractors, restaurants, cabins, vacation rentals, tourism businesses, cleaning companies, and local service providers.",
     },
   ],
 };
