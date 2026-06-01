@@ -8,7 +8,6 @@ export default function robots(): MetadataRoute.Robots {
     },
     sitemap: [
       "https://hometownwebservicesar.cc/sitemap.xml",
-      "https://hometownwebservicesar.cc/sitemap-main.xml",
     ],
   };
 }
