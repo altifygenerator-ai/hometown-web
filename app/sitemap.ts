@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
 
-export const dynamic = "force-static";
-
 const siteUrl = "https://hometownwebservicesar.cc";
 
 const lastModified = new Date("2026-06-01");
