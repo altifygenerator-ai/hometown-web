@@ -9,7 +9,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://hometownwebservicesar.cc";
+const siteUrl = "https://hometownwebservicesar.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -92,9 +92,12 @@ export const metadata: Metadata = {
   "website and SEO packages Arkansas",
   "website designer for local businesses",
 ],
-  verification: {
-    google: "qwoscScnZDrLEfuFVsxQ0R325hXoU6TI4OE1f6arJpA",
-  },
+verification: {
+  google: [
+    "qwoscScnZDrLEfuFVsxQ0R325hXoU6TI4OE1f6arJpA",
+    "X2qa6b79L57n822AJDaQUwD2esN20h9ES72SmjWBGg8",
+  ],
+},
 
   openGraph: {
     title: "Arkansas Web Design for Small Businesses",
