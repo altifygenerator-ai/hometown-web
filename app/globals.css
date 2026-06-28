@@ -245,7 +245,9 @@ select {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: #050505;
 }
 
 .video-card::after {
@@ -257,7 +259,6 @@ select {
     linear-gradient(to right, rgba(0, 0, 0, 0.18), transparent 44%);
   pointer-events: none;
 }
-
 .section-kicker {
   font-size: 0.78rem;
   font-weight: 600;

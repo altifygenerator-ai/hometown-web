@@ -1,13 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const trustItems = [
-  "Free preview before you pay",
-  "Mobile-first websites",
-  "Built around calls and leads",
+  "Free working preview before you pay",
+  "Built around calls, texts, and Google",
+  "Clear pricing with no pressure",
 ];
 
 export default function Hero() {
@@ -41,11 +40,11 @@ export default function Hero() {
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link href="/free-preview" className="btn btn-primary">
-                Get a free preview
+                Get your free preview now
               </Link>
 
               <Link href="/portfolio" className="btn btn-secondary">
-                View work
+                See recent work
               </Link>
             </div>
 
@@ -72,43 +71,29 @@ export default function Hero() {
             <div className="relative rounded-[2.25rem] border border-[var(--border-soft)] bg-white p-3 shadow-[var(--shadow-strong)]">
               <div className="video-card h-[360px] md:h-[520px]">
                 <video
-                  src="/videos/onyxridge.mp4"
+                  src="/videos/newatlivingwaterfinished.mp4"
                   autoPlay
                   muted
                   loop
                   playsInline
                   preload="metadata"
                   poster="/og-image.png"
-                  className="h-full w-full object-cover"
+                  className="hero-demo-video"
                 />
 
-                <div className="absolute bottom-0 left-0 z-10 p-6 md:p-8">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/65">
-                    Demo preview
-                  </p>
-
-                  <h2 className="mt-3 max-w-md text-3xl leading-tight text-white md:text-4xl">
-                    Real layouts built around trust, calls, and local searches.
-                  </h2>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-6 left-6 right-6 z-20 rounded-[1.5rem] border border-white/50 bg-white/92 p-4 shadow-[var(--shadow-soft)] backdrop-blur md:left-auto md:right-8 md:w-[300px]">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Hometown Web Services"
-                    width={44}
-                    height={44}
-                    className="h-11 w-11 rounded-full object-contain"
-                  />
-
-                  <div>
-                    <p className="text-sm font-semibold text-[var(--text-main)]">
-                      Preview first process
+                <div className="absolute bottom-0 left-0 z-20 p-5 md:p-7">
+                  <div className="max-w-md rounded-2xl border border-white/10 bg-black/65 p-5 shadow-2xl backdrop-blur-md md:p-6">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">
+                      Live project preview
                     </p>
-                    <p className="mt-1 text-xs leading-5 text-[var(--text-soft)]">
-                      See a working version before committing.
+
+                    <h2 className="mt-3 text-2xl leading-tight text-white md:text-4xl">
+                      See the direction first, then decide if it fits.
+                    </h2>
+
+                    <p className="mt-3 text-sm leading-6 text-white/75">
+                      A real working preview gives you something to judge before
+                      you spend money on a full build.
                     </p>
                   </div>
                 </div>

@@ -49,34 +49,90 @@ export const metadata = {
 };
 
 const featuredProjects: PortfolioProject[] = [
+
   {
-    title: "Onyx Ridge Building Solutions",
-    category: "Construction and Remodeling",
-    videos: ["/videos/onyxridge.mp4"],
+    title: "At Living Water Cabins",
+    category: "Cabins and Direct Booking",
+    videos: ["/videos/newatlivingwaterfinished.mp4"],
     summary:
-      "A dark, rugged contractor site built around remodeling, new construction, plumbing, and strong trust-based service positioning.",
-    tags: ["Construction", "Remodeling", "Contractor"],
-    live: { url: "https://onyxridge.net/" },
+      "A warm cabin rental website built to help guests understand the cabins, check availability, and book direct instead of only relying on Airbnb.",
+    tags: ["Cabins", "Direct Booking", "OwnerRez"],
+    live: { url: "https://atlivingwatercabins.com/" },
   },
   {
-    title: "Precision Turf Co.",
-    category: "Lawn Care",
-    videos: ["/videos/PrecisionTurfDemo.mp4"],
+    title: "TrueClean Solutions",
+    category: "Exterior Cleaning",
+    videos: ["/videos/truecleanlive.mp4"],
     summary:
-      "A premium lawn care website demo built around a branded service program, strong visuals, clear offers, and local lead generation.",
-    tags: ["Lawn Care", "Premium", "Lead Generation"],
+      "A bold service business site built for soft washing, exterior cleaning, storefront cleaning, and quote requests across South Georgia.",
+    tags: ["Service Business", "Soft Washing", "Local SEO"],
+    live: { url: "https://truecleansolutionsga.com/" },
   },
   {
-    title: "Mayo’s Remodeling",
-    category: "Remodeling and Contractor",
-    videos: ["/videos/mayos.mp4", "/videos/mayosforcapcut.mp4"],
+    title: "Lakes Area R&R",
+    category: "Local Business and Recreation",
+    videos: ["/videos/lakesrnrlive.mp4"],
     summary:
-      "A modern remodeling website demo designed to showcase services, project photos, trust points, and easy quote requests for homeowners.",
-    tags: ["Remodeling", "Contractor", "Quote Requests"],
+      "A cleaner rebuild for a Minnesota recreation business, organizing rentals, local links, shopping, food, and visitor info into one easier site.",
+    tags: ["Rebuild", "Local Business", "Tourism"],
+    live: { url: "https://lakesarearandr.com/" },
   },
 ];
 
 const liveClientProjects: PortfolioProject[] = [
+  {
+    title: "At Living Water Cabins",
+    category: "Cabins and Direct Booking",
+    videos: ["/videos/newatlivingwaterfinished.mp4"],
+    summary:
+      "A cabin rental site built around direct booking, clear cabin details, real photos, and an easier way for guests to check availability.",
+    tags: ["Cabins", "Direct Booking", "Lodging"],
+    live: { url: "https://atlivingwatercabins.com/" },
+  },
+  {
+    title: "TrueClean Solutions",
+    category: "Exterior Cleaning",
+    videos: ["/videos/truecleanlive.mp4"],
+    summary:
+      "A polished service website built to make pressure washing, soft washing, concrete cleaning, and storefront cleaning easier to understand and request.",
+    tags: ["Cleaning", "Service Business", "Quotes"],
+    live: { url: "https://truecleansolutionsga.com/" },
+  },
+  {
+    title: "Lakes Area R&R",
+    category: "Recreation and Local Business",
+    videos: ["/videos/lakesrnrlive.mp4"],
+    summary:
+      "A rebuild that organizes recreation rentals, local links, shopping, coffee, and visitor info into a cleaner, more useful site.",
+    tags: ["Rebuild", "Recreation", "Local Guide"],
+    live: { url: "https://lakesarearandr.com/" },
+  },
+  {
+    title: "Arkansas Geek",
+    category: "Computer Repair and Specialty Repair",
+    videos: ["/videos/geek.mp4"],
+    summary:
+      "A two-lane website built to separate computer repair from air-cooled Volkswagen repair while keeping the brand simple and easy to follow.",
+    tags: ["Computer Repair", "Specialty", "Simple Structure"],
+    live: { url: "https://arkansasgeek.com/" },
+  },
+  {
+    title: "Billhilly Lawncare",
+    category: "Lawn Care",
+    videos: ["/videos/billhillynew.mp4"],
+    summary:
+      "A clean lawn care website built around trust, service areas, recent work, reviews, and simple ways for customers to call or request a quote.",
+    tags: ["Lawn Care", "Reviews", "Local SEO"],
+  },
+  {
+    title: "Apex",
+    category: "Commercial and Service Business",
+    videos: ["/videos/apexlive.mp4"],
+    summary:
+      "A sharper business website layout built to make services easier to understand and give the company a stronger first impression online.",
+    tags: ["Commercial", "Services", "Branding"],
+  },
+  
   {
     title: "Onward And Upward",
     category: "Landscaping",
@@ -125,6 +181,31 @@ const liveClientProjects: PortfolioProject[] = [
 ];
 
 const contractorAndServiceDemos: PortfolioProject[] = [
+   {
+    title: "Mayo’s Remodeling",
+    category: "Remodeling and Contractor",
+    videos: ["/videos/mayosforcapcut.mp4"],
+    summary:
+      "A modern remodeling website demo built to show services, project photos, trust points, and easy quote requests for homeowners.",
+    tags: ["Remodeling", "Contractor", "Quote Requests"],
+  },
+  {
+    title: "Onyx Ridge Building Solutions",
+    category: "Construction and Remodeling",
+    videos: ["/videos/onyxridge.mp4"],
+    summary:
+      "A dark, rugged contractor site built around remodeling, new construction, plumbing, and strong trust-based service positioning.",
+    tags: ["Construction", "Remodeling", "Contractor"],
+    live: { url: "https://onyxridge.net/" },
+  },
+  {
+    title: "Precision Turf Co.",
+    category: "Lawn Care",
+    videos: ["/videos/PrecisionTurfDemo.mp4"],
+    summary:
+      "A premium lawn care website demo built around a branded service program, strong visuals, clear offers, and local lead generation.",
+    tags: ["Lawn Care", "Premium", "Lead Generation"],
+  },
   {
     title: "Bennett Handyman Services",
     category: "Handyman and Home Services",

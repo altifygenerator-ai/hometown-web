@@ -5,25 +5,25 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "Onyx Ridge",
-    label: "Contractor Website",
+    title: "TrueClean Solutions",
+    label: "Exterior Cleaning Website",
     description:
-      "A rugged contractor-style website built to make services, trust, service areas, and call buttons obvious on mobile.",
-    video: "/videos/onyxridge.mp4",
+      "A bold service business site built to make soft washing, exterior cleaning, concrete cleaning, and quote requests easy to understand and act on.",
+    video: "/videos/truecleanlive.mp4",
   },
   {
-    title: "Mayo’s Remodeling Demo",
-    label: "Remodeling Demo",
+    title: "Lakes Area R&R",
+    label: "Local Business Rebuild",
     description:
-      "A remodeler-focused demo showing how real project photos, clearer service sections, and stronger layout can make the business feel more trustworthy.",
-    video: "/videos/mayos.mp4",
+      "A cleaner rebuild for a recreation business, organizing rentals, local links, shopping, coffee, and visitor info into one easier site.",
+    video: "/videos/lakesrnrlive.mp4",
   },
   {
-    title: "Precision Turf Co. Demo",
-    label: "Lawn Care Demo",
+    title: "Arkansas Geek",
+    label: "Specialty Service Website",
     description:
-      "A premium lawn care demo built around service packages, quote requests, and a cleaner high-end brand feel.",
-    video: "/videos/PrecisionTurfDemo.mp4",
+      "A two-lane website built to separate computer repair from air-cooled Volkswagen repair while keeping the brand simple, clean, and easy to follow.",
+    video: "/videos/geek.mp4",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function FeaturedWork() {
                 loop
                 playsInline
                 preload="metadata"
-                className="h-[380px] w-full object-cover transition duration-700 group-hover:scale-[1.02] md:h-[560px]"
+                className="h-[380px] w-full bg-black object-contain md:h-[560px]"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/30 to-transparent" />
@@ -143,7 +143,7 @@ export default function FeaturedWork() {
                       loop
                       playsInline
                       preload="metadata"
-                      className="h-[260px] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                      className="h-[260px] w-full bg-black object-contain"
                     />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
