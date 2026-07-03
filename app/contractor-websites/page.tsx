@@ -5,7 +5,7 @@ import Header from "@/components/sections/Header";
 import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
 
-const siteUrl = "https://hometownwebservicesar.cc";
+const siteUrl = "https://hometownwebservicesar.com";
 
 export const metadata: Metadata = {
   title: "Contractor Website Design in Arkansas | Hometown Web Services",

@@ -7,7 +7,7 @@ import Footer from "@/components/sections/Footer";
 import CTA from "@/components/sections/CTA";
 import Reveal from "@/components/ui/RevealV2";
 
-const siteUrl = "https://hometownwebservicesar.cc";
+const siteUrl = "https://hometownwebservicesar.com";
 
 export const metadata: Metadata = {
   title: "Local SEO Services Arkansas | Hometown Web Services",

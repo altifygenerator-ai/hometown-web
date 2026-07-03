@@ -4,7 +4,7 @@ import Link from "next/link";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 
-const siteUrl = "https://hometownwebservicesar.cc";
+const siteUrl = "https://hometownwebservicesar.com";
 
 export const metadata: Metadata = {
   title:

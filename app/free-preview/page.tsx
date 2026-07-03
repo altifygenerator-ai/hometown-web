@@ -4,7 +4,7 @@ import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import FreePreviewForm from "@/components/FreePreviewForm";
 
-const siteUrl = "https://hometownwebservicesar.cc";
+const siteUrl = "https://hometownwebservicesar.com";
 
 export const metadata: Metadata = {
   title: "Get a Free Website Preview | Hometown Web Services",
