@@ -1,6 +1,6 @@
 import type { LocationData } from "./types";
 
-const siteUrl = "https://hometownwebservicesar.com";
+const siteUrl = "https://www.hometownwebservicesar.com";
 
 export const bentonLocation: LocationData = {
   city: "Benton",

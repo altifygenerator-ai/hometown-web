@@ -103,7 +103,7 @@ export default function ServicesPage() {
               provider: {
                 "@type": "ProfessionalService",
                 name: "Hometown Web Services",
-                url: "https://hometownwebservicesar.com",
+                url: "https://www.hometownwebservicesar.com",
               },
               areaServed: {
                 "@type": "State",

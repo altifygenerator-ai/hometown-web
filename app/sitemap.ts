@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://hometownwebservicesar.com";
+const siteUrl = "https://www.hometownwebservicesar.com";
 
 const lastModified = new Date("2026-06-01");
 

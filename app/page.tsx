@@ -8,7 +8,7 @@ import Footer from "@/components/sections/Footer";
 import Testimonials from "@/components/sections/Testimonials";
 import FAQSection, { faqs } from "@/components/sections/FAQSection";
 import VacationRentalPreview from "@/components/sections/VacationRentalPreview";
-const siteUrl = "https://hometownwebservicesar.com";
+const siteUrl = "https://www.hometownwebservicesar.com";
 
 const homeSchema = [
   {

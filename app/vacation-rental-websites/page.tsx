@@ -3,7 +3,7 @@ import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import CTA from "@/components/sections/CTA";
 
-const siteUrl = "https://hometownwebservicesar.com";
+const siteUrl = "https://www.hometownwebservicesar.com";
 
 export const metadata = {
   title: "Vacation Rental Website Design in Arkansas | Hometown Web Services",

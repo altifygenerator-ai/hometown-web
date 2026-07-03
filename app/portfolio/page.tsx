@@ -28,13 +28,13 @@ export const metadata = {
   description:
     "A portfolio of websites, demos, and local business projects built by Hometown Web Services for Arkansas contractors, service businesses, tourism sites, restaurants, education, rentals, and small businesses.",
   alternates: {
-    canonical: "https://hometownwebservicesar.com/portfolio",
+    canonical: "https://www.hometownwebservicesar.com/portfolio",
   },
   openGraph: {
     title: "Website Portfolio | Hometown Web Services",
     description:
       "Selected website projects and demos built for local businesses, contractors, service companies, tourism sites, and Arkansas small businesses.",
-    url: "https://hometownwebservicesar.com/portfolio",
+    url: "https://www.hometownwebservicesar.com/portfolio",
     siteName: "Hometown Web Services",
     type: "website",
     images: [
@@ -439,18 +439,18 @@ export default function PortfolioPage() {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: "Hometown Web Services Portfolio",
-      url: "https://hometownwebservicesar.com/portfolio",
+      url: "https://www.hometownwebservicesar.com/portfolio",
       description:
         "Selected website projects, live websites, demos, local business websites, contractor websites, tourism sites, and web tools built by Hometown Web Services.",
       isPartOf: {
         "@type": "WebSite",
         name: "Hometown Web Services",
-        url: "https://hometownwebservicesar.com",
+        url: "https://www.hometownwebservicesar.com",
       },
       about: {
         "@type": "ProfessionalService",
         name: "Hometown Web Services",
-        url: "https://hometownwebservicesar.com",
+        url: "https://www.hometownwebservicesar.com",
       },
     },
     {

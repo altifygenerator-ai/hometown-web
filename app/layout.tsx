@@ -9,7 +9,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://hometownwebservicesar.com";
+const siteUrl = "https://www.hometownwebservicesar.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
