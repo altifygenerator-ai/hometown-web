@@ -9,7 +9,7 @@ export const arkadelphiaLocation: LocationData = {
   url: `${siteUrl}/locations/arkadelphia-ar`,
 
   metadata: {
-    title: "Web Design in Arkadelphia, AR | Hometown Web Services",
+    title: "Web Design in Arkadelphia, AR",
     description:
       "Web design and local SEO for Arkadelphia, Arkansas businesses, contractors, restaurants, shops, service companies, and businesses serving DeGray Lake and Caddo Valley.",
     alternates: {

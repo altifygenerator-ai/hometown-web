@@ -1,11 +1,33 @@
+import type { Metadata } from "next";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import PricingSection from "@/components/sections/PricingSection";
 
-export const metadata = {
+
+const siteUrl = "https://www.hometownwebservicesar.com";
+export const metadata: Metadata = {
   title: "Web Design & SEO Services in Arkansas",
   description:
     "Professional websites and SEO for Arkansas small businesses. Built to help you show up on Google and get more leads.",
+  alternates: {
+    canonical: `${siteUrl}/services`,
+  },
+  openGraph: {
+    title: "Web Design & SEO Services in Arkansas",
+    description:
+      "Professional websites, local SEO, and Google Business Profile help for Arkansas small businesses.",
+    url: `${siteUrl}/services`,
+    siteName: "Hometown Web Services",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Arkansas web design and local SEO services",
+      },
+    ],
+  },
 };
 
 const services = [

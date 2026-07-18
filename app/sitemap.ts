@@ -2,8 +2,6 @@ import type { MetadataRoute } from "next";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
-const lastModified = new Date("2026-06-01");
-
 const locationSlugs = [
   "arkadelphia-ar",
   "hot-springs-ar",
@@ -20,7 +18,6 @@ const locationSlugs = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const locationPages: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
     url: `${siteUrl}/locations/${slug}`,
-    lastModified,
     changeFrequency: "monthly",
     priority: slug === "hot-springs-ar" ? 0.85 : 0.7,
   }));
@@ -28,44 +25,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages: MetadataRoute.Sitemap = [
     {
       url: `${siteUrl}/services`,
-      lastModified,
-      changeFrequency: "monthly",
+    changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${siteUrl}/free-preview`,
-      lastModified,
-      changeFrequency: "monthly",
+    changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/contractor-websites`,
-      lastModified,
-      changeFrequency: "monthly",
+    changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/vacation-rental-websites`,
-      lastModified,
-      changeFrequency: "monthly",
+    changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/local-seo-arkansas`,
-      lastModified,
-      changeFrequency: "monthly",
+    changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/hot-springs-contractor-websites`,
-      lastModified,
-      changeFrequency: "monthly",
+    changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${siteUrl}/hot-springs-vacation-rental-websites`,
-      lastModified,
-      changeFrequency: "monthly",
+    changeFrequency: "monthly",
       priority: 0.85,
     },
   ];
@@ -73,14 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${siteUrl}/`,
-      lastModified,
-      changeFrequency: "weekly",
+    changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${siteUrl}/portfolio`,
-      lastModified,
-      changeFrequency: "monthly",
+    changeFrequency: "monthly",
       priority: 0.8,
     },
     ...servicePages,

@@ -9,7 +9,7 @@ export const littleRockLocation: LocationData = {
   url: `${siteUrl}/locations/little-rock-ar`,
 
   metadata: {
-    title: "Web Design in Little Rock, AR | Hometown Web Services",
+    title: "Web Design in Little Rock, AR",
     description:
       "Web design and local SEO for Little Rock, Arkansas contractors, service businesses, restaurants, professional services, shops, and local companies.",
     alternates: {

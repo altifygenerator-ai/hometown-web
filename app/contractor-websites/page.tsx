@@ -8,7 +8,7 @@ import Footer from "@/components/sections/Footer";
 const siteUrl = "https://www.hometownwebservicesar.com";
 
 export const metadata: Metadata = {
-  title: "Contractor Website Design in Arkansas | Hometown Web Services",
+  title: "Contractor Website Design in Arkansas",
   description:
     "Contractor website design for Arkansas roofers, remodelers, plumbers, electricians, landscapers, dirt work companies, and local service businesses that need more calls, trust, and local visibility.",
   keywords: [

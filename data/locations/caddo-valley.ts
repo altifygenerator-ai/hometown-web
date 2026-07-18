@@ -9,7 +9,7 @@ export const caddoValleyLocation: LocationData = {
   url: `${siteUrl}/locations/caddo-valley-ar`,
 
   metadata: {
-    title: "Web Design in Caddo Valley, AR | Hometown Web Services",
+    title: "Web Design in Caddo Valley, AR",
     description:
       "Web design and local SEO for Caddo Valley, Arkansas businesses including lodging, restaurants, tourism businesses, contractors, shops, and service providers near DeGray Lake.",
     alternates: {

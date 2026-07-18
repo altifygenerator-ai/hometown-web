@@ -9,7 +9,7 @@ export const bryantLocation: LocationData = {
   url: `${siteUrl}/locations/bryant-ar`,
 
   metadata: {
-    title: "Web Design in Bryant, AR | Hometown Web Services",
+    title: "Web Design in Bryant, AR",
     description:
       "Web design and local SEO for Bryant, Arkansas contractors, service businesses, restaurants, cleaning companies, shops, and small businesses serving Saline County.",
     alternates: {

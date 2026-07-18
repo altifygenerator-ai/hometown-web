@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import FeaturedWork from "@/components/sections/FeaturedWork";
@@ -10,6 +11,12 @@ import FAQSection, { faqs } from "@/components/sections/FAQSection";
 import VacationRentalPreview from "@/components/sections/VacationRentalPreview";
 const siteUrl = "https://www.hometownwebservicesar.com";
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: siteUrl,
+  },
+};
+
 const homeSchema = [
   {
     "@context": "https://schema.org",
@@ -18,7 +25,7 @@ const homeSchema = [
     name: "Hometown Web Services",
     url: siteUrl,
     telephone: "+18702604880",
-    email: "altifygenerator@gmail.com",
+    email: "hello@hometownwebservicesar.com",
     description:
       "Arkansas web design, local SEO, and Google-ready websites for small businesses, contractors, service businesses, restaurants, tourism businesses, and local companies.",
     areaServed: [

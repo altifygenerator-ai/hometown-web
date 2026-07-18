@@ -6,7 +6,7 @@ import CTA from "@/components/sections/CTA";
 const siteUrl = "https://www.hometownwebservicesar.com";
 
 export const metadata = {
-  title: "Vacation Rental Website Design in Arkansas | Hometown Web Services",
+  title: "Vacation Rental Website Design in Arkansas",
   description:
     "Website design for Arkansas cabins, Airbnbs, vacation rentals, lodges, and short-term rental owners who want a cleaner brand, easier booking experience, and better visibility outside of crowded booking platforms.",
   alternates: {

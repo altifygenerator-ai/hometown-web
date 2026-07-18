@@ -31,7 +31,7 @@ export const metadata = {
     canonical: "https://www.hometownwebservicesar.com/portfolio",
   },
   openGraph: {
-    title: "Website Portfolio | Hometown Web Services",
+    title: "Website Portfolio",
     description:
       "Selected website projects and demos built for local businesses, contractors, service companies, tourism sites, and Arkansas small businesses.",
     url: "https://www.hometownwebservicesar.com/portfolio",

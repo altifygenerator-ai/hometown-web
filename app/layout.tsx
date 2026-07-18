@@ -136,10 +136,6 @@ verification: {
       "max-video-preview": -1,
     },
   },
-
-  alternates: {
-    canonical: siteUrl,
-  },
 };
 
 export default function RootLayout({
@@ -151,8 +147,11 @@ export default function RootLayout({
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      name: "Hometown Web Services",
-      url: siteUrl,
+      "@id": `${siteUrl}/#business`,
+    name: "Hometown Web Services",
+    url: siteUrl,
+    telephone: "+18702604880",
+    email: "hello@hometownwebservicesar.com",
       areaServed: {
         "@type": "State",
         name: "Arkansas",
@@ -169,8 +168,10 @@ export default function RootLayout({
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "Hometown Web Services",
-      url: siteUrl,
+      "@id": `${siteUrl}/#website`,
+    name: "Hometown Web Services",
+    url: siteUrl,
+    publisher: { "@id": `${siteUrl}/#business` },
     },
   ];
 

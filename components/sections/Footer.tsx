@@ -62,10 +62,10 @@ export default function Footer() {
               </a>
 
               <a
-                href="mailto:hello@hometownwebservicesar.cc"
+                href="mailto:hello@hometownwebservicesar.com"
                 className="hover:text-[var(--text-main)]"
               >
-                hello@hometownwebservicesar.cc
+                hello@hometownwebservicesar.com
               </a>
             </div>
           </div>

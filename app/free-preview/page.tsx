@@ -7,14 +7,14 @@ import FreePreviewForm from "@/components/FreePreviewForm";
 const siteUrl = "https://www.hometownwebservicesar.com";
 
 export const metadata: Metadata = {
-  title: "Get a Free Website Preview | Hometown Web Services",
+  title: "Get a Free Website Preview",
   description:
     "Request a free website preview for your Arkansas small business. Send your business info, Facebook page, photos, and current website to see what your site could look like before paying.",
   alternates: {
     canonical: `${siteUrl}/free-preview`,
   },
   openGraph: {
-    title: "Get a Free Website Preview | Hometown Web Services",
+    title: "Get a Free Website Preview",
     description:
       "See a working website preview for your Arkansas business before committing.",
     url: `${siteUrl}/free-preview`,

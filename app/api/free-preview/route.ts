@@ -51,7 +51,7 @@ ${body.notes || "Not provided"}
 `;
 
     const { error } = await resend.emails.send({
-      from: "Hometown Web Services <hello@hometownwebservicesar.cc>",
+      from: "Hometown Web Services <hello@hometownwebservicesar.com>",
       to: ["altifygenerator@gmail.com"],
       replyTo: body.phoneOrEmail?.includes("@")
         ? body.phoneOrEmail

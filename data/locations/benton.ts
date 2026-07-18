@@ -9,7 +9,7 @@ export const bentonLocation: LocationData = {
   url: `${siteUrl}/locations/benton-ar`,
 
   metadata: {
-    title: "Web Design in Benton, AR | Hometown Web Services",
+    title: "Web Design in Benton, AR",
     description:
       "Web design and local SEO for Benton, Arkansas contractors, service businesses, restaurants, shops, cleaning companies, and small businesses in Saline County.",
     alternates: {

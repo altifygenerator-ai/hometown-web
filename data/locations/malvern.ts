@@ -9,7 +9,7 @@ export const malvernLocation: LocationData = {
   url: `${siteUrl}/locations/malvern-ar`,
 
   metadata: {
-    title: "Web Design in Malvern, AR | Hometown Web Services",
+    title: "Web Design in Malvern, AR",
     description:
       "Web design and local SEO for Malvern, Arkansas contractors, service businesses, restaurants, shops, industrial companies, and small businesses in Hot Spring County.",
     alternates: {

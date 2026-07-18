@@ -10,7 +10,7 @@ import Reveal from "@/components/ui/RevealV2";
 const siteUrl = "https://www.hometownwebservicesar.com";
 
 export const metadata: Metadata = {
-  title: "Local SEO Services Arkansas | Hometown Web Services",
+  title: "Local SEO Services Arkansas",
   description:
     "Local SEO services for Arkansas contractors and small businesses. Google Business Profile optimization, service pages, website structure, and local visibility improvements.",
   keywords: [

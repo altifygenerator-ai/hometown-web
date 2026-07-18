@@ -9,7 +9,7 @@ export const maumelleLocation: LocationData = {
   url: `${siteUrl}/locations/maumelle-ar`,
 
   metadata: {
-    title: "Web Design in Maumelle, AR | Hometown Web Services",
+    title: "Web Design in Maumelle, AR",
     description:
       "Web design and local SEO for Maumelle, Arkansas contractors, professional services, home service businesses, restaurants, shops, and small businesses.",
     alternates: {
