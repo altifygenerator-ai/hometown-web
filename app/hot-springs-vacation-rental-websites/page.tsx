@@ -3,34 +3,17 @@ import Link from "next/link";
 
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
+import { createPageMetadata } from "@/lib/seo";
+import { PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
-export const metadata: Metadata = {
-  title:
-    "Hot Springs Vacation Rental Website Design | Cabin & Airbnb Websites",
+export const metadata: Metadata = createPageMetadata({
+  title: "Hot Springs Vacation Rental Web Design",
   description:
-    "Website design for Hot Springs cabins, Airbnbs, vacation rentals, lake stays, boutique lodging, and rental owners who want a stronger online presence beyond booking platforms.",
-  alternates: {
-    canonical: `${siteUrl}/hot-springs-vacation-rental-websites`,
-  },
-  openGraph: {
-    title: "Hot Springs Vacation Rental Website Design",
-    description:
-      "Photo-first websites for Hot Springs cabins, Airbnbs, vacation rentals, lake stays, and boutique lodging.",
-    url: `${siteUrl}/hot-springs-vacation-rental-websites`,
-    siteName: "Hometown Web Services",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Hot Springs Vacation Rental Website Design",
-      },
-    ],
-  },
-};
+    "Websites for Hot Springs cabins, Airbnbs, lake houses, and vacation rentals with strong photos, booking links, local content, and direct contact options.",
+  path: "/hot-springs-vacation-rental-websites",
+});
 
 const rentalTypes = [
   "Cabins",
@@ -102,13 +85,15 @@ export default function HotSpringsVacationRentalWebsitesPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": `${siteUrl}/hot-springs-vacation-rental-websites#service`,
       name: "Hot Springs Vacation Rental Website Design",
       url: `${siteUrl}/hot-springs-vacation-rental-websites`,
       provider: {
         "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#business`,
         name: "Hometown Web Services",
         url: siteUrl,
-        telephone: "+18702604880",
+        telephone: "+18708282562",
       },
       areaServed: [
         {
@@ -128,6 +113,7 @@ export default function HotSpringsVacationRentalWebsitesPage() {
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": `${siteUrl}/hot-springs-vacation-rental-websites#faq`,
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -493,10 +479,17 @@ export default function HotSpringsVacationRentalWebsitesPage() {
                 </Link>
 
                 <a
-                  href="sms:8702604880"
+                  href={PHONE_CALL_URL}
                   className="text-sm text-white/65 transition hover:text-white"
                 >
-                  Text 870-260-4880 →
+                  Call {PHONE_DASHED} →
+                </a>
+
+                <a
+                  href={PHONE_TEXT_URL}
+                  className="text-sm text-white/65 transition hover:text-white"
+                >
+                  Text {PHONE_DASHED} →
                 </a>
               </div>
             </div>

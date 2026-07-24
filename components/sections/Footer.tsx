@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PHONE_CALL_URL, PHONE_DISPLAY, PHONE_TEXT_URL } from "@/lib/site";
 
 const serviceLinks = [
   { label: "Services", href: "/services" },
@@ -55,10 +56,17 @@ export default function Footer() {
 
             <div className="mt-5 flex flex-col gap-2 text-sm text-[var(--text-soft)]">
               <a
-                href="sms:8702604880"
+                href={PHONE_CALL_URL}
                 className="hover:text-[var(--text-main)]"
               >
-                Text: (870) 260-4880
+                Call: {PHONE_DISPLAY}
+              </a>
+
+              <a
+                href={PHONE_TEXT_URL}
+                className="hover:text-[var(--text-main)]"
+              >
+                Text: {PHONE_DISPLAY}
               </a>
 
               <a
@@ -87,8 +95,12 @@ export default function Footer() {
                 </Link>
               ))}
 
-              <a href="sms:8702604880" className="hover:text-[var(--text-main)]">
-                Contact
+              <a href={PHONE_CALL_URL} className="hover:text-[var(--text-main)]">
+                Call {PHONE_DISPLAY}
+              </a>
+
+              <a href={PHONE_TEXT_URL} className="hover:text-[var(--text-main)]">
+                Text us
               </a>
             </nav>
           </div>

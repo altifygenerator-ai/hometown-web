@@ -1,4 +1,5 @@
 import type { LocationData } from "./types";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -8,14 +9,12 @@ export const littleRockLocation: LocationData = {
   slug: "little-rock-ar",
   url: `${siteUrl}/locations/little-rock-ar`,
 
-  metadata: {
+  metadata: createPageMetadata({
     title: "Web Design in Little Rock, AR",
     description:
-      "Web design and local SEO for Little Rock, Arkansas contractors, service businesses, restaurants, professional services, shops, and local companies.",
-    alternates: {
-      canonical: `${siteUrl}/locations/little-rock-ar`,
-    },
-  },
+      "Web design and local SEO for Little Rock contractors, service companies, restaurants, professional services, shops, and businesses across the metro.",
+    path: "/locations/little-rock-ar",
+  }),
 
   hero: {
     eyebrow: "Little Rock Web Design",

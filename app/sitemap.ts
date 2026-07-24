@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
-const siteUrl = "https://www.hometownwebservicesar.com";
+const lastModified = new Date("2026-07-24");
 
 const locationSlugs = [
   "arkadelphia-ar",
@@ -17,58 +18,68 @@ const locationSlugs = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locationPages: MetadataRoute.Sitemap = locationSlugs.map((slug) => ({
-    url: `${siteUrl}/locations/${slug}`,
+    url: `${SITE_URL}/locations/${slug}`,
+    lastModified,
     changeFrequency: "monthly",
     priority: slug === "hot-springs-ar" ? 0.85 : 0.7,
   }));
 
   const servicePages: MetadataRoute.Sitemap = [
     {
-      url: `${siteUrl}/services`,
-    changeFrequency: "monthly",
+      url: `${SITE_URL}/services`,
+      lastModified,
+      changeFrequency: "monthly",
       priority: 0.85,
     },
     {
-      url: `${siteUrl}/free-preview`,
-    changeFrequency: "monthly",
+      url: `${SITE_URL}/free-preview`,
+      lastModified,
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/contractor-websites`,
-    changeFrequency: "monthly",
+      url: `${SITE_URL}/contractor-websites`,
+      lastModified,
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/vacation-rental-websites`,
-    changeFrequency: "monthly",
+      url: `${SITE_URL}/vacation-rental-websites`,
+      lastModified,
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/local-seo-arkansas`,
-    changeFrequency: "monthly",
+      url: `${SITE_URL}/local-seo-arkansas`,
+      lastModified,
+      changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/hot-springs-contractor-websites`,
-    changeFrequency: "monthly",
+      url: `${SITE_URL}/hot-springs-contractor-websites`,
+      lastModified,
+      changeFrequency: "monthly",
       priority: 0.85,
     },
     {
-      url: `${siteUrl}/hot-springs-vacation-rental-websites`,
-    changeFrequency: "monthly",
+      url: `${SITE_URL}/hot-springs-vacation-rental-websites`,
+      lastModified,
+      changeFrequency: "monthly",
       priority: 0.85,
     },
   ];
 
   return [
     {
-      url: `${siteUrl}/`,
-    changeFrequency: "weekly",
+      url: SITE_URL,
+      lastModified,
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${siteUrl}/portfolio`,
-    changeFrequency: "monthly",
+      url: `${SITE_URL}/portfolio`,
+      lastModified,
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     ...servicePages,

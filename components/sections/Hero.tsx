@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { PHONE_CALL_URL, PHONE_DISPLAY, PHONE_TEXT_URL } from "@/lib/site";
 import { motion } from "framer-motion";
 
 const trustItems = [
@@ -46,6 +47,22 @@ export default function Hero() {
               <Link href="/portfolio" className="btn btn-secondary">
                 See recent work
               </Link>
+            </div>
+
+            <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[var(--text-soft)]">
+              <a
+                href={PHONE_CALL_URL}
+                className="transition hover:text-[var(--text-main)]"
+              >
+                Call {PHONE_DISPLAY}
+              </a>
+              <span aria-hidden="true">•</span>
+              <a
+                href={PHONE_TEXT_URL}
+                className="transition hover:text-[var(--text-main)]"
+              >
+                Text for a quick question
+              </a>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">

@@ -1,4 +1,5 @@
 import type { LocationData } from "./types";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -8,14 +9,12 @@ export const arkadelphiaLocation: LocationData = {
   slug: "arkadelphia-ar",
   url: `${siteUrl}/locations/arkadelphia-ar`,
 
-  metadata: {
+  metadata: createPageMetadata({
     title: "Web Design in Arkadelphia, AR",
     description:
-      "Web design and local SEO for Arkadelphia, Arkansas businesses, contractors, restaurants, shops, service companies, and businesses serving DeGray Lake and Caddo Valley.",
-    alternates: {
-      canonical: `${siteUrl}/locations/arkadelphia-ar`,
-    },
-  },
+      "Web design and local SEO for Arkadelphia contractors, restaurants, shops, service companies, and businesses serving Caddo Valley, DeGray Lake, and Clark County.",
+    path: "/locations/arkadelphia-ar",
+  }),
 
   hero: {
     eyebrow: "Arkadelphia Web Design",

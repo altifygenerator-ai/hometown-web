@@ -1,4 +1,5 @@
 import type { LocationData } from "./types";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -8,14 +9,12 @@ export const glenwoodLocation: LocationData = {
   slug: "glenwood-ar",
   url: `${siteUrl}/locations/glenwood-ar`,
 
-  metadata: {
+  metadata: createPageMetadata({
     title: "Web Design in Glenwood, AR",
     description:
-      "Web design and local SEO for Glenwood, Arkansas businesses including cabins, tourism businesses, restaurants, contractors, local shops, and service providers.",
-    alternates: {
-      canonical: `${siteUrl}/locations/glenwood-ar`,
-    },
-  },
+      "Web design and local SEO for Glenwood cabins, tourism businesses, restaurants, contractors, shops, and service companies across Pike County.",
+    path: "/locations/glenwood-ar",
+  }),
 
   hero: {
     eyebrow: "Glenwood Web Design",

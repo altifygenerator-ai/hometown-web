@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
 
 const businessTypes = [
   "Contractor / home services",
@@ -108,7 +109,7 @@ ${form.notes || "Not provided"}`;
       setErrorMessage(
         error instanceof Error
           ? error.message
-          : "Something went wrong. You can still text 870-260-4880."
+          : `Something went wrong. You can still text ${PHONE_DASHED}.`
       );
     }
   }
@@ -274,7 +275,7 @@ ${form.notes || "Not provided"}`;
                 {status === "sending" ? "Sending..." : "Send preview request"}
               </button>
 
-              <a href="sms:8702604880" className="btn btn-secondary">
+              <a href={PHONE_TEXT_URL} className="btn btn-secondary">
                 Text instead
               </a>
             </div>
@@ -306,7 +307,7 @@ ${form.notes || "Not provided"}`;
             <div className="mt-6 rounded-[1.5rem] bg-[var(--text-main)] p-5 text-white">
               <p className="text-sm leading-7 text-white/70">
                 This sends through the site form. If it ever gives an error, you
-                can still text me directly at 870-260-4880.
+                can still text me directly at {PHONE_DASHED}.
               </p>
             </div>
           </div>

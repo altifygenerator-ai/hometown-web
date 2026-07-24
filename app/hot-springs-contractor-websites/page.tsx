@@ -3,34 +3,17 @@ import Link from "next/link";
 
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
+import { createPageMetadata } from "@/lib/seo";
+import { PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
-export const metadata: Metadata = {
-  title:
-    "Hot Springs Contractor Website Design | Websites for Local Contractors",
+export const metadata: Metadata = createPageMetadata({
+  title: "Hot Springs Contractor Web Design",
   description:
-    "Website design for Hot Springs, Arkansas contractors, remodelers, roofers, plumbers, landscapers, dirt work companies, and service businesses that need more calls and quote requests.",
-  alternates: {
-    canonical: `${siteUrl}/hot-springs-contractor-websites`,
-  },
-  openGraph: {
-    title: "Hot Springs Contractor Website Design",
-    description:
-      "Clean, mobile-friendly contractor websites built for calls, quote requests, local trust, and Google visibility in Hot Springs, Arkansas.",
-    url: `${siteUrl}/hot-springs-contractor-websites`,
-    siteName: "Hometown Web Services",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Hot Springs Contractor Website Design",
-      },
-    ],
-  },
-};
+    "Websites for Hot Springs contractors, remodelers, roofers, plumbers, landscapers, and dirt work companies that need more calls and quote requests.",
+  path: "/hot-springs-contractor-websites",
+});
 
 const contractorTypes = [
   "Remodelers",
@@ -123,13 +106,15 @@ export default function HotSpringsContractorWebsitesPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": `${siteUrl}/hot-springs-contractor-websites#service`,
       name: "Hot Springs Contractor Website Design",
       url: `${siteUrl}/hot-springs-contractor-websites`,
       provider: {
         "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#business`,
         name: "Hometown Web Services",
         url: siteUrl,
-        telephone: "+18702604880",
+        telephone: "+18708282562",
       },
       areaServed: [
         {
@@ -149,6 +134,7 @@ export default function HotSpringsContractorWebsitesPage() {
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": `${siteUrl}/hot-springs-contractor-websites#faq`,
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -534,10 +520,17 @@ export default function HotSpringsContractorWebsitesPage() {
                 </Link>
 
                 <a
-                  href="sms:8702604880"
+                  href={PHONE_CALL_URL}
                   className="text-sm text-white/65 transition hover:text-white"
                 >
-                  Text 870-260-4880 →
+                  Call {PHONE_DASHED} →
+                </a>
+
+                <a
+                  href={PHONE_TEXT_URL}
+                  className="text-sm text-white/65 transition hover:text-white"
+                >
+                  Text {PHONE_DASHED} →
                 </a>
               </div>
             </div>

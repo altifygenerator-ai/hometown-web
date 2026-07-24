@@ -1,4 +1,5 @@
 import type { LocationData } from "./types";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -8,15 +9,12 @@ export const hotSpringsLocation: LocationData = {
   slug: "hot-springs-ar",
   url: `${siteUrl}/locations/hot-springs-ar`,
 
-  metadata: {
-    title:
-      "Web Design in Hot Springs, AR | Small Business & Contractor Websites",
+  metadata: createPageMetadata({
+    title: "Web Design in Hot Springs, AR",
     description:
-      "Web design and local SEO for Hot Springs, Arkansas contractors, cabins, vacation rentals, restaurants, cleaning companies, tourism businesses, shops, and local service providers.",
-    alternates: {
-      canonical: `${siteUrl}/locations/hot-springs-ar`,
-    },
-  },
+      "Web design and local SEO for Hot Springs contractors, cabins, vacation rentals, restaurants, cleaning companies, tourism businesses, and local services.",
+    path: "/locations/hot-springs-ar",
+  }),
 
   hero: {
     eyebrow: "Hot Springs Web Design",
@@ -135,7 +133,7 @@ export const hotSpringsLocation: LocationData = {
         "@id": `${siteUrl}/#business`,
         name: "Hometown Web Services",
         url: siteUrl,
-        telephone: "+18702604880",
+        telephone: "+18708282562",
       },
       areaServed: [
         {

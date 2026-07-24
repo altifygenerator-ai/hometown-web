@@ -1,4 +1,5 @@
 import type { LocationData } from "./types";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -8,14 +9,12 @@ export const bryantLocation: LocationData = {
   slug: "bryant-ar",
   url: `${siteUrl}/locations/bryant-ar`,
 
-  metadata: {
+  metadata: createPageMetadata({
     title: "Web Design in Bryant, AR",
     description:
-      "Web design and local SEO for Bryant, Arkansas contractors, service businesses, restaurants, cleaning companies, shops, and small businesses serving Saline County.",
-    alternates: {
-      canonical: `${siteUrl}/locations/bryant-ar`,
-    },
-  },
+      "Web design and local SEO for Bryant contractors, service companies, restaurants, cleaning businesses, shops, and small businesses serving Saline County.",
+    path: "/locations/bryant-ar",
+  }),
 
   hero: {
     eyebrow: "Bryant Web Design",

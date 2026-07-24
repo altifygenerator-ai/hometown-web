@@ -1,4 +1,5 @@
 import type { LocationData } from "./types";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -8,14 +9,12 @@ export const bentonLocation: LocationData = {
   slug: "benton-ar",
   url: `${siteUrl}/locations/benton-ar`,
 
-  metadata: {
+  metadata: createPageMetadata({
     title: "Web Design in Benton, AR",
     description:
-      "Web design and local SEO for Benton, Arkansas contractors, service businesses, restaurants, shops, cleaning companies, and small businesses in Saline County.",
-    alternates: {
-      canonical: `${siteUrl}/locations/benton-ar`,
-    },
-  },
+      "Web design and local SEO for Benton contractors, home service companies, restaurants, shops, cleaning businesses, and small businesses across Saline County.",
+    path: "/locations/benton-ar",
+  }),
 
   hero: {
     eyebrow: "Benton Web Design",

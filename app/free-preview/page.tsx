@@ -3,33 +3,17 @@ import type { Metadata } from "next";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import FreePreviewForm from "@/components/FreePreviewForm";
+import { createPageMetadata } from "@/lib/seo";
+import { PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
-export const metadata: Metadata = {
-  title: "Get a Free Website Preview",
+export const metadata: Metadata = createPageMetadata({
+  title: "Free Website Preview in Arkansas",
   description:
-    "Request a free website preview for your Arkansas small business. Send your business info, Facebook page, photos, and current website to see what your site could look like before paying.",
-  alternates: {
-    canonical: `${siteUrl}/free-preview`,
-  },
-  openGraph: {
-    title: "Get a Free Website Preview",
-    description:
-      "See a working website preview for your Arkansas business before committing.",
-    url: `${siteUrl}/free-preview`,
-    siteName: "Hometown Web Services",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Hometown Web Services Free Website Preview",
-      },
-    ],
-  },
-};
+    "Request a free working website preview for your Arkansas business. See the design direction, mobile layout, and contact flow before paying or committing.",
+  path: "/free-preview",
+});
 
 const sendItems = [
   "Your business name",
@@ -98,12 +82,15 @@ export default function FreePreviewPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": `${siteUrl}/free-preview#service`,
       name: "Free Website Preview",
+      url: `${siteUrl}/free-preview`,
       provider: {
         "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#business`,
         name: "Hometown Web Services",
         url: siteUrl,
-        telephone: "+18702604880",
+        telephone: "+18708282562",
       },
       areaServed: {
         "@type": "State",
@@ -116,6 +103,7 @@ export default function FreePreviewPage() {
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": `${siteUrl}/free-preview#faq`,
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -164,8 +152,15 @@ export default function FreePreviewPage() {
                     Fill out the preview form
                   </a>
 
-                  <a href="sms:8702604880" className="btn btn-secondary">
-                    Text 870-260-4880
+                  <a href={PHONE_CALL_URL} className="btn btn-secondary">
+                    Call {PHONE_DASHED}
+                  </a>
+
+                  <a
+                    href={PHONE_TEXT_URL}
+                    className="text-sm text-[var(--text-soft)] transition hover:text-[var(--text-main)]"
+                  >
+                    Text instead →
                   </a>
                 </div>
 
@@ -372,10 +367,17 @@ export default function FreePreviewPage() {
                   </a>
 
                   <a
-                    href="sms:8702604880"
+                    href={PHONE_CALL_URL}
                     className="text-sm text-white/65 transition hover:text-white"
                   >
-                    Text 870-260-4880 →
+                    Call {PHONE_DASHED} →
+                  </a>
+
+                  <a
+                    href={PHONE_TEXT_URL}
+                    className="text-sm text-white/65 transition hover:text-white"
+                  >
+                    Text {PHONE_DASHED} →
                   </a>
                 </div>
               </div>

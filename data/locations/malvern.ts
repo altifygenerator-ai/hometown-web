@@ -1,4 +1,5 @@
 import type { LocationData } from "./types";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -8,14 +9,12 @@ export const malvernLocation: LocationData = {
   slug: "malvern-ar",
   url: `${siteUrl}/locations/malvern-ar`,
 
-  metadata: {
+  metadata: createPageMetadata({
     title: "Web Design in Malvern, AR",
     description:
-      "Web design and local SEO for Malvern, Arkansas contractors, service businesses, restaurants, shops, industrial companies, and small businesses in Hot Spring County.",
-    alternates: {
-      canonical: `${siteUrl}/locations/malvern-ar`,
-    },
-  },
+      "Web design and local SEO for Malvern contractors, service businesses, restaurants, shops, industrial companies, and small businesses in Hot Spring County.",
+    path: "/locations/malvern-ar",
+  }),
 
   hero: {
     eyebrow: "Malvern Web Design",

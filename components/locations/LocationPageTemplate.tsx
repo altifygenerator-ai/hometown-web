@@ -23,6 +23,20 @@ export default function LocationPageTemplate({
     ...data.schema,
     {
       "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${data.url}#webpage`,
+      url: data.url,
+      name: `${data.city}, ${data.state} Web Design`,
+      isPartOf: {
+        "@id": "https://www.hometownwebservicesar.com/#website",
+      },
+      about: {
+        "@id": `${data.url}#service`,
+      },
+      inLanguage: "en-US",
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "@id": `${data.url}#faq`,
       mainEntity: data.faqs.map((faq) => ({

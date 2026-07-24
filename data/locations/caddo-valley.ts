@@ -1,4 +1,5 @@
 import type { LocationData } from "./types";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -8,14 +9,12 @@ export const caddoValleyLocation: LocationData = {
   slug: "caddo-valley-ar",
   url: `${siteUrl}/locations/caddo-valley-ar`,
 
-  metadata: {
+  metadata: createPageMetadata({
     title: "Web Design in Caddo Valley, AR",
     description:
-      "Web design and local SEO for Caddo Valley, Arkansas businesses including lodging, restaurants, tourism businesses, contractors, shops, and service providers near DeGray Lake.",
-    alternates: {
-      canonical: `${siteUrl}/locations/caddo-valley-ar`,
-    },
-  },
+      "Web design and local SEO for Caddo Valley lodging, restaurants, tourism businesses, contractors, shops, and service providers near DeGray Lake.",
+    path: "/locations/caddo-valley-ar",
+  }),
 
   hero: {
     eyebrow: "Caddo Valley Web Design",

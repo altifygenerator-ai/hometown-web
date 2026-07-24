@@ -7,141 +7,50 @@ import Process from "@/components/sections/Process";
 import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
 import Testimonials from "@/components/sections/Testimonials";
-import FAQSection, { faqs } from "@/components/sections/FAQSection";
+import FAQSection from "@/components/sections/FAQSection";
+import { homeFaqs } from "@/data/home-faqs";
 import VacationRentalPreview from "@/components/sections/VacationRentalPreview";
+import { createPageMetadata } from "@/lib/seo";
 const siteUrl = "https://www.hometownwebservicesar.com";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: siteUrl,
-  },
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Arkansas Web Design & Local SEO",
+  description:
+    "Custom websites and local SEO for Arkansas contractors, service companies, restaurants, vacation rentals, shops, and small businesses that need more leads.",
+  path: "/",
+});
 
 const homeSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": `${siteUrl}/#business`,
-    name: "Hometown Web Services",
-    url: siteUrl,
-    telephone: "+18702604880",
-    email: "hello@hometownwebservicesar.com",
-    description:
-      "Arkansas web design, local SEO, and Google-ready websites for small businesses, contractors, service businesses, restaurants, tourism businesses, and local companies.",
-    areaServed: [
-      {
-        "@type": "State",
-        name: "Arkansas",
-      },
-      {
-        "@type": "City",
-        name: "Arkadelphia",
-      },
-      {
-        "@type": "City",
-        name: "Hot Springs",
-      },
-      {
-        "@type": "City",
-        name: "Benton",
-      },
-      {
-        "@type": "City",
-        name: "Bryant",
-      },
-      {
-        "@type": "City",
-        name: "Little Rock",
-      },
-      {
-        "@type": "City",
-        name: "Glenwood",
-      },
-      {
-        "@type": "City",
-        name: "Malvern",
-      },
-      {
-        "@type": "City",
-        name: "Maumelle",
-      },
-    ],
-    sameAs: ["https://share.google/f18YjPUwYQatjbbnZ"],
-    makesOffer: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Small Business Website Design",
-          serviceType: "Web Design",
-          areaServed: {
-            "@type": "State",
-            name: "Arkansas",
-          },
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Local SEO Services",
-          serviceType: "Local SEO",
-          areaServed: {
-            "@type": "State",
-            name: "Arkansas",
-          },
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Google Business Profile Optimization",
-          serviceType: "Google Business Profile Optimization",
-          areaServed: {
-            "@type": "State",
-            name: "Arkansas",
-          },
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Contractor Website Design",
-          serviceType: "Contractor Website Design",
-          areaServed: {
-            "@type": "State",
-            name: "Arkansas",
-          },
-        },
-      },
-    ],
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${siteUrl}/#website`,
-    url: siteUrl,
-    name: "Hometown Web Services",
-    publisher: {
-      "@id": `${siteUrl}/#business`,
-    },
-  },
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": `${siteUrl}/#webpage`,
     url: siteUrl,
-    name: "Arkansas Web Design for Small Businesses",
+    name: "Arkansas Web Design & Local SEO",
     description:
-      "Web design and local SEO for Arkansas small businesses that need a clean, mobile-friendly website built to bring in calls, leads, and local visibility.",
+      "Custom websites and local SEO for Arkansas small businesses that need more calls, leads, trust, and local visibility.",
     isPartOf: {
       "@id": `${siteUrl}/#website`,
     },
     about: {
       "@id": `${siteUrl}/#business`,
     },
+    mainEntity: {
+      "@id": `${siteUrl}/#business`,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${siteUrl}/#faq`,
+    mainEntity: homeFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   },
 ];
 
@@ -163,7 +72,7 @@ export default function Page() {
 
       <Process />
       <Testimonials />
-      <FAQSection/>
+      <FAQSection />
       <CTA />
       <Footer />
     </main>

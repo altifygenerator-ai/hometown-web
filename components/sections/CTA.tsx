@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
 
 const trustItems = [
   "Free preview before payment",
@@ -49,10 +50,17 @@ export default function CTA() {
                 </Link>
 
                 <a
-                  href="sms:8702604880"
+                  href={PHONE_CALL_URL}
                   className="text-sm text-white/65 transition hover:text-white"
                 >
-                  Text 870-260-4880 →
+                  Call {PHONE_DASHED} →
+                </a>
+
+                <a
+                  href={PHONE_TEXT_URL}
+                  className="text-sm text-white/65 transition hover:text-white"
+                >
+                  Text {PHONE_DASHED} →
                 </a>
 
                 <a

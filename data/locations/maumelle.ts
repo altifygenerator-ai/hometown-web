@@ -1,4 +1,5 @@
 import type { LocationData } from "./types";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -8,14 +9,12 @@ export const maumelleLocation: LocationData = {
   slug: "maumelle-ar",
   url: `${siteUrl}/locations/maumelle-ar`,
 
-  metadata: {
+  metadata: createPageMetadata({
     title: "Web Design in Maumelle, AR",
     description:
-      "Web design and local SEO for Maumelle, Arkansas contractors, professional services, home service businesses, restaurants, shops, and small businesses.",
-    alternates: {
-      canonical: `${siteUrl}/locations/maumelle-ar`,
-    },
-  },
+      "Web design and local SEO for Maumelle contractors, professional services, home service companies, restaurants, shops, and local small businesses.",
+    path: "/locations/maumelle-ar",
+  }),
 
   hero: {
     eyebrow: "Maumelle Web Design",

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { PHONE_CALL_URL, PHONE_DISPLAY } from "@/lib/site";
 
 const serviceLinks = [
   {
@@ -202,9 +203,17 @@ export default function Header() {
           </nav>
 
           {/* CTA */}
-        <Link href="/free-preview" className="btn btn-primary text-sm">
-  Get a free preview
-</Link>
+          <a
+            href={PHONE_CALL_URL}
+            className="hidden text-sm font-medium text-[var(--text-soft)] transition hover:text-[var(--text-main)] lg:inline-flex"
+            aria-label={`Call Hometown Web Services at ${PHONE_DISPLAY}`}
+          >
+            Call {PHONE_DISPLAY}
+          </a>
+
+          <Link href="/free-preview" className="btn btn-primary text-sm">
+            Get a free preview
+          </Link>
         </div>
       </div>
     </header>

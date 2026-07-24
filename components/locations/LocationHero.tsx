@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PHONE_CALL_URL, PHONE_DISPLAY, PHONE_TEXT_URL } from "@/lib/site";
 
 type LocationHeroProps = {
   variant?: "simple" | "split" | "visual";
@@ -49,13 +50,29 @@ export default function LocationHero({
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/contact" className="btn btn-primary">
+              <Link href="/free-preview" className="btn btn-primary">
                 {primaryCta}
               </Link>
 
               <Link href="/services" className="btn btn-secondary">
                 {secondaryCta}
               </Link>
+            </div>
+
+            <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[var(--text-soft)]">
+              <a
+                href={PHONE_CALL_URL}
+                className="transition hover:text-[var(--text-main)]"
+              >
+                Call {PHONE_DISPLAY}
+              </a>
+              <span aria-hidden="true">•</span>
+              <a
+                href={PHONE_TEXT_URL}
+                className="transition hover:text-[var(--text-main)]"
+              >
+                Text Hometown Web Services
+              </a>
             </div>
           </div>
 

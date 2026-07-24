@@ -6,45 +6,16 @@ import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import CTA from "@/components/sections/CTA";
 import Reveal from "@/components/ui/RevealV2";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
-export const metadata: Metadata = {
-  title: "Local SEO Services Arkansas",
+export const metadata: Metadata = createPageMetadata({
+  title: "Arkansas Local SEO Services",
   description:
-    "Local SEO services for Arkansas contractors and small businesses. Google Business Profile optimization, service pages, website structure, and local visibility improvements.",
-  keywords: [
-    "local SEO Arkansas",
-    "Google Business Profile help Arkansas",
-    "contractor SEO Arkansas",
-    "small business SEO Arkansas",
-    "Google Maps SEO Arkansas",
-    "website SEO Arkansas",
-    "local search optimization Arkansas",
-    "roofing SEO Arkansas",
-    "plumber SEO Arkansas",
-    "Arkansas SEO services",
-  ],
-  alternates: {
-    canonical: `${siteUrl}/local-seo-arkansas`,
-  },
-  openGraph: {
-    title: "Local SEO Services Arkansas",
-    description:
-      "Helping Arkansas businesses improve local visibility, Google rankings, and online trust.",
-    url: `${siteUrl}/local-seo-arkansas`,
-    siteName: "Hometown Web Services",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Local SEO Services Arkansas",
-      },
-    ],
-  },
-};
+    "Local SEO for Arkansas contractors and small businesses, including service pages, website structure, Google Business Profile help, and local visibility.",
+  path: "/local-seo-arkansas",
+});
 
 const seoCards = [
   {
@@ -96,9 +67,12 @@ export default function LocalSEOPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Local SEO Services Arkansas",
+      "@id": `${siteUrl}/local-seo-arkansas#service`,
+      name: "Local SEO Services for Arkansas Businesses",
+      url: `${siteUrl}/local-seo-arkansas`,
       provider: {
         "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#business`,
         name: "Hometown Web Services",
         url: siteUrl,
       },
@@ -113,6 +87,7 @@ export default function LocalSEOPage() {
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": `${siteUrl}/local-seo-arkansas#faq`,
       mainEntity: faq.map((item) => ({
         "@type": "Question",
         name: item.question,
@@ -156,7 +131,7 @@ export default function LocalSEOPage() {
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
-                  <Link href="/contact" className="btn btn-primary">
+                  <Link href="/free-preview" className="btn btn-primary">
                     Get SEO Help
                   </Link>
 
@@ -435,7 +410,7 @@ export default function LocalSEOPage() {
               </div>
 
               <div className="flex flex-col justify-center gap-4">
-                <Link href="/contact" className="btn btn-primary text-center">
+                <Link href="/free-preview" className="btn btn-primary text-center">
                   Request a Free Preview
                 </Link>
 

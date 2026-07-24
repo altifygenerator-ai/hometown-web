@@ -2,6 +2,16 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import {
+  CONTACT_EMAIL,
+  GOOGLE_PROFILE_URL,
+  LOGO_PATH,
+  OG_IMAGE_PATH,
+  PHONE_E164,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,122 +19,48 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = "https://www.hometownwebservicesar.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
   title: {
-    default:
-      "Arkansas Web Design for Small Businesses | Hometown Web Services",
-    template: "%s | Hometown Web Services",
+    default: "Arkansas Web Design & Local SEO | Hometown Web Services",
+    template: `%s | ${SITE_NAME}`,
   },
-
-  description:
-    "Web design, local SEO, and Google-ready websites for Arkansas small businesses, contractors, service companies, restaurants, and local shops.",
-
- keywords: [
-  // core web design
-  "Arkansas web design",
-  "Arkansas web designer",
-  "web design Arkansas",
-  "small business websites Arkansas",
-  "custom websites Arkansas",
-  "modern website design Arkansas",
-  "professional websites Arkansas",
-  "responsive web design Arkansas",
-  "mobile friendly websites Arkansas",
-  "website redesign Arkansas",
-  "website developer Arkansas",
-  "website development Arkansas",
-  "local web designer Arkansas",
-
-  // seo + google
-  "local SEO Arkansas",
-  "SEO services Arkansas",
-  "Google Business Profile help Arkansas",
-  "Google Maps ranking Arkansas",
-  "website SEO Arkansas",
-  "small business SEO Arkansas",
-  "contractor SEO Arkansas",
-  "Google-ready websites",
-  "SEO web design Arkansas",
-  "websites built for Google rankings",
-
-  // industries
-  "websites for contractors Arkansas",
-  "contractor website design Arkansas",
-  "roofing website design Arkansas",
-  "plumber website design Arkansas",
-  "electrician website design Arkansas",
-  "HVAC website design Arkansas",
-  "cleaning company website Arkansas",
-  "restaurant website design Arkansas",
-  "landscaping website design Arkansas",
-  "construction company website Arkansas",
-  "real estate website Arkansas",
-  "tourism website Arkansas",
-  "vacation rental website Arkansas",
-  "small town business websites",
-  "service business web design",
-
-  // local cities
-  "web design Arkadelphia AR",
-  "web design Hot Springs AR",
-  "web design Glenwood AR",
-  "web design Mount Ida AR",
-  "web design Amity AR",
-  "web design Malvern AR",
-  "web design Benton AR",
-  "web design Little Rock AR",
-  "web design Central Arkansas",
-  "website designer near me Arkansas",
-
-  // intent-based
-  "affordable websites for small businesses",
-  "small business web developer",
-  "help getting found on Google",
-  "website help for local businesses",
-  "website upgrades Arkansas",
-  "website maintenance Arkansas",
-  "website help near me",
-  "small business marketing Arkansas",
-  "website and SEO packages Arkansas",
-  "website designer for local businesses",
-],
-verification: {
-  google: [
-    "qwoscScnZDrLEfuFVsxQ0R325hXoU6TI4OE1f6arJpA",
-    "X2qa6b79L57n822AJDaQUwD2esN20h9ES72SmjWBGg8",
-  ],
-},
-
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: SITE_URL,
+  },
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "Web Design",
+  verification: {
+    google: [
+      "qwoscScnZDrLEfuFVsxQ0R325hXoU6TI4OE1f6arJpA",
+      "X2qa6b79L57n822AJDaQUwD2esN20h9ES72SmjWBGg8",
+    ],
+  },
   openGraph: {
-    title: "Arkansas Web Design for Small Businesses",
-    description:
-      "Modern websites built to help Arkansas businesses show up on Google, look more professional, and turn visitors into calls.",
-    url: siteUrl,
-    siteName: "Hometown Web Services",
+    title: "Arkansas Web Design & Local SEO",
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     type: "website",
     locale: "en_US",
     images: [
       {
-        url: "/og-image.png",
+        url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
-        alt: "Hometown Web Services Arkansas Web Design",
+        alt: "Hometown Web Services — Arkansas web design and local SEO",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Arkansas Web Design for Small Businesses",
-    description:
-      "Websites and local SEO for Arkansas small businesses, contractors, and service companies.",
-    images: ["/og-image.png"],
+    title: "Arkansas Web Design & Local SEO",
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
   },
-
   robots: {
     index: true,
     follow: true,
@@ -147,31 +83,45 @@ export default function RootLayout({
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "@id": `${siteUrl}/#business`,
-    name: "Hometown Web Services",
-    url: siteUrl,
-    telephone: "+18702604880",
-    email: "hello@hometownwebservicesar.com",
+      "@id": `${SITE_URL}/#business`,
+      name: SITE_NAME,
+      alternateName: "Hometown Web Services Arkansas",
+      url: SITE_URL,
+      logo: `${SITE_URL}${LOGO_PATH}`,
+      image: `${SITE_URL}${OG_IMAGE_PATH}`,
+      telephone: PHONE_E164,
+      email: CONTACT_EMAIL,
       areaServed: {
         "@type": "State",
         name: "Arkansas",
       },
-      description:
-        "Web design and local SEO services for Arkansas small businesses, contractors, service companies, restaurants, and local shops.",
+      description: SITE_DESCRIPTION,
+      sameAs: [GOOGLE_PROFILE_URL],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: PHONE_E164,
+        contactType: "sales",
+        areaServed: "US-AR",
+        availableLanguage: "English",
+      },
       serviceType: [
         "Web Design",
         "Local SEO",
         "Small Business Websites",
+        "Contractor Website Design",
+        "Vacation Rental Website Design",
         "Google Business Profile Optimization",
       ],
     },
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-    name: "Hometown Web Services",
-    url: siteUrl,
-    publisher: { "@id": `${siteUrl}/#business` },
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      alternateName: "Hometown Web Services Arkansas",
+      url: SITE_URL,
+      inLanguage: "en-US",
+      publisher: { "@id": `${SITE_URL}/#business` },
     },
   ];
 

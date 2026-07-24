@@ -4,46 +4,17 @@ import Link from "next/link";
 import Header from "@/components/sections/Header";
 import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
+import { createPageMetadata } from "@/lib/seo";
+import { PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
-export const metadata: Metadata = {
-  title: "Contractor Website Design in Arkansas",
+export const metadata: Metadata = createPageMetadata({
+  title: "Arkansas Contractor Website Design",
   description:
-    "Contractor website design for Arkansas roofers, remodelers, plumbers, electricians, landscapers, dirt work companies, and local service businesses that need more calls, trust, and local visibility.",
-  keywords: [
-    "contractor website design Arkansas",
-    "websites for contractors Arkansas",
-    "roofing website design Arkansas",
-    "remodeling contractor websites Arkansas",
-    "plumber website design Arkansas",
-    "electrician website design Arkansas",
-    "landscaping website design Arkansas",
-    "construction website design Arkansas",
-    "excavating website design Arkansas",
-    "local SEO for contractors Arkansas",
-    "contractor web designer Arkansas",
-  ],
-  alternates: {
-    canonical: `${siteUrl}/contractor-websites`,
-  },
-  openGraph: {
-    title: "Contractor Website Design in Arkansas",
-    description:
-      "Clean, fast, Google-ready websites for Arkansas contractors and local service businesses.",
-    url: `${siteUrl}/contractor-websites`,
-    siteName: "Hometown Web Services",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Contractor Website Design in Arkansas",
-      },
-    ],
-  },
-};
+    "Website design for Arkansas roofers, remodelers, plumbers, electricians, landscapers, dirt work companies, and contractors that need more calls.",
+  path: "/contractor-websites",
+});
 
 const contractorVideos = [
   {
@@ -145,12 +116,15 @@ export default function ContractorWebsitesPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": `${siteUrl}/contractor-websites#service`,
       name: "Contractor Website Design in Arkansas",
+      url: `${siteUrl}/contractor-websites`,
       provider: {
         "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#business`,
         name: "Hometown Web Services",
         url: siteUrl,
-        telephone: "+18702604880",
+        telephone: "+18708282562",
       },
       areaServed: {
         "@type": "State",
@@ -163,6 +137,7 @@ export default function ContractorWebsitesPage() {
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": `${siteUrl}/contractor-websites#faq`,
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -508,10 +483,17 @@ export default function ContractorWebsitesPage() {
               </Link>
 
               <a
-                href="sms:8702604880"
+                href={PHONE_CALL_URL}
                 className="text-sm text-[var(--text-soft)] transition hover:text-[var(--text-main)]"
               >
-                Text 870-260-4880 →
+                Call {PHONE_DASHED} →
+              </a>
+
+              <a
+                href={PHONE_TEXT_URL}
+                className="text-sm text-[var(--text-soft)] transition hover:text-[var(--text-main)]"
+              >
+                Text {PHONE_DASHED} →
               </a>
             </div>
           </div>

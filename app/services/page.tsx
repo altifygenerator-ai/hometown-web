@@ -1,34 +1,19 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import PricingSection from "@/components/sections/PricingSection";
+import { createPageMetadata } from "@/lib/seo";
+import { PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
 
 
 const siteUrl = "https://www.hometownwebservicesar.com";
-export const metadata: Metadata = {
-  title: "Web Design & SEO Services in Arkansas",
+export const metadata: Metadata = createPageMetadata({
+  title: "Arkansas Web Design & Local SEO",
   description:
-    "Professional websites and SEO for Arkansas small businesses. Built to help you show up on Google and get more leads.",
-  alternates: {
-    canonical: `${siteUrl}/services`,
-  },
-  openGraph: {
-    title: "Web Design & SEO Services in Arkansas",
-    description:
-      "Professional websites, local SEO, and Google Business Profile help for Arkansas small businesses.",
-    url: `${siteUrl}/services`,
-    siteName: "Hometown Web Services",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Arkansas web design and local SEO services",
-      },
-    ],
-  },
-};
+    "Website design, local SEO, Google Business Profile help, redesigns, and ongoing website support for Arkansas small businesses that need more calls and leads.",
+  path: "/services",
+});
 
 const services = [
   {
@@ -109,6 +94,48 @@ const faqs = [
   },
 ];
 
+const servicesSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteUrl}/services#service`,
+    name: "Web Design and Local SEO Services in Arkansas",
+    url: `${siteUrl}/services`,
+    provider: {
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#business`,
+      name: "Hometown Web Services",
+      url: siteUrl,
+    },
+    areaServed: {
+      "@type": "State",
+      name: "Arkansas",
+    },
+    serviceType: [
+      "Web Design",
+      "Local SEO",
+      "Small Business Websites",
+      "Google Business Profile Optimization",
+      "Website Redesigns",
+    ],
+    description:
+      "Web design and local SEO services for Arkansas small businesses, contractors, service companies, restaurants, vacation rentals, and local shops.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${siteUrl}/services#faq`,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  },
+];
+
 export default function ServicesPage() {
   return (
     <>
@@ -118,29 +145,7 @@ export default function ServicesPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              name: "Web Design and Local SEO Services",
-              provider: {
-                "@type": "ProfessionalService",
-                name: "Hometown Web Services",
-                url: "https://www.hometownwebservicesar.com",
-              },
-              areaServed: {
-                "@type": "State",
-                name: "Arkansas",
-              },
-              serviceType: [
-                "Web Design",
-                "Local SEO",
-                "Small Business Websites",
-                "Google Business Profile Optimization",
-                "Website Redesigns",
-              ],
-              description:
-                "Web design and local SEO services for Arkansas small businesses, contractors, service companies, restaurants, and local shops.",
-            }),
+            __html: JSON.stringify(servicesSchema),
           }}
         />
 
@@ -167,9 +172,9 @@ export default function ServicesPage() {
                 </p>
 
                 <div className="mt-9 flex flex-wrap items-center gap-4">
-                  <a href="sms:8702604880" className="btn btn-primary">
+                  <Link href="/free-preview" className="btn btn-primary">
                     Get a free preview
-                  </a>
+                  </Link>
 
                   <a
                     href="#pricing"
@@ -377,10 +382,10 @@ export default function ServicesPage() {
                 </div>
 
                 <a
-                  href="sms:8702604880"
+                  href={PHONE_TEXT_URL}
                   className="mt-8 inline-block text-sm text-[var(--text-soft)] transition hover:text-[var(--text-main)]"
                 >
-                  Request a free audit →
+                  Text to request a free audit →
                 </a>
               </div>
             </div>
@@ -443,11 +448,25 @@ export default function ServicesPage() {
                   </p>
 
                   <div className="mt-9 flex flex-wrap items-center gap-4">
-                    <a
-                      href="sms:8702604880"
+                    <Link
+                      href="/free-preview"
                       className="inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
                     >
                       Get a free preview
+                    </Link>
+
+                    <a
+                      href={PHONE_CALL_URL}
+                      className="text-sm text-white/65 transition hover:text-white"
+                    >
+                      Call {PHONE_DASHED} →
+                    </a>
+
+                    <a
+                      href={PHONE_TEXT_URL}
+                      className="text-sm text-white/65 transition hover:text-white"
+                    >
+                      Text {PHONE_DASHED} →
                     </a>
 
                     <a

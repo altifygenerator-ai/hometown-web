@@ -1,18 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import CTA from "@/components/sections/CTA";
+import { createPageMetadata } from "@/lib/seo";
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 
-export const metadata = {
-  title: "Vacation Rental Website Design in Arkansas",
+export const metadata: Metadata = createPageMetadata({
+  title: "Arkansas Vacation Rental Web Design",
   description:
-    "Website design for Arkansas cabins, Airbnbs, vacation rentals, lodges, and short-term rental owners who want a cleaner brand, easier booking experience, and better visibility outside of crowded booking platforms.",
-  alternates: {
-    canonical: `${siteUrl}/vacation-rental-websites`,
-  },
-};
+    "Photo-focused websites for Arkansas cabins, Airbnbs, lodges, and vacation rentals with amenities, booking links, local content, and direct contact options.",
+  path: "/vacation-rental-websites",
+});
 
 const features = [
   {
@@ -132,7 +132,7 @@ export default function VacationRentalWebsitesPage() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/contact" className="btn btn-primary">
+                <Link href="/free-preview" className="btn btn-primary">
                   Get a free preview
                 </Link>
 
