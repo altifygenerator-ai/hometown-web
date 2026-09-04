@@ -327,6 +327,21 @@ const tourismAndGuideProjects: PortfolioProject[] = [
 
 const toolsAndSpecialtyProjects: PortfolioProject[] = [
   {
+    title: "Clark Transportation Services",
+    category: "Custom Business System",
+    summary:
+      "A recruiting website tied into a driver application flow with quick apply, full application handling, admin tools, and role-based operational management.",
+    tags: ["Application Flow", "Admin Dashboard", "Role-Based Access"],
+    live: { url: "https://clark-transportation.com/" },
+  },
+  {
+    title: "Webvidence",
+    category: "SaaS and Prospecting App",
+    summary:
+      "A prospecting web app built around local search, evidence-backed outreach, workflow tracking, and app-style repeat use rather than static pages.",
+    tags: ["SaaS", "Workflow", "Prospecting"],
+  },
+  {
     title: "Worksheet Editor",
     category: "SaaS Tool",
     images: ["/we1.png", "/we2.png", "/we3.png", "/we4.png"],
@@ -370,7 +385,7 @@ const portfolioSections: PortfolioSectionData[] = [
     id: "tools-specialty",
     eyebrow: "Tools & specialty builds",
     title: "Specialty projects and web-based tools",
-    text: "A smaller group of projects built around custom functionality, productivity, or more app-like website experiences.",
+    text: "A smaller group of projects built around custom functionality, dashboards, workflow tools, productivity, or more app-like website experiences.",
     projects: toolsAndSpecialtyProjects,
   },
 ];
@@ -475,9 +490,9 @@ export default function PortfolioPage() {
 
                 <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--text-soft)]">
                   A mix of live client work, demo concepts, tourism guides,
-                  contractor websites, local business sites, and specialty tools.
-                  The goal is the same across all of them: make the business
-                  easier to trust, understand, and contact.
+                  contractor websites, local business sites, custom systems,
+                  and specialty tools. The goal is the same across all of
+                  them: make the business easier to trust, understand, and use.
                 </p>
 
                 <div className="mt-9 flex flex-wrap gap-4">

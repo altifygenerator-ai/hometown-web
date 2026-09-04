@@ -126,6 +126,39 @@ export default function ServicesPreview() {
             </Link>
           </div>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-12 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center"
+        >
+          <div className="premium-shell rounded-[2rem] p-6">
+            <p className="text-sm font-medium text-[var(--text-main)]">
+              Need more than a normal website?
+            </p>
+            <h3 className="mt-4 max-w-xl text-2xl leading-tight md:text-4xl">
+              I also build custom systems, admin dashboards, portals,
+              workflows, and web apps.
+            </h3>
+          </div>
+
+          <div>
+            <p className="text-lg leading-8 text-[var(--text-soft)]">
+              Some businesses need applications, booking logic, internal tools,
+              dashboards, or customer portals. If the business needs a system
+              behind the site, I can build that too.
+            </p>
+
+            <Link
+              href="/custom-business-systems"
+              className="mt-6 inline-flex text-sm text-[var(--text-soft)] transition hover:text-[var(--text-main)]"
+            >
+              See custom systems and web apps →
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

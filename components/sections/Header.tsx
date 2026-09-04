@@ -22,6 +22,11 @@ const serviceLinks = [
     text: "Sites for cabins, Airbnbs, short-term rentals, and lodging.",
   },
   {
+    label: "Custom Systems & Web Apps",
+    href: "/custom-business-systems",
+    text: "Admin dashboards, application flows, portals, and custom business software.",
+  },
+  {
     label: "Website Redesigns",
     href: "/website-redesigns",
     text: "Rebuild outdated sites without losing the parts that already work.",

@@ -32,6 +32,11 @@ const services = [
     href: "/local-seo-arkansas",
   },
   {
+    title: "Custom Systems & Web Apps",
+    text: "Application flows, admin dashboards, booking systems, staff portals, and web-based business tools built around how your business works.",
+    href: "/custom-business-systems",
+  },
+  {
     title: "Website Redesigns",
     text: "Rebuild outdated or hard-to-use sites with better mobile layout, clearer services, stronger trust, and cleaner search structure.",
     href: "/website-redesigns",
@@ -130,6 +135,10 @@ const servicesSchema = [
       "Local SEO",
       "Small Business Websites",
       "Google Business Profile Optimization",
+      "Custom Business Systems",
+      "Web App Development",
+      "Admin Dashboards",
+      "Application Flows",
       "Website Redesigns",
     ],
     description:

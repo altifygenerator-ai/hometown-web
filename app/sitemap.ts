@@ -51,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${SITE_URL}/custom-business-systems`,
+      lastModified: seoRelease,
+      changeFrequency: "monthly",
+      priority: 0.88,
+    },
+    {
       url: `${SITE_URL}/website-redesigns`,
       lastModified: seoRelease,
       changeFrequency: "monthly",

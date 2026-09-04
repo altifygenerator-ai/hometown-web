@@ -96,6 +96,7 @@ const sitemap = read(path.join("app", "sitemap.ts"));
 for (const requiredRoute of [
   "/locations",
   "/about",
+  "/custom-business-systems",
   "/website-redesigns",
   "/website-maintenance",
 ]) {

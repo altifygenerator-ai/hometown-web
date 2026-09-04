@@ -10,6 +10,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import FAQSection from "@/components/sections/FAQSection";
 import { homeFaqs } from "@/data/home-faqs";
 import VacationRentalPreview from "@/components/sections/VacationRentalPreview";
+import CustomSystemsPreview from "@/components/sections/CustomSystemsPreview";
 import { createPageMetadata } from "@/lib/seo";
 const siteUrl = "https://www.hometownwebservicesar.com";
 
@@ -69,6 +70,7 @@ export default function Page() {
       <FeaturedWork />
       <ServicesPreview />
       <VacationRentalPreview />
+      <CustomSystemsPreview />
 
       <Process />
       <Testimonials />

@@ -46,13 +46,34 @@ export default function ProjectCard({ project, index }: any) {
                 preload="metadata"
                 className="h-full w-full object-contain"
               />
-            ) : (
+            ) : imageSrc ? (
               <Image
-                src={imageSrc ?? "/placeholder.png"}
+                src={imageSrc}
                 alt={project.title || "Portfolio project"}
                 fill
                 className="object-cover transition duration-500 group-hover:scale-[1.02]"
               />
+            ) : (
+              <div className="flex h-full w-full flex-col justify-between bg-[linear-gradient(145deg,rgba(0,0,0,0.94),rgba(0,0,0,0.78))] p-6 text-white">
+                <div>
+                  {project.category && (
+                    <p className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/60">
+                      {project.category}
+                    </p>
+                  )}
+                  <h4 className="mt-4 max-w-xs text-2xl leading-tight text-white">
+                    {project.title}
+                  </h4>
+                </div>
+
+                <div className="grid gap-2">
+                  {(project.tags || []).slice(0, 3).map((tag: string) => (
+                    <div key={tag} className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/75">
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+              </div>
             )}
           </div>
         </div>

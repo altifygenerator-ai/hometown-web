@@ -12,6 +12,7 @@ const serviceLinks = [
   { label: "Free Website Preview", href: "/free-preview" },
   { label: "Contractor Websites", href: "/contractor-websites" },
   { label: "Vacation Rental Websites", href: "/vacation-rental-websites" },
+  { label: "Custom Systems & Web Apps", href: "/custom-business-systems" },
   { label: "Website Redesigns", href: "/website-redesigns" },
   { label: "Website Maintenance", href: "/website-maintenance" },
   { label: "Local SEO Arkansas", href: "/local-seo-arkansas" },
@@ -81,8 +82,8 @@ export default function Footer() {
             </Link>
 
             <p className="mt-2 max-w-sm text-sm leading-6 text-[var(--text-soft)]">
-              Arkansas web design, local SEO, and Google-ready websites for
-              contractors, service businesses, restaurants, vacation rentals,
+              Arkansas web design, local SEO, custom systems, and Google-ready
+              websites for contractors, service businesses, vacation rentals,
               and small local companies.
             </p>
 
