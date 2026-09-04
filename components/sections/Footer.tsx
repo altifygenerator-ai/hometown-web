@@ -1,13 +1,20 @@
 import Link from "next/link";
-import { PHONE_CALL_URL, PHONE_DISPLAY, PHONE_TEXT_URL } from "@/lib/site";
+import {
+  CONTACT_EMAIL,
+  GOOGLE_PROFILE_URL,
+  PHONE_CALL_URL,
+  PHONE_DISPLAY,
+  PHONE_TEXT_URL,
+} from "@/lib/site";
 
 const serviceLinks = [
-  { label: "Services", href: "/services" },
+  { label: "Website Services", href: "/services" },
   { label: "Free Website Preview", href: "/free-preview" },
   { label: "Contractor Websites", href: "/contractor-websites" },
   { label: "Vacation Rental Websites", href: "/vacation-rental-websites" },
+  { label: "Website Redesigns", href: "/website-redesigns" },
+  { label: "Website Maintenance", href: "/website-maintenance" },
   { label: "Local SEO Arkansas", href: "/local-seo-arkansas" },
-  { label: "Portfolio", href: "/portfolio" },
 ];
 
 const hotSpringsLinks = [
@@ -23,6 +30,7 @@ const hotSpringsLinks = [
 ];
 
 const southwestArkansas = [
+  { label: "All Service Areas", href: "/locations" },
   { label: "Arkadelphia, AR", href: "/locations/arkadelphia-ar" },
   { label: "Glenwood, AR", href: "/locations/glenwood-ar" },
   { label: "Malvern, AR", href: "/locations/malvern-ar" },
@@ -37,12 +45,36 @@ const centralArkansas = [
   { label: "Maumelle, AR", href: "/locations/maumelle-ar" },
 ];
 
+function FooterLinks({
+  title,
+  links,
+}: {
+  title: string;
+  links: { label: string; href: string }[];
+}) {
+  return (
+    <div>
+      <p className="text-sm font-medium text-[var(--text-main)]">{title}</p>
+      <div className="mt-4 flex flex-col gap-3 text-sm text-[var(--text-soft)]">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="hover:text-[var(--text-main)]"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--border-soft)] bg-white px-6 py-16">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr_1fr_1fr_1fr]">
-          {/* BRAND */}
           <div>
             <Link href="/" className="text-base font-medium text-[var(--text-main)]">
               Hometown Web Services
@@ -55,122 +87,50 @@ export default function Footer() {
             </p>
 
             <div className="mt-5 flex flex-col gap-2 text-sm text-[var(--text-soft)]">
-              <a
-                href={PHONE_CALL_URL}
-                className="hover:text-[var(--text-main)]"
-              >
+              <a href={PHONE_CALL_URL} className="hover:text-[var(--text-main)]">
                 Call: {PHONE_DISPLAY}
               </a>
 
-              <a
-                href={PHONE_TEXT_URL}
-                className="hover:text-[var(--text-main)]"
-              >
+              <a href={PHONE_TEXT_URL} className="hover:text-[var(--text-main)]">
                 Text: {PHONE_DISPLAY}
               </a>
 
               <a
-                href="mailto:hello@hometownwebservicesar.com"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="hover:text-[var(--text-main)]"
               >
-                hello@hometownwebservicesar.com
+                {CONTACT_EMAIL}
               </a>
+
+              <a
+                href={GOOGLE_PROFILE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-[var(--text-main)]"
+              >
+                Google Business Profile
+              </a>
+            </div>
+
+            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-[var(--text-soft)]">
+              <Link href="/about" className="hover:text-[var(--text-main)]">
+                About Hometown
+              </Link>
+              <Link href="/portfolio" className="hover:text-[var(--text-main)]">
+                Portfolio
+              </Link>
             </div>
           </div>
 
-          {/* MAIN LINKS */}
-          <div>
-            <h4 className="mb-4 text-sm font-medium text-[var(--text-main)]">
-              Pages
-            </h4>
-
-            <nav className="flex flex-col gap-3 text-sm text-[var(--text-soft)]">
-              {serviceLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="hover:text-[var(--text-main)]"
-                >
-                  {link.label}
-                </Link>
-              ))}
-
-              <a href={PHONE_CALL_URL} className="hover:text-[var(--text-main)]">
-                Call {PHONE_DISPLAY}
-              </a>
-
-              <a href={PHONE_TEXT_URL} className="hover:text-[var(--text-main)]">
-                Text us
-              </a>
-            </nav>
-          </div>
-
-          {/* HOT SPRINGS */}
-          <div>
-            <h4 className="mb-4 text-sm font-medium text-[var(--text-main)]">
-              Hot Springs
-            </h4>
-
-            <nav className="flex flex-col gap-3 text-sm text-[var(--text-soft)]">
-              {hotSpringsLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="hover:text-[var(--text-main)]"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* SOUTHWEST AR */}
-          <div>
-            <h4 className="mb-4 text-sm font-medium text-[var(--text-main)]">
-              Southwest Arkansas
-            </h4>
-
-            <nav className="flex flex-col gap-3 text-sm text-[var(--text-soft)]">
-              {southwestArkansas.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="hover:text-[var(--text-main)]"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* CENTRAL AR */}
-          <div>
-            <h4 className="mb-4 text-sm font-medium text-[var(--text-main)]">
-              Central Arkansas
-            </h4>
-
-            <nav className="flex flex-col gap-3 text-sm text-[var(--text-soft)]">
-              {centralArkansas.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="hover:text-[var(--text-main)]"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+          <FooterLinks title="Services" links={serviceLinks} />
+          <FooterLinks title="Hot Springs" links={hotSpringsLinks} />
+          <FooterLinks title="Southwest AR" links={southwestArkansas} />
+          <FooterLinks title="Central AR" links={centralArkansas} />
         </div>
 
-        {/* BOTTOM */}
-        <div className="mt-12 flex flex-col gap-3 border-t border-[var(--border-soft)] pt-6 text-xs text-[var(--text-soft)] md:flex-row md:items-center md:justify-between">
-          <p>
-            © {new Date().getFullYear()} Hometown Web Services. All rights
-            reserved.
-          </p>
-
-          <p>Built in Arkansas for small businesses that need better websites.</p>
+        <div className="mt-12 flex flex-col gap-3 border-t border-[var(--border-soft)] pt-6 text-xs text-[var(--text-soft)] sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Hometown Web Services.</p>
+          <p>Based in Amity, Arkansas and serving small businesses across Arkansas.</p>
         </div>
       </div>
     </footer>

@@ -3,6 +3,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import {
+  BUSINESS_CITY,
+  BUSINESS_COUNTRY,
+  BUSINESS_POSTAL_CODE,
+  BUSINESS_STATE,
+  BUSINESS_STREET,
   CONTACT_EMAIL,
   GOOGLE_PROFILE_URL,
   LOGO_PATH,
@@ -23,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
   title: {
-    default: "Arkansas Web Design & Local SEO | Hometown Web Services",
+    default: "Arkansas Web Design for Small Businesses | Hometown Web Services",
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -40,7 +45,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Arkansas Web Design & Local SEO",
+    title: "Arkansas Web Design for Small Businesses",
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -57,7 +62,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arkansas Web Design & Local SEO",
+    title: "Arkansas Web Design for Small Businesses",
     description: SITE_DESCRIPTION,
     images: [OG_IMAGE_PATH],
   },
@@ -91,12 +96,31 @@ export default function RootLayout({
       image: `${SITE_URL}${OG_IMAGE_PATH}`,
       telephone: PHONE_E164,
       email: CONTACT_EMAIL,
-      areaServed: {
-        "@type": "State",
-        name: "Arkansas",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: BUSINESS_STREET,
+        addressLocality: BUSINESS_CITY,
+        addressRegion: BUSINESS_STATE,
+        postalCode: BUSINESS_POSTAL_CODE,
+        addressCountry: BUSINESS_COUNTRY,
       },
+      areaServed: [
+        { "@type": "State", name: "Arkansas" },
+        { "@type": "City", name: "Hot Springs", addressRegion: "AR" },
+        { "@type": "City", name: "Arkadelphia", addressRegion: "AR" },
+        { "@type": "City", name: "Glenwood", addressRegion: "AR" },
+        { "@type": "City", name: "Malvern", addressRegion: "AR" },
+        { "@type": "City", name: "Benton", addressRegion: "AR" },
+        { "@type": "City", name: "Bryant", addressRegion: "AR" },
+        { "@type": "City", name: "Little Rock", addressRegion: "AR" },
+      ],
       description: SITE_DESCRIPTION,
       sameAs: [GOOGLE_PROFILE_URL],
+      hasMap: GOOGLE_PROFILE_URL,
+      founder: {
+        "@type": "Person",
+        name: "Jake",
+      },
       contactPoint: {
         "@type": "ContactPoint",
         telephone: PHONE_E164,
@@ -111,6 +135,8 @@ export default function RootLayout({
         "Contractor Website Design",
         "Vacation Rental Website Design",
         "Google Business Profile Optimization",
+        "Website Redesign",
+        "Website Maintenance",
       ],
     },
     {

@@ -7,9 +7,9 @@ import { PHONE_CALL_URL, PHONE_DISPLAY } from "@/lib/site";
 
 const serviceLinks = [
   {
-    label: "All Web Design Services",
+    label: "All Website Services",
     href: "/services",
-    text: "Web design, local SEO, updates, and Google-ready sites.",
+    text: "Web design, local SEO, support, and Google-ready sites.",
   },
   {
     label: "Contractor Website Design",
@@ -22,29 +22,30 @@ const serviceLinks = [
     text: "Sites for cabins, Airbnbs, short-term rentals, and lodging.",
   },
   {
+    label: "Website Redesigns",
+    href: "/website-redesigns",
+    text: "Rebuild outdated sites without losing the parts that already work.",
+  },
+  {
+    label: "Website Maintenance",
+    href: "/website-maintenance",
+    text: "Ongoing updates, fixes, content changes, and site support.",
+  },
+  {
     label: "Local SEO Services Arkansas",
     href: "/local-seo-arkansas",
     text: "Google visibility, local rankings, and SEO-focused structure.",
-  },
-  {
-    label: "Free Website Preview",
-    href: "/free-preview",
-    text: "Send your info and see a working preview before paying.",
   },
 ];
 
 const locationLinks = [
   {
+    label: "All Arkansas Service Areas",
+    href: "/locations",
+  },
+  {
     label: "Hot Springs Web Design",
     href: "/locations/hot-springs-ar",
-  },
-  {
-    label: "Hot Springs Contractor Websites",
-    href: "/hot-springs-contractor-websites",
-  },
-  {
-    label: "Hot Springs Vacation Rental Websites",
-    href: "/hot-springs-vacation-rental-websites",
   },
   {
     label: "Arkadelphia Web Design",
@@ -55,16 +56,12 @@ const locationLinks = [
     href: "/locations/glenwood-ar",
   },
   {
-    label: "Benton Web Design",
-    href: "/locations/benton-ar",
+    label: "Malvern Web Design",
+    href: "/locations/malvern-ar",
   },
   {
-    label: "Bryant Web Design",
-    href: "/locations/bryant-ar",
-  },
-  {
-    label: "Little Rock Web Design",
-    href: "/locations/little-rock-ar",
+    label: "Central Arkansas",
+    href: "/locations#central-arkansas",
   },
 ];
 
@@ -75,7 +72,6 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border-soft)] bg-[var(--bg-main)]/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        {/* LEFT — BRAND */}
         <Link
           href="/"
           aria-label="Hometown Web Services homepage"
@@ -100,7 +96,6 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* RIGHT — NAV */}
         <div className="flex items-center gap-8">
           <nav
             aria-label="Main navigation"
@@ -113,7 +108,6 @@ export default function Header() {
               Website Portfolio
             </Link>
 
-            {/* SERVICES DROPDOWN */}
             <div
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
@@ -137,7 +131,7 @@ export default function Header() {
               </button>
 
               {servicesOpen && (
-                <div className="absolute left-1/2 top-full w-[300px] -translate-x-1/2 pt-4">
+                <div className="absolute left-1/2 top-full w-[320px] -translate-x-1/2 pt-4">
                   <div className="card overflow-hidden p-2">
                     {serviceLinks.map((link) => (
                       <Link
@@ -160,7 +154,6 @@ export default function Header() {
               )}
             </div>
 
-            {/* LOCATIONS DROPDOWN */}
             <div
               className="relative"
               onMouseEnter={() => setLocationsOpen(true)}
@@ -184,7 +177,7 @@ export default function Header() {
               </button>
 
               {locationsOpen && (
-                <div className="absolute left-1/2 top-full w-[260px] -translate-x-1/2 pt-4">
+                <div className="absolute left-1/2 top-full w-[270px] -translate-x-1/2 pt-4">
                   <div className="card overflow-hidden p-2">
                     {locationLinks.map((link) => (
                       <Link
@@ -200,9 +193,15 @@ export default function Header() {
                 </div>
               )}
             </div>
+
+            <Link
+              href="/about"
+              className="transition hover:text-[var(--text-main)]"
+            >
+              About
+            </Link>
           </nav>
 
-          {/* CTA */}
           <a
             href={PHONE_CALL_URL}
             className="hidden text-sm font-medium text-[var(--text-soft)] transition hover:text-[var(--text-main)] lg:inline-flex"

@@ -1,30 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const reviews = [
-  {
-    name: "Rebecca Turner",
-    business: "Onward & Upward Services",
-    label: "Google review",
-    time: "6 weeks ago",
-    text: "Great service. Dependable. Very responsive and trustworthy. Any time we ask for change on the website he does it immediately. Does amazing work. Very thankful he is on our team at Onward & Upward Services.",
-  },
-  {
-    name: "Isaiah ‘N Kat",
-    business: "Local client",
-    label: "Google review",
-    time: "3 weeks ago",
-    text: "Fast, reliable and affordable!",
-  },
-  {
-    name: "Jake Shockley",
-    business: "Local client",
-    label: "Google review",
-    time: "1 week ago",
-    text: "Quick, and very helpful.",
-  },
-];
+import { clientReviews } from "@/data/reviews";
+import { GOOGLE_PROFILE_URL } from "@/lib/site";
 
 const trustPoints = [
   "Fast updates when changes are needed",
@@ -34,6 +12,9 @@ const trustPoints = [
 ];
 
 export default function Testimonials() {
+  const featured = clientReviews[0];
+  const remaining = clientReviews.slice(1);
+
   return (
     <section className="relative overflow-hidden bg-[var(--bg-alt)] py-24 md:py-28">
       <div className="pointer-events-none absolute right-[-140px] top-[-140px] h-[400px] w-[400px] rounded-full bg-[var(--accent)] opacity-[0.04] blur-[120px]" />
@@ -51,7 +32,7 @@ export default function Testimonials() {
             <p className="section-kicker mb-4">Client feedback</p>
 
             <h2 className="text-balance max-w-md text-4xl leading-tight md:text-6xl">
-              Real reviews from businesses I’ve helped.
+              Real Google reviews from businesses I’ve helped.
             </h2>
 
             <p className="mt-6 max-w-md text-lg leading-8 text-[var(--text-soft)]">
@@ -59,6 +40,15 @@ export default function Testimonials() {
               communication, quick updates, and someone who actually helps when
               the business needs changes.
             </p>
+
+            <a
+              href={GOOGLE_PROFILE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex text-sm font-medium text-[var(--text-main)] underline decoration-[var(--border-soft)] underline-offset-4"
+            >
+              View Hometown Web Services on Google →
+            </a>
 
             <div className="mt-10 rounded-[1.75rem] border border-[var(--border-soft)] bg-white p-6 shadow-sm">
               <p className="text-sm font-medium text-[var(--text-main)]">
@@ -92,7 +82,7 @@ export default function Testimonials() {
                     Featured review
                   </p>
                   <p className="mt-1 text-sm text-[var(--text-soft)]">
-                    {reviews[0].label} • {reviews[0].time}
+                    {featured.source}
                   </p>
                 </div>
 
@@ -102,21 +92,23 @@ export default function Testimonials() {
               </div>
 
               <p className="text-2xl leading-relaxed tracking-[-0.03em] md:text-3xl">
-                “{reviews[0].text}”
+                “{featured.text}”
               </p>
 
               <div className="mt-8">
                 <p className="text-sm font-medium text-[var(--text-main)]">
-                  {reviews[0].name}
+                  {featured.name}
                 </p>
-                <p className="mt-1 text-sm text-[var(--text-soft)]">
-                  {reviews[0].business}
-                </p>
+                {featured.business && (
+                  <p className="mt-1 text-sm text-[var(--text-soft)]">
+                    {featured.business}
+                  </p>
+                )}
               </div>
             </motion.div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {reviews.slice(1).map((review, index) => (
+              {remaining.map((review, index) => (
                 <motion.div
                   key={review.name}
                   initial={{ opacity: 0, y: 35 }}
@@ -127,7 +119,7 @@ export default function Testimonials() {
                 >
                   <div className="mb-5 flex items-center justify-between gap-4">
                     <p className="text-sm text-[var(--text-soft)]">
-                      {review.label}
+                      {review.source}
                     </p>
 
                     <span className="text-sm text-[var(--text-soft)]">
@@ -143,9 +135,11 @@ export default function Testimonials() {
                     <p className="text-sm font-medium text-[var(--text-main)]">
                       {review.name}
                     </p>
-                    <p className="mt-1 text-sm text-[var(--text-soft)]">
-                      {review.time}
-                    </p>
+                    {review.business && (
+                      <p className="mt-1 text-sm text-[var(--text-soft)]">
+                        {review.business}
+                      </p>
+                    )}
                   </div>
                 </motion.div>
               ))}

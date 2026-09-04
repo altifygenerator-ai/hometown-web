@@ -48,6 +48,31 @@ export default function LocationPageTemplate({
         },
       })),
     },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${data.url}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.hometownwebservicesar.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Arkansas Service Areas",
+          item: "https://www.hometownwebservicesar.com/locations",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: `${data.city}, ${data.state} Web Design`,
+          item: data.url,
+        },
+      ],
+    },
   ];
 
   const heroVariant = data.layout?.heroVariant ?? "simple";

@@ -4,14 +4,14 @@ import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import PricingSection from "@/components/sections/PricingSection";
 import { createPageMetadata } from "@/lib/seo";
-import { PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
+import { GOOGLE_PROFILE_URL, PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
 
 
 const siteUrl = "https://www.hometownwebservicesar.com";
 export const metadata: Metadata = createPageMetadata({
-  title: "Arkansas Web Design & Local SEO",
+  title: "Small Business Website Services in Arkansas",
   description:
-    "Website design, local SEO, Google Business Profile help, redesigns, and ongoing website support for Arkansas small businesses that need more calls and leads.",
+    "Small business website design, local SEO structure, website redesigns, Google Business Profile help, and ongoing website support across Arkansas.",
   path: "/services",
 });
 
@@ -19,18 +19,32 @@ const services = [
   {
     title: "Website Design",
     text: "Clean, modern websites built around your business, your services, and the actions you want customers to take.",
+    href: "/free-preview",
   },
   {
     title: "Local SEO Structure",
     text: "Pages, headings, content, metadata, and structure built so Google can better understand what you do and where you work.",
+    href: "/local-seo-arkansas",
   },
   {
     title: "Google Business Profile Help",
-    text: "Setup and optimization help for your Google listing so your business looks more complete in local searches and maps.",
+    text: "Setup and optimization help so your Google listing and website send customers and search engines the same clear business signals.",
+    href: "/local-seo-arkansas",
+  },
+  {
+    title: "Website Redesigns",
+    text: "Rebuild outdated or hard-to-use sites with better mobile layout, clearer services, stronger trust, and cleaner search structure.",
+    href: "/website-redesigns",
+  },
+  {
+    title: "Website Maintenance",
+    text: "Ongoing updates, content changes, fixes, new photos, service changes, and practical support after the site goes live.",
+    href: "/website-maintenance",
   },
   {
     title: "Lead-Focused Layouts",
     text: "Clear calls, text links, quote buttons, service sections, and mobile-first layouts that make contacting you simple.",
+    href: "/portfolio",
   },
 ];
 
@@ -157,11 +171,11 @@ export default function ServicesPage() {
             <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
               <div>
                 <p className="mb-5 text-sm text-[var(--text-soft)]">
-                  Web design & local SEO services
+                  Small business website services in Arkansas
                 </p>
 
                 <h1 className="max-w-3xl text-4xl leading-tight md:text-6xl">
-                  Simple websites that actually help small businesses get found.
+                  Web design services for Arkansas small businesses that need to get found and get called.
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-soft)]">
@@ -234,18 +248,23 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <div
+                <Link
                   key={service.title}
-                  className="rounded-[1.5rem] border border-[var(--border-soft)] bg-[var(--bg-card)] p-6 transition duration-300 hover:-translate-y-1"
+                  href={service.href}
+                  className="rounded-[1.5rem] border border-[var(--border-soft)] bg-white p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
                 >
                   <h3 className="text-xl">{service.title}</h3>
 
                   <p className="mt-3 text-sm leading-relaxed text-[var(--text-soft)]">
                     {service.text}
                   </p>
-                </div>
+
+                  <span className="mt-5 inline-flex text-sm font-medium text-[var(--text-main)]">
+                    Learn more →
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -470,7 +489,7 @@ export default function ServicesPage() {
                     </a>
 
                     <a
-                      href="https://share.google/f18YjPUwYQatjbbnZ"
+                      href={GOOGLE_PROFILE_URL}
                       target="_blank"
                       rel="noreferrer"
                       className="text-sm text-white/65 transition hover:text-white"

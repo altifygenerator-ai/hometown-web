@@ -14,9 +14,9 @@ import { createPageMetadata } from "@/lib/seo";
 const siteUrl = "https://www.hometownwebservicesar.com";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Arkansas Web Design & Local SEO",
+  title: "Arkansas Web Design for Small Businesses",
   description:
-    "Custom websites and local SEO for Arkansas contractors, service companies, restaurants, vacation rentals, shops, and small businesses that need more leads.",
+    "Custom Arkansas web design for contractors, service companies, restaurants, vacation rentals, shops, and small businesses that need more calls, trust, and a stronger Google presence.",
   path: "/",
 });
 
@@ -26,7 +26,7 @@ const homeSchema = [
     "@type": "WebPage",
     "@id": `${siteUrl}/#webpage`,
     url: siteUrl,
-    name: "Arkansas Web Design & Local SEO",
+    name: "Arkansas Web Design for Small Businesses",
     description:
       "Custom websites and local SEO for Arkansas small businesses that need more calls, leads, trust, and local visibility.",
     isPartOf: {

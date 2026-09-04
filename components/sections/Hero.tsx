@@ -24,11 +24,11 @@ export default function Hero() {
             transition={{ duration: 0.55 }}
           >
             <p className="mb-5 inline-flex rounded-full border border-[var(--border-soft)] bg-white/70 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-[var(--text-soft)] backdrop-blur">
-              Arkansas Web Design
+              Arkansas Web Design for Small Businesses
             </p>
 
             <h1 className="max-w-3xl text-5xl leading-[0.95] tracking-[-0.05em] md:text-7xl">
-              Websites that make local businesses look worth calling.
+              Arkansas web design that makes local businesses look worth calling.
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--text-soft)]">

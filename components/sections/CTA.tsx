@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
+import { GOOGLE_PROFILE_URL, PHONE_CALL_URL, PHONE_DASHED, PHONE_TEXT_URL } from "@/lib/site";
 
 const trustItems = [
   "Free preview before payment",
@@ -64,7 +64,7 @@ export default function CTA() {
                 </a>
 
                 <a
-                  href="https://share.google/f18YjPUwYQatjbbnZ"
+                  href={GOOGLE_PROFILE_URL}
                   target="_blank"
                   rel="noreferrer"
                   className="text-sm text-white/65 transition hover:text-white"
